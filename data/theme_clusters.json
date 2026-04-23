@@ -1,0 +1,3279 @@
+{
+  "generated_at": "2026-04-07T08:56:52.177502+00:00",
+  "total_records": 57,
+  "years": [
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "excluded_country_tags": [
+    {
+      "tag": "ghana",
+      "count": 6
+    },
+    {
+      "tag": "china",
+      "count": 4
+    },
+    {
+      "tag": "global south",
+      "count": 4
+    },
+    {
+      "tag": "nigeria",
+      "count": 3
+    },
+    {
+      "tag": "south africa",
+      "count": 3
+    },
+    {
+      "tag": "brics",
+      "count": 3
+    },
+    {
+      "tag": "kenya",
+      "count": 3
+    },
+    {
+      "tag": "south-south cooperation",
+      "count": 1
+    },
+    {
+      "tag": "west africa",
+      "count": 1
+    },
+    {
+      "tag": "turkey",
+      "count": 1
+    },
+    {
+      "tag": "drc",
+      "count": 1
+    },
+    {
+      "tag": "zambia",
+      "count": 1
+    },
+    {
+      "tag": "egypt",
+      "count": 1
+    },
+    {
+      "tag": "ecowas",
+      "count": 1
+    },
+    {
+      "tag": "eu-china-africa",
+      "count": 1
+    },
+    {
+      "tag": "morocco",
+      "count": 1
+    },
+    {
+      "tag": "afcfta",
+      "count": 1
+    },
+    {
+      "tag": "united states",
+      "count": 1
+    }
+  ],
+  "themes_defined": [
+    "Climate & Energy",
+    "Minerals & Industry",
+    "Geopolitics & Security",
+    "Economy, Finance & Trade",
+    "Governance & Institutions",
+    "Technology & Digital",
+    "Society & Development",
+    "Other / Emerging"
+  ],
+  "overall": {
+    "Climate & Energy": [
+      {
+        "label": "Africa's Climate Agenda",
+        "count": 10,
+        "variants": [
+          {
+            "tag": "Africa's Climate Agenda",
+            "count": 10
+          }
+        ]
+      },
+      {
+        "label": "Energy Transition",
+        "count": 8,
+        "variants": [
+          {
+            "tag": "Energy Transition",
+            "count": 8
+          }
+        ]
+      },
+      {
+        "label": "Climate Action",
+        "count": 7,
+        "variants": [
+          {
+            "tag": "Climate Action",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "label": "Renewable Energy",
+        "count": 5,
+        "variants": [
+          {
+            "tag": "Renewable Energy",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "label": "Climate",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Climate",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Adaptation",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Adaptation",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Climate Diplomacy",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Climate Diplomacy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Climate Justice",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Climate Justice",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Transition Minerals",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Transition Minerals",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Diplomacy Nigeria",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate Diplomacy Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Negotiations",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate Negotiations",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Security Nigeria",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate Security Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Policy Integration",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate Policy Integration",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Mainstreaming Climate Action",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Mainstreaming Climate Action",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Africa Energy Systems",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Africa Energy Systems",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Transport Emissions",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Transport Emissions",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate-smart Agriculture",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Climate-smart Agriculture",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cop",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Cop",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cop30",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Cop30",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Technologytransition",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Technologytransition",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Economy, Finance & Trade": [
+      {
+        "label": "Finance",
+        "count": 15,
+        "variants": [
+          {
+            "tag": "Finance",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "label": "Trade",
+        "count": 4,
+        "variants": [
+          {
+            "tag": "Trade",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Green Economy",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Green Economy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Political Economy",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Political Economy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Economic Growth",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Economic Growth",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Investment Sustainability",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Investment Sustainability",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Civilian Infrastructure",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Civilian Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Industrial Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Green Industrial Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Infrastructure",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Green Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Economic Planning",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Economic Planning",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Low-carbon Economy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Low-carbon Economy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Low-carbon Infrastructure",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Low-carbon Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Economy Society",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Economy Society",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Trademark",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Trademark",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Geopolitics & Security": [
+      {
+        "label": "Geopolitics & Geoeconomics",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Geopolitics & Geoeconomics",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Security Cooperation",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Security Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Security Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Security Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Environmental Conflict",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Environmental Conflict",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "National Security Strategy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "National Security Strategy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Resource Conflict",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Resource Conflict",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Food Security Nigeria",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Food Security Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cybersecurity",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Cybersecurity",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Governance & Institutions": [
+      {
+        "label": "Policy Brief",
+        "count": 4,
+        "variants": [
+          {
+            "tag": "Policy Brief",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Governance",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Governance",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Strategic Statecraft",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Strategic Statecraft",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Foreign Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Foreign Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agriculture Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Agriculture Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Feminist Development Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Feminist Development Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Development Policy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Development Policy",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Minerals & Industry": [
+      {
+        "label": "Critical Minerals",
+        "count": 7,
+        "variants": [
+          {
+            "tag": "Critical Minerals",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "label": "Nigeria Mining",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Nigeria Mining",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Lithium",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Lithium",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Sustainable Mining",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Sustainable Mining",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Mineral Partnerships",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Green Mineral Partnerships",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Other / Emerging": [
+      {
+        "label": "Short Analysis",
+        "count": 6,
+        "variants": [
+          {
+            "tag": "Short Analysis",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "label": "Crm",
+        "count": 6,
+        "variants": [
+          {
+            "tag": "Crm",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "label": "Employment",
+        "count": 6,
+        "variants": [
+          {
+            "tag": "Employment",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "label": "Jetp",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Jetp",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Trilateral Partnership",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Trilateral Partnership",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Indigenous",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Indigenous",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Indigenousknowledge",
+        "count": 3,
+        "variants": [
+          {
+            "tag": "Indigenousknowledge",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Global",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Global",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Expert",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Expert",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Interview",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Interview",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Us China Relations",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Us China Relations",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Global-south Cooperation",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Global-south Cooperation",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Csa",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Csa",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Local",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Local",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Solutions",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Solutions",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Impact",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Impact",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Justice",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Justice",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Inverted",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Inverted",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Rising",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Rising",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Voices",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Voices",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "African",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "African",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Africa's",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Africa's",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Waste",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Waste",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Crisis",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Crisis",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Reveals",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Reveals",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Wealth",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Wealth",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Wellbeing",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Wellbeing",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Promising",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Promising",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Unlocking",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Unlocking",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Potential",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Potential",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Insights",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Insights",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Kulthoum",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Kulthoum",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Omari-motsumi",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Omari-motsumi",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Odarno",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Odarno",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Director",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Director",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Strategies",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Strategies",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Practices",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Practices",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Change",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Change",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Electroyuan",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Electroyuan",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Renminbi",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Renminbi",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Rmb",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Rmb",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Currency Internationalisation",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Currency Internationalisation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "China Green Tech",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "China Green Tech",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Foreign Exchange Risk",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Foreign Exchange Risk",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Fx Liquidity",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Fx Liquidity",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Balance Of Payments",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Balance Of Payments",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agoa",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Agoa",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Us Nigeria Relations",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Us Nigeria Relations",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Global South Cooperation",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Global South Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Resilience Building",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Resilience Building",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Budgeting",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Green Budgeting",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Mobility",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Green Mobility",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Public Transport Reform",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Public Transport Reform",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Rural Developmen",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Rural Developmen",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Hegemony",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Hegemony",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Military",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Military",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Feminism",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Feminism",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Declonising",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Declonising",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Europe And Africa",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Europe And Africa",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Au-eu Summit",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Au-eu Summit",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Africa 1 Summits",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Africa 1 Summits",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Global Diplomacy",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Global Diplomacy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Diversify Partnership",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Diversify Partnership",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Lobito Corridor",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Lobito Corridor",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Eu-brics",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Eu-brics",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Regional Integration",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Regional Integration",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Mous",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Mous",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Natural Resources",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Natural Resources",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Intellectualproperty",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Intellectualproperty",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Patent",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Patent",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Emobility",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Emobility",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Entrepreneurship",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Entrepreneurship",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Startup",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Startup",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Society & Development": [
+      {
+        "label": "Youth",
+        "count": 4,
+        "variants": [
+          {
+            "tag": "Youth",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Youth's",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Youth's",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Gender",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Gender",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Development Cooperation",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Development Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agrifood",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Agrifood",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Private Sector Development",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Private Sector Development",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Human Rights",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Human Rights",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Technology & Digital": [
+      {
+        "label": "Green Technology",
+        "count": 7,
+        "variants": [
+          {
+            "tag": "Green Technology",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "label": "Country Platform",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Country Platform",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Innovation",
+        "count": 2,
+        "variants": [
+          {
+            "tag": "Innovation",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Sustainable Development",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Sustainable Development",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Financial Innovation",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Financial Innovation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Sustainable Transport",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Sustainable Transport",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Sustainable Transport Nigeria",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Sustainable Transport Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agriculture Technology",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Agriculture Technology",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Technology Transfer",
+        "count": 1,
+        "variants": [
+          {
+            "tag": "Technology Transfer",
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "by_year": {
+    "2022": {
+      "Climate & Energy": [
+        {
+          "label": "Africa's Climate Agenda",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Adaptation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Adaptation",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Other / Emerging": [
+        {
+          "label": "Change",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Change",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "2023": {
+      "Climate & Energy": [
+        {
+          "label": "Africa's Climate Agenda",
+          "count": 4,
+          "variants": [
+            {
+              "tag": "Africa's Climate Agenda",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "Adaptation",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Adaptation",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Other / Emerging": [
+        {
+          "label": "Rising",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Rising",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Voices",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Voices",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "African",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "African",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Unlocking",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Unlocking",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Potential",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Potential",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Insights",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Insights",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Expert",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Expert",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Interview",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Interview",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Odarno",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Odarno",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Director",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Director",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Strategies",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Strategies",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Practices",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Practices",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Employment",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Employment",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society & Development": [
+        {
+          "label": "Youth's",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Youth's",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Youth",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Youth",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology & Digital": [
+        {
+          "label": "Green Technology",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Technology",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "2024": {
+      "Climate & Energy": [
+        {
+          "label": "Africa's Climate Agenda",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics & Security": [
+        {
+          "label": "Cybersecurity",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Cybersecurity",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Governance & Institutions": [
+        {
+          "label": "Development Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Development Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Other / Emerging": [
+        {
+          "label": "Global",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Global",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Short Analysis",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Short Analysis",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Local",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Local",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Solutions",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Solutions",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Impact",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Impact",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Justice",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Justice",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Inverted",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Inverted",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Declonising",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Declonising",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society & Development": [
+        {
+          "label": "Human Rights",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Human Rights",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "2025": {
+      "Climate & Energy": [
+        {
+          "label": "Climate Action",
+          "count": 7,
+          "variants": [
+            {
+              "tag": "Climate Action",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "label": "Energy Transition",
+          "count": 6,
+          "variants": [
+            {
+              "tag": "Energy Transition",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "label": "Renewable Energy",
+          "count": 5,
+          "variants": [
+            {
+              "tag": "Renewable Energy",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Africa's Climate Agenda",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate Diplomacy",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Climate Diplomacy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate Justice",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Climate Justice",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate Diplomacy Nigeria",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate Diplomacy Nigeria",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Negotiations",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate Negotiations",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Security Nigeria",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate Security Nigeria",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Policy Integration",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate Policy Integration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Mainstreaming Climate Action",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Mainstreaming Climate Action",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Africa Energy Systems",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Africa Energy Systems",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Transport Emissions",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Transport Emissions",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate-smart Agriculture",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Climate-smart Agriculture",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Economy, Finance & Trade": [
+        {
+          "label": "Finance",
+          "count": 12,
+          "variants": [
+            {
+              "tag": "Finance",
+              "count": 12
+            }
+          ]
+        },
+        {
+          "label": "Trade",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Political Economy",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Political Economy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Green Economy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Investment Sustainability",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Investment Sustainability",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Industrial Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Industrial Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Infrastructure",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Infrastructure",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Economic Planning",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Economic Planning",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Low-carbon Economy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Low-carbon Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Low-carbon Infrastructure",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Low-carbon Infrastructure",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Trademark",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Trademark",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics & Security": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Environmental Conflict",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Environmental Conflict",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "National Security Strategy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "National Security Strategy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Resource Conflict",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Resource Conflict",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Food Security Nigeria",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Food Security Nigeria",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Governance & Institutions": [
+        {
+          "label": "Governance",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Foreign Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Foreign Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agriculture Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Agriculture Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Feminist Development Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Feminist Development Policy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Minerals & Industry": [
+        {
+          "label": "Critical Minerals",
+          "count": 7,
+          "variants": [
+            {
+              "tag": "Critical Minerals",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "label": "Sustainable Mining",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Sustainable Mining",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Mineral Partnerships",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Mineral Partnerships",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Other / Emerging": [
+        {
+          "label": "Crm",
+          "count": 6,
+          "variants": [
+            {
+              "tag": "Crm",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "label": "Short Analysis",
+          "count": 4,
+          "variants": [
+            {
+              "tag": "Short Analysis",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "Employment",
+          "count": 4,
+          "variants": [
+            {
+              "tag": "Employment",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "Jetp",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Jetp",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Trilateral Partnership",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Trilateral Partnership",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Indigenous",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Indigenous",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Indigenousknowledge",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Indigenousknowledge",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Us China Relations",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Us China Relations",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Global-south Cooperation",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Global-south Cooperation",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Wealth",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Wealth",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Wellbeing",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Wellbeing",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Promising",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Promising",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Expert",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Expert",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Interview",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Interview",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Kulthoum",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Kulthoum",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Omari-motsumi",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Omari-motsumi",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "China Green Tech",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "China Green Tech",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Foreign Exchange Risk",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Foreign Exchange Risk",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Fx Liquidity",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Fx Liquidity",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Balance Of Payments",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Balance Of Payments",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Global South Cooperation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Global South Cooperation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Resilience Building",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Resilience Building",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Budgeting",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Budgeting",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Mobility",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Mobility",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Public Transport Reform",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Public Transport Reform",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Rural Developmen",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Rural Developmen",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Hegemony",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Hegemony",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Military",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Military",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Feminism",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Feminism",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Europe And Africa",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Europe And Africa",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Au-eu Summit",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Au-eu Summit",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Lobito Corridor",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Lobito Corridor",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Eu-brics",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Eu-brics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Regional Integration",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Regional Integration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Mous",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Mous",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Natural Resources",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Natural Resources",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Intellectualproperty",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Intellectualproperty",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Patent",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Patent",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Emobility",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Emobility",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Csa",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Csa",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Entrepreneurship",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Entrepreneurship",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Startup",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Startup",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society & Development": [
+        {
+          "label": "Youth",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Youth",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Gender",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Gender",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agrifood",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Agrifood",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Private Sector Development",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Private Sector Development",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology & Digital": [
+        {
+          "label": "Green Technology",
+          "count": 6,
+          "variants": [
+            {
+              "tag": "Green Technology",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "label": "Country Platform",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Country Platform",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Innovation",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Innovation",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Sustainable Development",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Sustainable Development",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Financial Innovation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Financial Innovation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Sustainable Transport",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Sustainable Transport",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Sustainable Transport Nigeria",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Sustainable Transport Nigeria",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Technology Transfer",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Technology Transfer",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "2026": {
+      "Climate & Energy": [
+        {
+          "label": "Energy Transition",
+          "count": 2,
+          "variants": [
+            {
+              "tag": "Energy Transition",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Africa's Climate Agenda",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Transition Minerals",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Transition Minerals",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Cop",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Cop",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Cop30",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Cop30",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Technologytransition",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Technologytransition",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Economy, Finance & Trade": [
+        {
+          "label": "Finance",
+          "count": 3,
+          "variants": [
+            {
+              "tag": "Finance",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Economic Growth",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Economic Growth",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Economy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Green Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Trade",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Civilian Infrastructure",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Civilian Infrastructure",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Economy Society",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Economy Society",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics & Security": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Security Cooperation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Security Cooperation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Security Policy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Security Policy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Governance & Institutions": [
+        {
+          "label": "Strategic Statecraft",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Strategic Statecraft",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Minerals & Industry": [
+        {
+          "label": "Nigeria Mining",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Nigeria Mining",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Lithium",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Lithium",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Other / Emerging": [
+        {
+          "label": "Africa's",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Africa's",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Waste",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Waste",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Crisis",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Crisis",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Reveals",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Reveals",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Electroyuan",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Electroyuan",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Renminbi",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Renminbi",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Rmb",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Rmb",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Currency Internationalisation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Currency Internationalisation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agoa",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Agoa",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Us Nigeria Relations",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Us Nigeria Relations",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Africa 1 Summits",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Africa 1 Summits",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Global Diplomacy",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Global Diplomacy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Diversify Partnership",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Diversify Partnership",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Csa",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Csa",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Employment",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Employment",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society & Development": [
+        {
+          "label": "Development Cooperation",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Development Cooperation",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology & Digital": [
+        {
+          "label": "Agriculture Technology",
+          "count": 1,
+          "variants": [
+            {
+              "tag": "Agriculture Technology",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
