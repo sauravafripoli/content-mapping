@@ -60,6 +60,7 @@
           <svg id="clusterSvg" aria-label="Theme cluster animation"></svg>
           <div id="clusterTooltip" class="ta-tooltip hidden" role="tooltip"></div>
           <div id="emptyState" class="ta-empty hidden">No theme tags found for this year.</div>
+          <div id="taProgramLegend" class="ta-program-legend" aria-label="Programme ring legend"></div>
           <article class="ta-story-inline" aria-live="polite">
             <div class="ta-story-inline-header">
               <div>

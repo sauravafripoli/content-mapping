@@ -6,6 +6,7 @@ const els = {
   svg: document.getElementById('clusterSvg'),
   empty: document.getElementById('emptyState'),
   tooltip: document.getElementById('clusterTooltip'),
+  programLegend: document.getElementById('taProgramLegend'),
   topThemesList: document.getElementById('topThemesList'),
   clusterList: document.getElementById('clusterList'),
   selectedThemeTitle: document.getElementById('selectedThemeTitle'),
@@ -45,6 +46,8 @@ const els = {
 const state = {
   years: [],
   dataByYear: new Map(),
+  fixedThemes: [],
+  themeMeta: new Map(),
   yearIndex: 0,
   timer: null,
   simulation: null,
@@ -60,7 +63,8 @@ const state = {
   storyModeEnabled: false,
   storyTimer: null,
   storyNotes: [],
-  storyPreviousClusterFilter: 'all'
+  storyPreviousClusterFilter: 'all',
+  programColorScale: null
 };
 
 function setLinkHref(baseView, params = {}) {
@@ -83,13 +87,29 @@ function escapeHtml(value) {
 }
 
 function buildData(clusterPayload) {
+  const fixedThemes = Array.isArray(clusterPayload.fixed_themes)
+    ? clusterPayload.fixed_themes.map(String)
+    : [];
+
+  const themeMeta = new Map(
+    Object.entries(clusterPayload.theme_meta || {}).map(([theme, meta]) => [
+      String(theme),
+      {
+        category: String(meta?.category || 'Cross-cutting'),
+        keywords: Array.isArray(meta?.keywords) ? meta.keywords.map(String) : []
+      }
+    ])
+  );
+
   const years = (clusterPayload.years || []).map(Number).filter(Number.isFinite).sort((a, b) => a - b);
   const byYear = new Map();
 
   years.forEach((year) => {
     const yearKey = String(year);
     const yearThemes = clusterPayload.by_year?.[yearKey] || {};
-    const themeNames = Object.keys(yearThemes).sort((a, b) => a.localeCompare(b));
+    const themeNames = fixedThemes.length
+      ? fixedThemes
+      : Object.keys(yearThemes).sort((a, b) => a.localeCompare(b));
 
     const nodes = [];
     const clusters = [];
@@ -97,24 +117,36 @@ function buildData(clusterPayload) {
     themeNames.forEach((themeName, idx) => {
       const color = palette[idx % palette.length];
       const themeItems = (yearThemes[themeName] || []).slice(0, 14);
+      const meta = themeMeta.get(themeName) || { category: 'Cross-cutting', keywords: [] };
 
       const clusterTotal = themeItems.reduce((sum, item) => sum + (Number(item.count) || 0), 0);
       clusters.push({
         id: idx,
         color,
         lead: themeName,
+        category: meta.category,
         size: themeItems.length,
         total: clusterTotal
       });
 
       themeItems.forEach((item, itemIndex) => {
+        const programCounts = Array.isArray(item.program_counts)
+          ? item.program_counts.map((p) => ({
+            program: String(p.program || 'Unknown Programme'),
+            count: Number(p.count) || 0
+          }))
+          : [];
+
         nodes.push({
           id: `${year}-${themeName}-${item.label}-${itemIndex}`,
           tag: item.label,
           count: Number(item.count) || 0,
           cluster: idx,
           color,
-          theme: themeName
+          theme: themeName,
+          category: meta.category,
+          topProgram: String(item.top_program || programCounts[0]?.program || 'Unknown Programme'),
+          programCounts
         });
       });
     });
@@ -122,13 +154,57 @@ function buildData(clusterPayload) {
     byYear.set(year, { nodes, links: [], clusters });
   });
 
-  return { years, byYear };
+  return { years, byYear, fixedThemes: themeNamesFromPayloadOrData(fixedThemes, byYear), themeMeta };
+}
+
+function themeNamesFromPayloadOrData(fixedThemes, byYear) {
+  if (fixedThemes.length) return fixedThemes;
+  const yearEntry = byYear.values().next().value;
+  const fallback = (yearEntry?.clusters || []).map((c) => c.lead);
+  return fallback;
 }
 
 function setupSvg() {
   const box = els.svg.getBoundingClientRect();
   state.width = box.width;
   state.height = box.height;
+}
+
+function ensureProgramColorScale(nodes = []) {
+  if (state.programColorScale) return;
+  const seedPrograms = [...new Set(nodes.map((n) => n.topProgram).filter(Boolean))];
+  state.programColorScale = d3.scaleOrdinal()
+    .domain(seedPrograms)
+    .range([
+      '#2563eb', '#dc2626', '#059669', '#7c3aed', '#ea580c', '#0891b2', '#be123c', '#65a30d', '#4f46e5', '#0f766e', '#9333ea'
+    ]);
+}
+
+function getProgramColor(programName) {
+  if (!state.programColorScale) {
+    ensureProgramColorScale();
+  }
+  const safeName = String(programName || 'Unknown Programme');
+  return state.programColorScale(safeName);
+}
+
+function renderProgramLegend(nodes) {
+  if (!els.programLegend) return;
+
+  const programs = [...d3.rollup(nodes, (v) => d3.sum(v, (d) => d.count), (d) => d.topProgram).entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6);
+
+  if (!programs.length) {
+    els.programLegend.innerHTML = '<span class="ta-program-legend-label">Ring = Programme</span><span class="ta-program-legend-empty">No programme signal for current filters.</span>';
+    return;
+  }
+
+  const chips = programs
+    .map(([program, mentions]) => `<span class="ta-program-chip"><span class="ta-program-chip-dot" style="background:${getProgramColor(program)}"></span>${escapeHtml(program)} · ${mentions}</span>`)
+    .join('');
+
+  els.programLegend.innerHTML = `<span class="ta-program-legend-label">Outer ring = programme</span>${chips}`;
 }
 
 function currentFilterState() {
@@ -144,7 +220,7 @@ function populateClusterFilterOptions(clusters) {
 
   const options = ['<option value="all">All clusters</option>'];
   clusters.forEach((c) => {
-    options.push(`<option value="${c.id}">${escapeHtml(c.lead)} (${c.size})</option>`);
+    options.push(`<option value="${c.id}">${escapeHtml(c.lead)} · ${escapeHtml(c.category || 'Cross-cutting')} (${c.size})</option>`);
   });
 
   els.clusterFilterSelect.innerHTML = options.join('');
@@ -154,7 +230,13 @@ function populateClusterFilterOptions(clusters) {
 
 function showTooltip(event, node) {
   if (!els.tooltip) return;
-  els.tooltip.innerHTML = `<strong>${escapeHtml(node.tag)}</strong><br>${escapeHtml(node.theme)}<br>${node.count} mentions`;
+  const topPrograms = (node.programCounts || [])
+    .slice(0, 2)
+    .map((p) => `${escapeHtml(p.program)} (${p.count})`)
+    .join(' · ');
+  const programLine = topPrograms || escapeHtml(node.topProgram || 'Unknown Programme');
+
+  els.tooltip.innerHTML = `<strong>${escapeHtml(node.tag)}</strong><br>${escapeHtml(node.theme)} · ${escapeHtml(node.category || 'Cross-cutting')}<br>${node.count} mentions<br><span class="ta-tooltip-program">Programme: ${programLine}</span>`;
   els.tooltip.classList.remove('hidden');
 
   const cardBox = els.svg.parentElement?.getBoundingClientRect();
@@ -180,7 +262,11 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
   }
 
   els.selectedThemeTitle.textContent = selectedNode.tag;
-  els.selectedThemeMeta.textContent = `${year} · ${selectedNode.theme} · ${selectedNode.count} mentions`;
+  const topPrograms = (selectedNode.programCounts || [])
+    .slice(0, 3)
+    .map((p) => `${p.program} (${p.count})`)
+    .join(' · ');
+  els.selectedThemeMeta.textContent = `${year} · ${selectedNode.theme} · ${selectedNode.category || 'Cross-cutting'} · ${selectedNode.count} mentions · ${topPrograms || selectedNode.topProgram || 'Unknown Programme'}`;
 
   const related = allVisibleNodes
     .filter((n) => n.cluster === selectedNode.cluster && n.id !== selectedNode.id)
@@ -188,7 +274,7 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
     .slice(0, 8);
 
   els.selectedThemeRelated.innerHTML = related
-    .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count})</li>`)
+    .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count}) <span style="color:#6b7280">· ${escapeHtml(n.topProgram || 'Unknown Programme')}</span></li>`)
     .join('') || '<li>No related themes in current filters.</li>';
 }
 
@@ -659,6 +745,7 @@ function renderYear() {
     renderTopThemes([]);
     renderClusterSummary([]);
     renderSelectedTheme(null, [], year);
+    renderProgramLegend([]);
     renderInsights(year, []);
     return;
   }
@@ -677,6 +764,8 @@ function renderYear() {
     n.r = rScale(n.count);
   });
 
+  ensureProgramColorScale(nodes);
+
   const linkSel = g.selectAll('line')
     .data(links)
     .join('line')
@@ -684,9 +773,21 @@ function renderYear() {
     .attr('stroke-opacity', (d) => Math.min(0.45, 0.08 + d.weight * 0.04))
     .attr('stroke-width', (d) => Math.min(2.2, 0.6 + d.weight * 0.25));
 
-  const circleSel = g.selectAll('circle')
+  const ringSel = g.selectAll('circle.ta-program-ring')
     .data(nodes, (d) => d.id)
     .join('circle')
+    .attr('class', 'ta-program-ring')
+    .attr('r', (d) => d.r + 4)
+    .attr('fill', 'none')
+    .attr('stroke', (d) => getProgramColor(d.topProgram))
+    .attr('stroke-width', 2.8)
+    .attr('stroke-opacity', 0.95)
+    .attr('pointer-events', 'none');
+
+  const circleSel = g.selectAll('circle.ta-node')
+    .data(nodes, (d) => d.id)
+    .join('circle')
+    .attr('class', 'ta-node')
     .attr('r', (d) => d.r)
     .attr('fill', (d) => d.color)
     .attr('fill-opacity', 0.84)
@@ -694,7 +795,7 @@ function renderYear() {
     .attr('stroke-width', 1.2)
     .attr('tabindex', 0)
     .attr('role', 'button')
-    .attr('aria-label', (d) => `${d.tag}, ${d.theme}, ${d.count} mentions`)
+    .attr('aria-label', (d) => `${d.tag}, ${d.theme}, ${d.category || 'Cross-cutting'}, ${d.count} mentions, programme ${d.topProgram || 'Unknown Programme'}`)
     .on('mouseenter', (event, d) => showTooltip(event, d))
     .on('mousemove', (event, d) => showTooltip(event, d))
     .on('mouseleave', hideTooltip)
@@ -743,10 +844,12 @@ function renderYear() {
         .attr('y2', (d) => d.target.y);
 
       circleSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
+      ringSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
       textSel.attr('x', (d) => d.x).attr('y', (d) => d.y + 3);
     });
 
   renderTopThemes(nodes);
+  renderProgramLegend(nodes);
 
   const selectedNode = nodes.find((n) => n.id === state.selectedNodeId) || nodes[0] || null;
   if (selectedNode) {
@@ -762,6 +865,10 @@ function renderYear() {
   circleSel
     .attr('stroke-width', (d) => (d.id === state.selectedNodeId ? 2.6 : 1.2))
     .attr('stroke', (d) => (d.id === state.selectedNodeId ? '#111827' : '#fff'));
+
+  ringSel
+    .attr('stroke-width', (d) => (d.id === state.selectedNodeId ? 4 : 2.8))
+    .attr('stroke-opacity', (d) => (d.id === state.selectedNodeId ? 1 : 0.95));
 
   if (state.focusSelectedOnRender && state.selectedNodeId) {
     const selectedEl = circleSel.filter((d) => d.id === state.selectedNodeId).node();
@@ -822,7 +929,7 @@ function applyFiltersFromUrl() {
 function renderTopThemes(nodes) {
   const top = [...nodes].sort((a, b) => b.count - a.count).slice(0, 12);
   els.topThemesList.innerHTML = top
-    .map((d) => `<li><strong>${escapeHtml(d.tag)}</strong> (${d.count}) <span style="color:#6b7280">· ${escapeHtml(d.theme)}</span></li>`)
+    .map((d) => `<li><strong>${escapeHtml(d.tag)}</strong> (${d.count}) <span style="color:#6b7280">· ${escapeHtml(d.theme)} · ${escapeHtml(d.topProgram || 'Unknown Programme')}</span></li>`)
     .join('') || '<li>No themes in current filters.</li>';
 }
 
@@ -832,7 +939,7 @@ function renderClusterSummary(clusters, highlightedClusterId = null) {
     .map((c) => {
       const isActive = activeCluster !== 'all' && activeCluster === String(c.id);
       const isHighlighted = highlightedClusterId !== null && String(highlightedClusterId) === String(c.id);
-      return `<li><button class="ta-cluster-btn ${isActive ? 'is-active' : ''} ${isHighlighted ? 'is-story-focus' : ''}" type="button" data-cluster-id="${c.id}"><span class="dot" style="background:${c.color}"></span><strong>${escapeHtml(c.lead)}</strong> · ${c.size} themes · ${c.total} mentions</button></li>`;
+      return `<li><button class="ta-cluster-btn ${isActive ? 'is-active' : ''} ${isHighlighted ? 'is-story-focus' : ''}" type="button" data-cluster-id="${c.id}"><span class="dot" style="background:${c.color}"></span><strong>${escapeHtml(c.lead)}</strong> <span class="ta-cluster-category">${escapeHtml(c.category || 'Cross-cutting')}</span> · ${c.size} themes · ${c.total} mentions</button></li>`;
     })
     .join('') || '<li>No clusters in current filters.</li>';
 }
@@ -1023,10 +1130,12 @@ async function init() {
   }
 
   const clusterPayload = await response.json();
-  const { years, byYear } = buildData(clusterPayload);
+  const { years, byYear, fixedThemes, themeMeta } = buildData(clusterPayload);
 
   state.years = years;
   state.dataByYear = byYear;
+  state.fixedThemes = fixedThemes;
+  state.themeMeta = themeMeta;
 
   if (els.yearRangeChip) {
     const rangeText = years.length ? `${years[0]} → ${years[years.length - 1]}` : '—';

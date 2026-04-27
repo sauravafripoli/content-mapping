@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T08:56:52.177502+00:00",
+  "generated_at": "2026-04-27T08:19:25.115682+00:00",
   "total_records": 57,
   "years": [
     2022,
@@ -7,6 +7,177 @@
     2024,
     2025,
     2026
+  ],
+  "fixed_themes": [
+    "Energy Transition & Climate",
+    "Critical Minerals & Industrial Strategy",
+    "Geopolitics, Security & Diplomacy",
+    "Trade, Finance & Investment",
+    "Governance, Policy & Institutions",
+    "Technology, Digital & Innovation",
+    "Infrastructure, Logistics & Connectivity",
+    "Society, Inclusion & Human Capital",
+    "Food, Water & Environmental Systems",
+    "Regional Integration & Global Partnerships"
+  ],
+  "theme_meta": {
+    "Energy Transition & Climate": {
+      "category": "Energy & Resources",
+      "keywords": [
+        "adaptation",
+        "climate",
+        "cop",
+        "decarbon",
+        "emissions",
+        "energy",
+        "mitigation",
+        "net zero",
+        "renewable",
+        "transition"
+      ]
+    },
+    "Critical Minerals & Industrial Strategy": {
+      "category": "Energy & Resources",
+      "keywords": [
+        "battery",
+        "cobalt",
+        "critical mineral",
+        "critical minerals",
+        "industrial",
+        "lithium",
+        "mineral",
+        "mining",
+        "nickel",
+        "rare earth"
+      ]
+    },
+    "Geopolitics, Security & Diplomacy": {
+      "category": "Power, Politics & Governance",
+      "keywords": [
+        "conflict",
+        "defence",
+        "defense",
+        "diplomac",
+        "geoeconom",
+        "geopolit",
+        "sahel",
+        "security",
+        "strategy",
+        "war"
+      ]
+    },
+    "Trade, Finance & Investment": {
+      "category": "Economy, Markets & Infrastructure",
+      "keywords": [
+        "bank",
+        "capital",
+        "debt",
+        "econom",
+        "fdi",
+        "finance",
+        "investment",
+        "market",
+        "trade",
+        "value chain"
+      ]
+    },
+    "Governance, Policy & Institutions": {
+      "category": "Power, Politics & Governance",
+      "keywords": [
+        "democracy",
+        "election",
+        "governance",
+        "institution",
+        "law",
+        "policy",
+        "public sector",
+        "reform",
+        "regulation",
+        "state"
+      ]
+    },
+    "Technology, Digital & Innovation": {
+      "category": "Innovation & Human Development",
+      "keywords": [
+        "ai",
+        "connectivity",
+        "cyber",
+        "data",
+        "digital",
+        "innovation",
+        "platform",
+        "startup",
+        "technology",
+        "telecom"
+      ]
+    },
+    "Infrastructure, Logistics & Connectivity": {
+      "category": "Economy, Markets & Infrastructure",
+      "keywords": [
+        "connectivity",
+        "corridor",
+        "electricity",
+        "grid",
+        "infrastructure",
+        "logistics",
+        "pipeline",
+        "port",
+        "rail",
+        "transport"
+      ]
+    },
+    "Society, Inclusion & Human Capital": {
+      "category": "Innovation & Human Development",
+      "keywords": [
+        "education",
+        "gender",
+        "health",
+        "human",
+        "inclusion",
+        "jobs",
+        "migration",
+        "skills",
+        "social",
+        "youth"
+      ]
+    },
+    "Food, Water & Environmental Systems": {
+      "category": "Sustainability & Resilience",
+      "keywords": [
+        "agri",
+        "agriculture",
+        "biodiversity",
+        "ecosystem",
+        "environment",
+        "food",
+        "land",
+        "resilience",
+        "sustainability",
+        "water"
+      ]
+    },
+    "Regional Integration & Global Partnerships": {
+      "category": "Sustainability & Resilience",
+      "keywords": [
+        "afcfta",
+        "china",
+        "cooperation",
+        "eu",
+        "global",
+        "integration",
+        "multilateral",
+        "partnership",
+        "regional",
+        "united states"
+      ]
+    }
+  },
+  "overarching_categories": [
+    "Economy, Markets & Infrastructure",
+    "Energy & Resources",
+    "Innovation & Human Development",
+    "Power, Politics & Governance",
+    "Sustainability & Resilience"
   ],
   "excluded_country_tags": [
     {
@@ -83,20 +254,29 @@
     }
   ],
   "themes_defined": [
-    "Climate & Energy",
-    "Minerals & Industry",
-    "Geopolitics & Security",
-    "Economy, Finance & Trade",
-    "Governance & Institutions",
-    "Technology & Digital",
-    "Society & Development",
-    "Other / Emerging"
+    "Energy Transition & Climate",
+    "Critical Minerals & Industrial Strategy",
+    "Geopolitics, Security & Diplomacy",
+    "Trade, Finance & Investment",
+    "Governance, Policy & Institutions",
+    "Technology, Digital & Innovation",
+    "Infrastructure, Logistics & Connectivity",
+    "Society, Inclusion & Human Capital",
+    "Food, Water & Environmental Systems",
+    "Regional Integration & Global Partnerships"
   ],
   "overall": {
-    "Climate & Energy": [
+    "Energy Transition & Climate": [
       {
         "label": "Africa's Climate Agenda",
         "count": 10,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 10
+          }
+        ],
         "variants": [
           {
             "tag": "Africa's Climate Agenda",
@@ -107,6 +287,13 @@
       {
         "label": "Energy Transition",
         "count": 8,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 8
+          }
+        ],
         "variants": [
           {
             "tag": "Energy Transition",
@@ -117,6 +304,13 @@
       {
         "label": "Climate Action",
         "count": 7,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 7
+          }
+        ],
         "variants": [
           {
             "tag": "Climate Action",
@@ -125,538 +319,15 @@
         ]
       },
       {
-        "label": "Renewable Energy",
-        "count": 5,
-        "variants": [
-          {
-            "tag": "Renewable Energy",
-            "count": 5
-          }
-        ]
-      },
-      {
-        "label": "Climate",
-        "count": 3,
-        "variants": [
-          {
-            "tag": "Climate",
-            "count": 3
-          }
-        ]
-      },
-      {
-        "label": "Adaptation",
-        "count": 3,
-        "variants": [
-          {
-            "tag": "Adaptation",
-            "count": 3
-          }
-        ]
-      },
-      {
-        "label": "Climate Diplomacy",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Climate Diplomacy",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Climate Justice",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Climate Justice",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Transition Minerals",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Transition Minerals",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate Diplomacy Nigeria",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate Diplomacy Nigeria",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate Negotiations",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate Negotiations",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate Security Nigeria",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate Security Nigeria",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate Policy Integration",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate Policy Integration",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Mainstreaming Climate Action",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Mainstreaming Climate Action",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Africa Energy Systems",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Africa Energy Systems",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Transport Emissions",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Transport Emissions",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Climate-smart Agriculture",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Climate-smart Agriculture",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Cop",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Cop",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Cop30",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Cop30",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Technologytransition",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Technologytransition",
-            "count": 1
-          }
-        ]
-      }
-    ],
-    "Economy, Finance & Trade": [
-      {
-        "label": "Finance",
-        "count": 15,
-        "variants": [
-          {
-            "tag": "Finance",
-            "count": 15
-          }
-        ]
-      },
-      {
-        "label": "Trade",
-        "count": 4,
-        "variants": [
-          {
-            "tag": "Trade",
-            "count": 4
-          }
-        ]
-      },
-      {
-        "label": "Green Economy",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Green Economy",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Political Economy",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Political Economy",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Economic Growth",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Economic Growth",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Investment Sustainability",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Investment Sustainability",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Civilian Infrastructure",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Civilian Infrastructure",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Green Industrial Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Green Industrial Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Green Infrastructure",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Green Infrastructure",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Economic Planning",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Economic Planning",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Low-carbon Economy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Low-carbon Economy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Low-carbon Infrastructure",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Low-carbon Infrastructure",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Economy Society",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Economy Society",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Trademark",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Trademark",
-            "count": 1
-          }
-        ]
-      }
-    ],
-    "Geopolitics & Security": [
-      {
-        "label": "Geopolitics & Geoeconomics",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Geopolitics & Geoeconomics",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Security Cooperation",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Security Cooperation",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Security Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Security Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Environmental Conflict",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Environmental Conflict",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "National Security Strategy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "National Security Strategy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Resource Conflict",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Resource Conflict",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Food Security Nigeria",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Food Security Nigeria",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Cybersecurity",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Cybersecurity",
-            "count": 1
-          }
-        ]
-      }
-    ],
-    "Governance & Institutions": [
-      {
-        "label": "Policy Brief",
-        "count": 4,
-        "variants": [
-          {
-            "tag": "Policy Brief",
-            "count": 4
-          }
-        ]
-      },
-      {
-        "label": "Governance",
-        "count": 3,
-        "variants": [
-          {
-            "tag": "Governance",
-            "count": 3
-          }
-        ]
-      },
-      {
-        "label": "Strategic Statecraft",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Strategic Statecraft",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Foreign Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Foreign Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Agriculture Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Agriculture Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Feminist Development Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Feminist Development Policy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Development Policy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Development Policy",
-            "count": 1
-          }
-        ]
-      }
-    ],
-    "Minerals & Industry": [
-      {
-        "label": "Critical Minerals",
-        "count": 7,
-        "variants": [
-          {
-            "tag": "Critical Minerals",
-            "count": 7
-          }
-        ]
-      },
-      {
-        "label": "Nigeria Mining",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Nigeria Mining",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Lithium",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Lithium",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Sustainable Mining",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Sustainable Mining",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Green Mineral Partnerships",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Green Mineral Partnerships",
-            "count": 1
-          }
-        ]
-      }
-    ],
-    "Other / Emerging": [
-      {
         "label": "Short Analysis",
         "count": 6,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 6
+          }
+        ],
         "variants": [
           {
             "tag": "Short Analysis",
@@ -667,6 +338,13 @@
       {
         "label": "Crm",
         "count": 6,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 6
+          }
+        ],
         "variants": [
           {
             "tag": "Crm",
@@ -677,6 +355,13 @@
       {
         "label": "Employment",
         "count": 6,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 6
+          }
+        ],
         "variants": [
           {
             "tag": "Employment",
@@ -685,8 +370,74 @@
         ]
       },
       {
+        "label": "Renewable Energy",
+        "count": 5,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 4
+          },
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Renewable Energy",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "label": "Climate",
+        "count": 3,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 3
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Adaptation",
+        "count": 3,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 3
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Adaptation",
+            "count": 3
+          }
+        ]
+      },
+      {
         "label": "Jetp",
         "count": 3,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          },
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Jetp",
@@ -695,18 +446,15 @@
         ]
       },
       {
-        "label": "Trilateral Partnership",
-        "count": 3,
-        "variants": [
-          {
-            "tag": "Trilateral Partnership",
-            "count": 3
-          }
-        ]
-      },
-      {
         "label": "Indigenous",
         "count": 3,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 3
+          }
+        ],
         "variants": [
           {
             "tag": "Indigenous",
@@ -717,6 +465,13 @@
       {
         "label": "Indigenousknowledge",
         "count": 3,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 3
+          }
+        ],
         "variants": [
           {
             "tag": "Indigenousknowledge",
@@ -725,18 +480,15 @@
         ]
       },
       {
-        "label": "Global",
-        "count": 2,
-        "variants": [
-          {
-            "tag": "Global",
-            "count": 2
-          }
-        ]
-      },
-      {
         "label": "Expert",
         "count": 2,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 2
+          }
+        ],
         "variants": [
           {
             "tag": "Expert",
@@ -747,6 +499,13 @@
       {
         "label": "Interview",
         "count": 2,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 2
+          }
+        ],
         "variants": [
           {
             "tag": "Interview",
@@ -755,21 +514,35 @@
         ]
       },
       {
-        "label": "Us China Relations",
+        "label": "Climate Diplomacy",
         "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
         "variants": [
           {
-            "tag": "Us China Relations",
+            "tag": "Climate Diplomacy",
             "count": 2
           }
         ]
       },
       {
-        "label": "Global-south Cooperation",
+        "label": "Climate Justice",
         "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
         "variants": [
           {
-            "tag": "Global-south Cooperation",
+            "tag": "Climate Justice",
             "count": 2
           }
         ]
@@ -777,6 +550,13 @@
       {
         "label": "Csa",
         "count": 2,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 2
+          }
+        ],
         "variants": [
           {
             "tag": "Csa",
@@ -787,6 +567,13 @@
       {
         "label": "Local",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Local",
@@ -797,6 +584,13 @@
       {
         "label": "Solutions",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Solutions",
@@ -807,6 +601,13 @@
       {
         "label": "Impact",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Impact",
@@ -817,6 +618,13 @@
       {
         "label": "Justice",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Justice",
@@ -827,6 +635,13 @@
       {
         "label": "Inverted",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Inverted",
@@ -837,6 +652,13 @@
       {
         "label": "Rising",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Rising",
@@ -847,6 +669,13 @@
       {
         "label": "Voices",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Voices",
@@ -857,6 +686,13 @@
       {
         "label": "African",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "African",
@@ -867,6 +703,13 @@
       {
         "label": "Africa's",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Africa's",
@@ -877,6 +720,13 @@
       {
         "label": "Waste",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Waste",
@@ -887,6 +737,13 @@
       {
         "label": "Crisis",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Crisis",
@@ -897,6 +754,13 @@
       {
         "label": "Reveals",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Reveals",
@@ -907,6 +771,13 @@
       {
         "label": "Wealth",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Wealth",
@@ -917,6 +788,13 @@
       {
         "label": "Wellbeing",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Wellbeing",
@@ -927,6 +805,13 @@
       {
         "label": "Promising",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Promising",
@@ -937,6 +822,13 @@
       {
         "label": "Unlocking",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Unlocking",
@@ -947,6 +839,13 @@
       {
         "label": "Potential",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Potential",
@@ -957,6 +856,13 @@
       {
         "label": "Insights",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Insights",
@@ -967,6 +873,13 @@
       {
         "label": "Kulthoum",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Kulthoum",
@@ -977,6 +890,13 @@
       {
         "label": "Omari-motsumi",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Omari-motsumi",
@@ -987,6 +907,13 @@
       {
         "label": "Odarno",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Odarno",
@@ -997,6 +924,13 @@
       {
         "label": "Director",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Director",
@@ -1007,6 +941,13 @@
       {
         "label": "Strategies",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Strategies",
@@ -1017,6 +958,13 @@
       {
         "label": "Practices",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Practices",
@@ -1027,6 +975,13 @@
       {
         "label": "Change",
         "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Change",
@@ -1037,6 +992,13 @@
       {
         "label": "Electroyuan",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Electroyuan",
@@ -1047,6 +1009,13 @@
       {
         "label": "Renminbi",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Renminbi",
@@ -1057,6 +1026,13 @@
       {
         "label": "Rmb",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Rmb",
@@ -1067,6 +1043,13 @@
       {
         "label": "Currency Internationalisation",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Currency Internationalisation",
@@ -1075,11 +1058,18 @@
         ]
       },
       {
-        "label": "China Green Tech",
+        "label": "Transition Minerals",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "China Green Tech",
+            "tag": "Transition Minerals",
             "count": 1
           }
         ]
@@ -1087,6 +1077,13 @@
       {
         "label": "Foreign Exchange Risk",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Foreign Exchange Risk",
@@ -1097,6 +1094,13 @@
       {
         "label": "Fx Liquidity",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Fx Liquidity",
@@ -1107,6 +1111,13 @@
       {
         "label": "Balance Of Payments",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Balance Of Payments",
@@ -1117,6 +1128,13 @@
       {
         "label": "Agoa",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Agoa",
@@ -1127,6 +1145,13 @@
       {
         "label": "Us Nigeria Relations",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Us Nigeria Relations",
@@ -1135,21 +1160,120 @@
         ]
       },
       {
-        "label": "Global South Cooperation",
+        "label": "Climate Diplomacy Nigeria",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Global South Cooperation",
+            "tag": "Climate Diplomacy Nigeria",
             "count": 1
           }
         ]
       },
       {
-        "label": "Resilience Building",
+        "label": "Climate Negotiations",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Resilience Building",
+            "tag": "Climate Negotiations",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Security Nigeria",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate Security Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Policy Integration",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate Policy Integration",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Mainstreaming Climate Action",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Mainstreaming Climate Action",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Africa Energy Systems",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Africa Energy Systems",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate Policy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate Policy",
             "count": 1
           }
         ]
@@ -1157,6 +1281,13 @@
       {
         "label": "Green Budgeting",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Green Budgeting",
@@ -1167,6 +1298,13 @@
       {
         "label": "Green Mobility",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Green Mobility",
@@ -1175,18 +1313,15 @@
         ]
       },
       {
-        "label": "Public Transport Reform",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Public Transport Reform",
-            "count": 1
-          }
-        ]
-      },
-      {
         "label": "Rural Developmen",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Rural Developmen",
@@ -1195,8 +1330,32 @@
         ]
       },
       {
+        "label": "Private Sector Development",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Private Sector Development",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Hegemony",
         "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Hegemony",
@@ -1207,6 +1366,13 @@
       {
         "label": "Military",
         "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Military",
@@ -1217,6 +1383,13 @@
       {
         "label": "Feminism",
         "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Feminism",
@@ -1227,6 +1400,13 @@
       {
         "label": "Declonising",
         "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Declonising",
@@ -1235,28 +1415,15 @@
         ]
       },
       {
-        "label": "Europe And Africa",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Europe And Africa",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Au-eu Summit",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Au-eu Summit",
-            "count": 1
-          }
-        ]
-      },
-      {
         "label": "Africa 1 Summits",
         "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Africa 1 Summits",
@@ -1265,58 +1432,15 @@
         ]
       },
       {
-        "label": "Global Diplomacy",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Global Diplomacy",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Diversify Partnership",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Diversify Partnership",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Lobito Corridor",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Lobito Corridor",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Eu-brics",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Eu-brics",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Regional Integration",
-        "count": 1,
-        "variants": [
-          {
-            "tag": "Regional Integration",
-            "count": 1
-          }
-        ]
-      },
-      {
         "label": "Mous",
         "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Mous",
@@ -1327,6 +1451,13 @@
       {
         "label": "Natural Resources",
         "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Natural Resources",
@@ -1335,8 +1466,66 @@
         ]
       },
       {
+        "label": "Cop",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Cop",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cop30",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Cop30",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Technologytransition",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Technologytransition",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Intellectualproperty",
         "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Intellectualproperty",
@@ -1347,6 +1536,13 @@
       {
         "label": "Patent",
         "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Patent",
@@ -1357,110 +1553,579 @@
       {
         "label": "Emobility",
         "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Emobility",
             "count": 1
           }
         ]
-      },
+      }
+    ],
+    "Critical Minerals & Industrial Strategy": [
       {
-        "label": "Entrepreneurship",
-        "count": 1,
+        "label": "Critical Minerals",
+        "count": 7,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 5
+          },
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          },
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Entrepreneurship",
+            "tag": "Critical Minerals",
+            "count": 7
+          }
+        ]
+      },
+      {
+        "label": "Nigeria Mining",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Nigeria Mining",
             "count": 1
           }
         ]
       },
       {
-        "label": "Startup",
+        "label": "Lithium",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Startup",
+            "tag": "Lithium",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Industrial Policy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Green Industrial Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Sustainable Mining",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Sustainable Mining",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Mineral Partnerships",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Green Mineral Partnerships",
             "count": 1
           }
         ]
       }
     ],
-    "Society & Development": [
+    "Geopolitics, Security & Diplomacy": [
       {
-        "label": "Youth",
-        "count": 4,
+        "label": "Geopolitics & Geoeconomics",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
         "variants": [
           {
-            "tag": "Youth",
+            "tag": "Geopolitics & Geoeconomics",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Security Cooperation",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Security Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Security Policy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Security Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Environmental Conflict",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Environmental Conflict",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "National Security Strategy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "National Security Strategy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Resource Conflict",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Resource Conflict",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Food Security Nigeria",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Food Security Nigeria",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cybersecurity",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Cybersecurity",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Global Diplomacy",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Global Diplomacy",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Trade, Finance & Investment": [
+      {
+        "label": "Finance",
+        "count": 15,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 15
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Finance",
+            "count": 15
+          }
+        ]
+      },
+      {
+        "label": "Trade",
+        "count": 4,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 3
+          },
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Trade",
             "count": 4
           }
         ]
       },
       {
-        "label": "Youth's",
-        "count": 1,
+        "label": "Green Economy",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
         "variants": [
           {
-            "tag": "Youth's",
+            "tag": "Green Economy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Political Economy",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Political Economy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Economic Growth",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Economic Growth",
             "count": 1
           }
         ]
       },
       {
-        "label": "Gender",
+        "label": "Investment Sustainability",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Gender",
+            "tag": "Investment Sustainability",
             "count": 1
           }
         ]
       },
       {
-        "label": "Development Cooperation",
+        "label": "Economic Planning",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Development Cooperation",
+            "tag": "Economic Planning",
             "count": 1
           }
         ]
       },
       {
-        "label": "Agrifood",
+        "label": "Low-carbon Economy",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Agrifood",
+            "tag": "Low-carbon Economy",
             "count": 1
           }
         ]
       },
       {
-        "label": "Private Sector Development",
+        "label": "Economy Society",
         "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Private Sector Development",
+            "tag": "Economy Society",
             "count": 1
           }
         ]
       },
       {
-        "label": "Human Rights",
+        "label": "Trademark",
         "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
-            "tag": "Human Rights",
+            "tag": "Trademark",
             "count": 1
           }
         ]
       }
     ],
-    "Technology & Digital": [
+    "Governance, Policy & Institutions": [
+      {
+        "label": "Policy Brief",
+        "count": 4,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Policy Brief",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Governance",
+        "count": 3,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 3
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Governance",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Strategic Statecraft",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Strategic Statecraft",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Foreign Policy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Foreign Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Feminist Development Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Feminist Development Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Development Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Development Policy",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Technology, Digital & Innovation": [
       {
         "label": "Green Technology",
         "count": 7,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 7
+          }
+        ],
         "variants": [
           {
             "tag": "Green Technology",
@@ -1471,6 +2136,13 @@
       {
         "label": "Country Platform",
         "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
         "variants": [
           {
             "tag": "Country Platform",
@@ -1481,6 +2153,13 @@
       {
         "label": "Innovation",
         "count": 2,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 2
+          }
+        ],
         "variants": [
           {
             "tag": "Innovation",
@@ -1491,6 +2170,13 @@
       {
         "label": "Sustainable Development",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Sustainable Development",
@@ -1501,6 +2187,13 @@
       {
         "label": "Financial Innovation",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Financial Innovation",
@@ -1509,8 +2202,85 @@
         ]
       },
       {
+        "label": "Technology Transfer",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Technology Transfer",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Startup",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Startup",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Infrastructure, Logistics & Connectivity": [
+      {
+        "label": "Civilian Infrastructure",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Civilian Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Green Infrastructure",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Green Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Sustainable Transport",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Sustainable Transport",
@@ -1521,6 +2291,13 @@
       {
         "label": "Sustainable Transport Nigeria",
         "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Sustainable Transport Nigeria",
@@ -1529,21 +2306,453 @@
         ]
       },
       {
+        "label": "Transport Emissions",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Transport Emissions",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Public Transport Reform",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Public Transport Reform",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Low-carbon Infrastructure",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Low-carbon Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Lobito Corridor",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Lobito Corridor",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Society, Inclusion & Human Capital": [
+      {
+        "label": "Youth",
+        "count": 4,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Youth",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Youth's",
+        "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Youth's",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Gender",
+        "count": 1,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Gender",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Human Rights",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Human Rights",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Food, Water & Environmental Systems": [
+      {
+        "label": "Resilience Building",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Resilience Building",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Climate-smart Agriculture",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate-smart Agriculture",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agriculture Policy",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Agriculture Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agrifood",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Agrifood",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Agriculture Technology",
         "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
         "variants": [
           {
             "tag": "Agriculture Technology",
             "count": 1
           }
         ]
-      },
+      }
+    ],
+    "Regional Integration & Global Partnerships": [
       {
-        "label": "Technology Transfer",
-        "count": 1,
+        "label": "Trilateral Partnership",
+        "count": 3,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 3
+          }
+        ],
         "variants": [
           {
-            "tag": "Technology Transfer",
+            "tag": "Trilateral Partnership",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Global",
+        "count": 2,
+        "top_program": "Africa's Climate Agenda",
+        "program_counts": [
+          {
+            "program": "Africa's Climate Agenda",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Global",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Us China Relations",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          },
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Us China Relations",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Global-south Cooperation",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Global-south Cooperation",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "China Green Tech",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "China Green Tech",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Global South Cooperation",
+        "count": 1,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Global South Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Development Cooperation",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Development Cooperation",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Europe And Africa",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Europe And Africa",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Au-eu Summit",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Au-eu Summit",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Diversify Partnership",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Diversify Partnership",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Eu-brics",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Eu-brics",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Regional Integration",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Regional Integration",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Entrepreneurship",
+        "count": 1,
+        "top_program": "Green Tech",
+        "program_counts": [
+          {
+            "program": "Green Tech",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Entrepreneurship",
             "count": 1
           }
         ]
@@ -1552,10 +2761,17 @@
   },
   "by_year": {
     "2022": {
-      "Climate & Energy": [
+      "Energy Transition & Climate": [
         {
           "label": "Africa's Climate Agenda",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Africa's Climate Agenda",
@@ -1566,6 +2782,13 @@
         {
           "label": "Climate",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Climate",
@@ -1574,8 +2797,32 @@
           ]
         },
         {
+          "label": "Change",
+          "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Change",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Adaptation",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Adaptation",
@@ -1584,24 +2831,28 @@
           ]
         }
       ],
-      "Other / Emerging": [
-        {
-          "label": "Change",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Change",
-              "count": 1
-            }
-          ]
-        }
-      ]
+      "Critical Minerals & Industrial Strategy": [],
+      "Geopolitics, Security & Diplomacy": [],
+      "Trade, Finance & Investment": [],
+      "Governance, Policy & Institutions": [],
+      "Technology, Digital & Innovation": [],
+      "Infrastructure, Logistics & Connectivity": [],
+      "Society, Inclusion & Human Capital": [],
+      "Food, Water & Environmental Systems": [],
+      "Regional Integration & Global Partnerships": []
     },
     "2023": {
-      "Climate & Energy": [
+      "Energy Transition & Climate": [
         {
           "label": "Africa's Climate Agenda",
           "count": 4,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 4
+            }
+          ],
           "variants": [
             {
               "tag": "Africa's Climate Agenda",
@@ -1612,6 +2863,13 @@
         {
           "label": "Adaptation",
           "count": 2,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Adaptation",
@@ -1620,20 +2878,15 @@
           ]
         },
         {
-          "label": "Climate",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Other / Emerging": [
-        {
           "label": "Rising",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Rising",
@@ -1644,6 +2897,13 @@
         {
           "label": "Voices",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Voices",
@@ -1654,6 +2914,13 @@
         {
           "label": "African",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "African",
@@ -1664,6 +2931,13 @@
         {
           "label": "Unlocking",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Unlocking",
@@ -1674,6 +2948,13 @@
         {
           "label": "Potential",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Potential",
@@ -1684,6 +2965,13 @@
         {
           "label": "Insights",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Insights",
@@ -1694,6 +2982,13 @@
         {
           "label": "Expert",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Expert",
@@ -1704,6 +2999,13 @@
         {
           "label": "Interview",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Interview",
@@ -1714,6 +3016,13 @@
         {
           "label": "Odarno",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Odarno",
@@ -1724,6 +3033,13 @@
         {
           "label": "Director",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Director",
@@ -1732,8 +3048,32 @@
           ]
         },
         {
+          "label": "Climate",
+          "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Strategies",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Strategies",
@@ -1744,6 +3084,13 @@
         {
           "label": "Practices",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Practices",
@@ -1754,6 +3101,13 @@
         {
           "label": "Employment",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Employment",
@@ -1762,10 +3116,41 @@
           ]
         }
       ],
-      "Society & Development": [
+      "Critical Minerals & Industrial Strategy": [],
+      "Geopolitics, Security & Diplomacy": [],
+      "Trade, Finance & Investment": [],
+      "Governance, Policy & Institutions": [],
+      "Technology, Digital & Innovation": [
+        {
+          "label": "Green Technology",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Technology",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Infrastructure, Logistics & Connectivity": [],
+      "Society, Inclusion & Human Capital": [
         {
           "label": "Youth's",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Youth's",
@@ -1776,6 +3161,13 @@
         {
           "label": "Youth",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Youth",
@@ -1784,24 +3176,21 @@
           ]
         }
       ],
-      "Technology & Digital": [
-        {
-          "label": "Green Technology",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Technology",
-              "count": 1
-            }
-          ]
-        }
-      ]
+      "Food, Water & Environmental Systems": [],
+      "Regional Integration & Global Partnerships": []
     },
     "2024": {
-      "Climate & Energy": [
+      "Energy Transition & Climate": [
         {
           "label": "Africa's Climate Agenda",
           "count": 2,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Africa's Climate Agenda",
@@ -1810,64 +3199,15 @@
           ]
         },
         {
-          "label": "Climate",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Geopolitics & Security": [
-        {
-          "label": "Cybersecurity",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Cybersecurity",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Governance & Institutions": [
-        {
-          "label": "Development Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Development Policy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Policy Brief",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Policy Brief",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Other / Emerging": [
-        {
-          "label": "Global",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Global",
-              "count": 2
-            }
-          ]
-        },
-        {
           "label": "Short Analysis",
           "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Short Analysis",
@@ -1878,6 +3218,13 @@
         {
           "label": "Local",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Local",
@@ -1888,6 +3235,13 @@
         {
           "label": "Solutions",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Solutions",
@@ -1898,6 +3252,13 @@
         {
           "label": "Impact",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Impact",
@@ -1906,8 +3267,32 @@
           ]
         },
         {
+          "label": "Climate",
+          "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Justice",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Justice",
@@ -1918,6 +3303,13 @@
         {
           "label": "Inverted",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Inverted",
@@ -1928,6 +3320,13 @@
         {
           "label": "Declonising",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Declonising",
@@ -1936,10 +3335,76 @@
           ]
         }
       ],
-      "Society & Development": [
+      "Critical Minerals & Industrial Strategy": [],
+      "Geopolitics, Security & Diplomacy": [
+        {
+          "label": "Cybersecurity",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Cybersecurity",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Trade, Finance & Investment": [],
+      "Governance, Policy & Institutions": [
+        {
+          "label": "Development Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Development Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology, Digital & Innovation": [],
+      "Infrastructure, Logistics & Connectivity": [],
+      "Society, Inclusion & Human Capital": [
         {
           "label": "Human Rights",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Human Rights",
@@ -1947,13 +3412,40 @@
             }
           ]
         }
+      ],
+      "Food, Water & Environmental Systems": [],
+      "Regional Integration & Global Partnerships": [
+        {
+          "label": "Global",
+          "count": 2,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Global",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "2025": {
-      "Climate & Energy": [
+      "Energy Transition & Climate": [
         {
           "label": "Climate Action",
           "count": 7,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 7
+            }
+          ],
           "variants": [
             {
               "tag": "Climate Action",
@@ -1964,6 +3456,13 @@
         {
           "label": "Energy Transition",
           "count": 6,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 6
+            }
+          ],
           "variants": [
             {
               "tag": "Energy Transition",
@@ -1972,388 +3471,15 @@
           ]
         },
         {
-          "label": "Renewable Energy",
-          "count": 5,
-          "variants": [
-            {
-              "tag": "Renewable Energy",
-              "count": 5
-            }
-          ]
-        },
-        {
-          "label": "Africa's Climate Agenda",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Africa's Climate Agenda",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "label": "Climate Diplomacy",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Climate Diplomacy",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "label": "Climate Justice",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Climate Justice",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "label": "Climate Diplomacy Nigeria",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate Diplomacy Nigeria",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Climate Negotiations",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate Negotiations",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Climate Security Nigeria",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate Security Nigeria",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Climate Policy Integration",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate Policy Integration",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Mainstreaming Climate Action",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Mainstreaming Climate Action",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Africa Energy Systems",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Africa Energy Systems",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Climate Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate Policy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Transport Emissions",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Transport Emissions",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Climate-smart Agriculture",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Climate-smart Agriculture",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Economy, Finance & Trade": [
-        {
-          "label": "Finance",
-          "count": 12,
-          "variants": [
-            {
-              "tag": "Finance",
-              "count": 12
-            }
-          ]
-        },
-        {
-          "label": "Trade",
-          "count": 3,
-          "variants": [
-            {
-              "tag": "Trade",
-              "count": 3
-            }
-          ]
-        },
-        {
-          "label": "Political Economy",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Political Economy",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "label": "Green Economy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Economy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Investment Sustainability",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Investment Sustainability",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Green Industrial Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Industrial Policy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Green Infrastructure",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Infrastructure",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Economic Planning",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Economic Planning",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Low-carbon Economy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Low-carbon Economy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Low-carbon Infrastructure",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Low-carbon Infrastructure",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Trademark",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Trademark",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Geopolitics & Security": [
-        {
-          "label": "Geopolitics & Geoeconomics",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Geopolitics & Geoeconomics",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Environmental Conflict",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Environmental Conflict",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "National Security Strategy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "National Security Strategy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Resource Conflict",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Resource Conflict",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Food Security Nigeria",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Food Security Nigeria",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Governance & Institutions": [
-        {
-          "label": "Governance",
-          "count": 3,
-          "variants": [
-            {
-              "tag": "Governance",
-              "count": 3
-            }
-          ]
-        },
-        {
-          "label": "Policy Brief",
-          "count": 2,
-          "variants": [
-            {
-              "tag": "Policy Brief",
-              "count": 2
-            }
-          ]
-        },
-        {
-          "label": "Foreign Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Foreign Policy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Agriculture Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Agriculture Policy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Feminist Development Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Feminist Development Policy",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Minerals & Industry": [
-        {
-          "label": "Critical Minerals",
-          "count": 7,
-          "variants": [
-            {
-              "tag": "Critical Minerals",
-              "count": 7
-            }
-          ]
-        },
-        {
-          "label": "Sustainable Mining",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Sustainable Mining",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Green Mineral Partnerships",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Mineral Partnerships",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Other / Emerging": [
-        {
           "label": "Crm",
           "count": 6,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 6
+            }
+          ],
           "variants": [
             {
               "tag": "Crm",
@@ -2362,8 +3488,36 @@
           ]
         },
         {
+          "label": "Renewable Energy",
+          "count": 5,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 4
+            },
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Renewable Energy",
+              "count": 5
+            }
+          ]
+        },
+        {
           "label": "Short Analysis",
           "count": 4,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 4
+            }
+          ],
           "variants": [
             {
               "tag": "Short Analysis",
@@ -2374,6 +3528,13 @@
         {
           "label": "Employment",
           "count": 4,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 4
+            }
+          ],
           "variants": [
             {
               "tag": "Employment",
@@ -2384,6 +3545,17 @@
         {
           "label": "Jetp",
           "count": 3,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            },
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Jetp",
@@ -2392,18 +3564,15 @@
           ]
         },
         {
-          "label": "Trilateral Partnership",
-          "count": 3,
-          "variants": [
-            {
-              "tag": "Trilateral Partnership",
-              "count": 3
-            }
-          ]
-        },
-        {
           "label": "Indigenous",
           "count": 3,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 3
+            }
+          ],
           "variants": [
             {
               "tag": "Indigenous",
@@ -2414,6 +3583,13 @@
         {
           "label": "Indigenousknowledge",
           "count": 3,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 3
+            }
+          ],
           "variants": [
             {
               "tag": "Indigenousknowledge",
@@ -2422,21 +3598,52 @@
           ]
         },
         {
-          "label": "Us China Relations",
+          "label": "Africa's Climate Agenda",
           "count": 2,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 2
+            }
+          ],
           "variants": [
             {
-              "tag": "Us China Relations",
+              "tag": "Africa's Climate Agenda",
               "count": 2
             }
           ]
         },
         {
-          "label": "Global-south Cooperation",
+          "label": "Climate Diplomacy",
           "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
           "variants": [
             {
-              "tag": "Global-south Cooperation",
+              "tag": "Climate Diplomacy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Climate Justice",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Justice",
               "count": 2
             }
           ]
@@ -2444,6 +3651,13 @@
         {
           "label": "Wealth",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Wealth",
@@ -2454,6 +3668,13 @@
         {
           "label": "Wellbeing",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Wellbeing",
@@ -2464,6 +3685,13 @@
         {
           "label": "Promising",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Promising",
@@ -2474,6 +3702,13 @@
         {
           "label": "Expert",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Expert",
@@ -2484,6 +3719,13 @@
         {
           "label": "Interview",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Interview",
@@ -2494,6 +3736,13 @@
         {
           "label": "Kulthoum",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Kulthoum",
@@ -2504,6 +3753,13 @@
         {
           "label": "Omari-motsumi",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Omari-motsumi",
@@ -2512,18 +3768,15 @@
           ]
         },
         {
-          "label": "China Green Tech",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "China Green Tech",
-              "count": 1
-            }
-          ]
-        },
-        {
           "label": "Foreign Exchange Risk",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Foreign Exchange Risk",
@@ -2534,6 +3787,13 @@
         {
           "label": "Fx Liquidity",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Fx Liquidity",
@@ -2544,6 +3804,13 @@
         {
           "label": "Balance Of Payments",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Balance Of Payments",
@@ -2552,21 +3819,120 @@
           ]
         },
         {
-          "label": "Global South Cooperation",
+          "label": "Climate Diplomacy Nigeria",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Global South Cooperation",
+              "tag": "Climate Diplomacy Nigeria",
               "count": 1
             }
           ]
         },
         {
-          "label": "Resilience Building",
+          "label": "Climate Negotiations",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Resilience Building",
+              "tag": "Climate Negotiations",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Security Nigeria",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Security Nigeria",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Policy Integration",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Policy Integration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Mainstreaming Climate Action",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Mainstreaming Climate Action",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Africa Energy Systems",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Africa Energy Systems",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate Policy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Policy",
               "count": 1
             }
           ]
@@ -2574,6 +3940,13 @@
         {
           "label": "Green Budgeting",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Green Budgeting",
@@ -2584,6 +3957,13 @@
         {
           "label": "Green Mobility",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Green Mobility",
@@ -2592,18 +3972,15 @@
           ]
         },
         {
-          "label": "Public Transport Reform",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Public Transport Reform",
-              "count": 1
-            }
-          ]
-        },
-        {
           "label": "Rural Developmen",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Rural Developmen",
@@ -2612,8 +3989,32 @@
           ]
         },
         {
+          "label": "Private Sector Development",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Private Sector Development",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Hegemony",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Hegemony",
@@ -2624,6 +4025,13 @@
         {
           "label": "Military",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Military",
@@ -2634,6 +4042,13 @@
         {
           "label": "Feminism",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Feminism",
@@ -2642,58 +4057,15 @@
           ]
         },
         {
-          "label": "Europe And Africa",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Europe And Africa",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Au-eu Summit",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Au-eu Summit",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Lobito Corridor",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Lobito Corridor",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Eu-brics",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Eu-brics",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Regional Integration",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Regional Integration",
-              "count": 1
-            }
-          ]
-        },
-        {
           "label": "Mous",
           "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Mous",
@@ -2704,6 +4076,13 @@
         {
           "label": "Natural Resources",
           "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Natural Resources",
@@ -2714,6 +4093,13 @@
         {
           "label": "Intellectualproperty",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Intellectualproperty",
@@ -2724,6 +4110,13 @@
         {
           "label": "Patent",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Patent",
@@ -2734,6 +4127,13 @@
         {
           "label": "Emobility",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Emobility",
@@ -2744,80 +4144,409 @@
         {
           "label": "Csa",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Csa",
               "count": 1
             }
           ]
-        },
+        }
+      ],
+      "Critical Minerals & Industrial Strategy": [
         {
-          "label": "Entrepreneurship",
-          "count": 1,
+          "label": "Critical Minerals",
+          "count": 7,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 5
+            },
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Entrepreneurship",
+              "tag": "Critical Minerals",
+              "count": 7
+            }
+          ]
+        },
+        {
+          "label": "Green Industrial Policy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Industrial Policy",
               "count": 1
             }
           ]
         },
         {
-          "label": "Startup",
+          "label": "Sustainable Mining",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Startup",
+              "tag": "Sustainable Mining",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Mineral Partnerships",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Mineral Partnerships",
               "count": 1
             }
           ]
         }
       ],
-      "Society & Development": [
+      "Geopolitics, Security & Diplomacy": [
         {
-          "label": "Youth",
-          "count": 3,
+          "label": "Geopolitics & Geoeconomics",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Youth",
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Environmental Conflict",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Environmental Conflict",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "National Security Strategy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "National Security Strategy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Resource Conflict",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Resource Conflict",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Food Security Nigeria",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Food Security Nigeria",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Trade, Finance & Investment": [
+        {
+          "label": "Finance",
+          "count": 12,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 12
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Finance",
+              "count": 12
+            }
+          ]
+        },
+        {
+          "label": "Trade",
+          "count": 3,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            },
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trade",
               "count": 3
             }
           ]
         },
         {
-          "label": "Gender",
-          "count": 1,
+          "label": "Political Economy",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
           "variants": [
             {
-              "tag": "Gender",
+              "tag": "Political Economy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Green Economy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Economy",
               "count": 1
             }
           ]
         },
         {
-          "label": "Agrifood",
+          "label": "Investment Sustainability",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Agrifood",
+              "tag": "Investment Sustainability",
               "count": 1
             }
           ]
         },
         {
-          "label": "Private Sector Development",
+          "label": "Economic Planning",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Private Sector Development",
+              "tag": "Economic Planning",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Low-carbon Economy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Low-carbon Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Trademark",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trademark",
               "count": 1
             }
           ]
         }
       ],
-      "Technology & Digital": [
+      "Governance, Policy & Institutions": [
+        {
+          "label": "Governance",
+          "count": 3,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Foreign Policy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Feminist Development Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Feminist Development Policy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology, Digital & Innovation": [
         {
           "label": "Green Technology",
           "count": 6,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 6
+            }
+          ],
           "variants": [
             {
               "tag": "Green Technology",
@@ -2828,6 +4557,13 @@
         {
           "label": "Country Platform",
           "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Country Platform",
@@ -2838,6 +4574,13 @@
         {
           "label": "Innovation",
           "count": 2,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Innovation",
@@ -2848,6 +4591,13 @@
         {
           "label": "Sustainable Development",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Sustainable Development",
@@ -2858,6 +4608,13 @@
         {
           "label": "Financial Innovation",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Financial Innovation",
@@ -2866,8 +4623,68 @@
           ]
         },
         {
+          "label": "Technology Transfer",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Technology Transfer",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Startup",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Startup",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Infrastructure, Logistics & Connectivity": [
+        {
+          "label": "Green Infrastructure",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Infrastructure",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Sustainable Transport",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Sustainable Transport",
@@ -2878,6 +4695,13 @@
         {
           "label": "Sustainable Transport Nigeria",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Sustainable Transport Nigeria",
@@ -2886,11 +4710,351 @@
           ]
         },
         {
-          "label": "Technology Transfer",
+          "label": "Transport Emissions",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Technology Transfer",
+              "tag": "Transport Emissions",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Public Transport Reform",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Public Transport Reform",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Low-carbon Infrastructure",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Low-carbon Infrastructure",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Lobito Corridor",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Lobito Corridor",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society, Inclusion & Human Capital": [
+        {
+          "label": "Youth",
+          "count": 3,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Youth",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Gender",
+          "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Gender",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Food, Water & Environmental Systems": [
+        {
+          "label": "Resilience Building",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Resilience Building",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Climate-smart Agriculture",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate-smart Agriculture",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agriculture Policy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agriculture Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agrifood",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agrifood",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Regional Integration & Global Partnerships": [
+        {
+          "label": "Trilateral Partnership",
+          "count": 3,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trilateral Partnership",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Us China Relations",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Us China Relations",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Global-south Cooperation",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Global-south Cooperation",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "China Green Tech",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "China Green Tech",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Global South Cooperation",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Global South Cooperation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Europe And Africa",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Europe And Africa",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Au-eu Summit",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Au-eu Summit",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Eu-brics",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Eu-brics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Regional Integration",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Regional Integration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Entrepreneurship",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Entrepreneurship",
               "count": 1
             }
           ]
@@ -2898,10 +5062,17 @@
       ]
     },
     "2026": {
-      "Climate & Energy": [
+      "Energy Transition & Climate": [
         {
           "label": "Energy Transition",
           "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 2
+            }
+          ],
           "variants": [
             {
               "tag": "Energy Transition",
@@ -2912,6 +5083,13 @@
         {
           "label": "Africa's Climate Agenda",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Africa's Climate Agenda",
@@ -2920,188 +5098,15 @@
           ]
         },
         {
-          "label": "Transition Minerals",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Transition Minerals",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Cop",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Cop",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Cop30",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Cop30",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Technologytransition",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Technologytransition",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Economy, Finance & Trade": [
-        {
-          "label": "Finance",
-          "count": 3,
-          "variants": [
-            {
-              "tag": "Finance",
-              "count": 3
-            }
-          ]
-        },
-        {
-          "label": "Economic Growth",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Economic Growth",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Green Economy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Green Economy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Trade",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Trade",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Civilian Infrastructure",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Civilian Infrastructure",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Economy Society",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Economy Society",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Geopolitics & Security": [
-        {
-          "label": "Geopolitics & Geoeconomics",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Geopolitics & Geoeconomics",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Security Cooperation",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Security Cooperation",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Security Policy",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Security Policy",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Governance & Institutions": [
-        {
-          "label": "Strategic Statecraft",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Strategic Statecraft",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Policy Brief",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Policy Brief",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Minerals & Industry": [
-        {
-          "label": "Nigeria Mining",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Nigeria Mining",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Lithium",
-          "count": 1,
-          "variants": [
-            {
-              "tag": "Lithium",
-              "count": 1
-            }
-          ]
-        }
-      ],
-      "Other / Emerging": [
-        {
           "label": "Africa's",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Africa's",
@@ -3112,6 +5117,13 @@
         {
           "label": "Waste",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Waste",
@@ -3122,6 +5134,13 @@
         {
           "label": "Crisis",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Crisis",
@@ -3132,6 +5151,13 @@
         {
           "label": "Reveals",
           "count": 1,
+          "top_program": "Africa's Climate Agenda",
+          "program_counts": [
+            {
+              "program": "Africa's Climate Agenda",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Reveals",
@@ -3142,6 +5168,13 @@
         {
           "label": "Electroyuan",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Electroyuan",
@@ -3152,6 +5185,13 @@
         {
           "label": "Renminbi",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Renminbi",
@@ -3162,6 +5202,13 @@
         {
           "label": "Rmb",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Rmb",
@@ -3172,6 +5219,13 @@
         {
           "label": "Currency Internationalisation",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Currency Internationalisation",
@@ -3180,8 +5234,32 @@
           ]
         },
         {
+          "label": "Transition Minerals",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Transition Minerals",
+              "count": 1
+            }
+          ]
+        },
+        {
           "label": "Agoa",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Agoa",
@@ -3192,6 +5270,13 @@
         {
           "label": "Us Nigeria Relations",
           "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Us Nigeria Relations",
@@ -3202,6 +5287,13 @@
         {
           "label": "Africa 1 Summits",
           "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Africa 1 Summits",
@@ -3210,21 +5302,52 @@
           ]
         },
         {
-          "label": "Global Diplomacy",
+          "label": "Cop",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Global Diplomacy",
+              "tag": "Cop",
               "count": 1
             }
           ]
         },
         {
-          "label": "Diversify Partnership",
+          "label": "Cop30",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Diversify Partnership",
+              "tag": "Cop30",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Technologytransition",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Technologytransition",
               "count": 1
             }
           ]
@@ -3232,6 +5355,13 @@
         {
           "label": "Csa",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Csa",
@@ -3242,6 +5372,13 @@
         {
           "label": "Employment",
           "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Employment",
@@ -3250,25 +5387,306 @@
           ]
         }
       ],
-      "Society & Development": [
+      "Critical Minerals & Industrial Strategy": [
+        {
+          "label": "Nigeria Mining",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Nigeria Mining",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Lithium",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Lithium",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics, Security & Diplomacy": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Security Cooperation",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Security Cooperation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Security Policy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Security Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Global Diplomacy",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Global Diplomacy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Trade, Finance & Investment": [
+        {
+          "label": "Finance",
+          "count": 3,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Finance",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Economic Growth",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economic Growth",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Green Economy",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Green Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Trade",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Economy Society",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economy Society",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Governance, Policy & Institutions": [
+        {
+          "label": "Strategic Statecraft",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Strategic Statecraft",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Policy Brief",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Policy Brief",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Technology, Digital & Innovation": [],
+      "Infrastructure, Logistics & Connectivity": [
+        {
+          "label": "Civilian Infrastructure",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Civilian Infrastructure",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Society, Inclusion & Human Capital": [],
+      "Food, Water & Environmental Systems": [
+        {
+          "label": "Agriculture Technology",
+          "count": 1,
+          "top_program": "Green Tech",
+          "program_counts": [
+            {
+              "program": "Green Tech",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agriculture Technology",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Regional Integration & Global Partnerships": [
         {
           "label": "Development Cooperation",
           "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
           "variants": [
             {
               "tag": "Development Cooperation",
               "count": 1
             }
           ]
-        }
-      ],
-      "Technology & Digital": [
+        },
         {
-          "label": "Agriculture Technology",
+          "label": "Diversify Partnership",
           "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
           "variants": [
             {
-              "tag": "Agriculture Technology",
+              "tag": "Diversify Partnership",
               "count": 1
             }
           ]

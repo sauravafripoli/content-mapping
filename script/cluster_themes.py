@@ -19,29 +19,81 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Tuple
 
 
-THEME_KEYWORDS = {
-    "Climate & Energy": {
-        "climate", "adaptation", "mitigation", "renewable", "energy", "emissions", "transition", "cop", "decarbon", "net zero",
+FIXED_THEME_TAXONOMY = [
+    {
+        "theme": "Energy Transition & Climate",
+        "category": "Energy & Resources",
+        "keywords": {
+            "climate", "adaptation", "mitigation", "energy", "transition", "renewable", "emissions", "decarbon", "net zero", "cop",
+        },
     },
-    "Minerals & Industry": {
-        "critical mineral", "critical minerals", "mineral", "mining", "battery", "rare earth", "lithium", "cobalt", "nickel", "supply chain",
+    {
+        "theme": "Critical Minerals & Industrial Strategy",
+        "category": "Energy & Resources",
+        "keywords": {
+            "critical mineral", "critical minerals", "mineral", "mining", "battery", "rare earth", "lithium", "cobalt", "nickel", "industrial",
+        },
     },
-    "Geopolitics & Security": {
-        "geopolit", "geoeconom", "security", "defence", "defense", "conflict", "strategy", "sahel", "terror", "war",
+    {
+        "theme": "Geopolitics, Security & Diplomacy",
+        "category": "Power, Politics & Governance",
+        "keywords": {
+            "geopolit", "geoeconom", "security", "defence", "defense", "conflict", "strategy", "war", "diplomac", "sahel",
+        },
     },
-    "Economy, Finance & Trade": {
-        "econom", "finance", "trade", "investment", "debt", "market", "industrial", "infrastructure", "value chain",
+    {
+        "theme": "Trade, Finance & Investment",
+        "category": "Economy, Markets & Infrastructure",
+        "keywords": {
+            "trade", "finance", "investment", "debt", "market", "bank", "econom", "capital", "fdi", "value chain",
+        },
     },
-    "Governance & Institutions": {
-        "governance", "policy", "institution", "regulation", "law", "democracy", "election", "state", "public sector",
+    {
+        "theme": "Governance, Policy & Institutions",
+        "category": "Power, Politics & Governance",
+        "keywords": {
+            "governance", "policy", "institution", "regulation", "law", "public sector", "state", "democracy", "election", "reform",
+        },
     },
-    "Technology & Digital": {
-        "technology", "digital", "innovation", "ai", "cyber", "data", "platform", "connectivity", "telecom",
+    {
+        "theme": "Technology, Digital & Innovation",
+        "category": "Innovation & Human Development",
+        "keywords": {
+            "technology", "digital", "innovation", "ai", "cyber", "data", "platform", "connectivity", "telecom", "startup",
+        },
     },
-    "Society & Development": {
-        "society", "education", "health", "gender", "youth", "migration", "development", "food", "water", "human",
+    {
+        "theme": "Infrastructure, Logistics & Connectivity",
+        "category": "Economy, Markets & Infrastructure",
+        "keywords": {
+            "infrastructure", "logistics", "corridor", "transport", "port", "rail", "electricity", "grid", "connectivity", "pipeline",
+        },
     },
-}
+    {
+        "theme": "Society, Inclusion & Human Capital",
+        "category": "Innovation & Human Development",
+        "keywords": {
+            "education", "health", "gender", "youth", "migration", "skills", "jobs", "social", "human", "inclusion",
+        },
+    },
+    {
+        "theme": "Food, Water & Environmental Systems",
+        "category": "Sustainability & Resilience",
+        "keywords": {
+            "food", "water", "agri", "agriculture", "land", "biodiversity", "environment", "ecosystem", "resilience", "sustainability",
+        },
+    },
+    {
+        "theme": "Regional Integration & Global Partnerships",
+        "category": "Sustainability & Resilience",
+        "keywords": {
+            "regional", "integration", "partnership", "cooperation", "afcfta", "multilateral", "eu", "china", "united states", "global",
+        },
+    },
+]
+
+THEME_KEYWORDS = {item["theme"]: item["keywords"] for item in FIXED_THEME_TAXONOMY}
+THEME_TO_CATEGORY = {item["theme"]: item["category"] for item in FIXED_THEME_TAXONOMY}
 
 TAG_CANONICAL_REPLACEMENTS = {
     "critical mineral": "critical minerals",
@@ -124,6 +176,7 @@ class Cluster:
     label: str
     count: int = 0
     variants: Counter = field(default_factory=Counter)
+    programs: Counter = field(default_factory=Counter)
 
 
 def normalize_text(value: str) -> str:
@@ -163,6 +216,13 @@ def split_tags(value) -> List[str]:
     if not value:
         return []
     return [v.strip() for v in re.split(r"[;,|]", str(value)) if v.strip()]
+
+
+def normalize_program(value: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        return "Unknown Programme"
+    return text
 
 
 def parse_year(record: dict) -> int | None:
@@ -210,8 +270,8 @@ def is_country_tag(tag: str, country_lexicon: set[str]) -> bool:
 
 def theme_for_tag(tag: str) -> str:
     tag_norm = normalize_text(tag)
-    best_theme = "Other / Emerging"
-    best_score = 0
+    best_theme = FIXED_THEME_TAXONOMY[-1]["theme"]
+    best_score = -1
 
     for theme, keywords in THEME_KEYWORDS.items():
         score = sum(1 for k in keywords if k in tag_norm)
@@ -232,7 +292,8 @@ def similarity(a: str, b: str) -> float:
     return (jacc * 0.45) + (seq * 0.55)
 
 
-def cluster_terms(counter: Counter) -> List[dict]:
+def cluster_terms(counter: Counter, program_counter_by_term: Dict[str, Counter] | None = None) -> List[dict]:
+    program_counter_by_term = program_counter_by_term or {}
     clusters: List[Cluster] = []
     ordered = sorted(counter.items(), key=lambda x: x[1], reverse=True)
 
@@ -242,6 +303,7 @@ def cluster_terms(counter: Counter) -> List[dict]:
             if similarity(term.lower(), c.label.lower()) >= 0.86:
                 c.count += count
                 c.variants[term] += count
+                c.programs.update(program_counter_by_term.get(term, Counter()))
                 if c.variants[c.label] < c.variants[term]:
                     c.label = term
                 placed = True
@@ -250,6 +312,7 @@ def cluster_terms(counter: Counter) -> List[dict]:
         if not placed:
             cl = Cluster(label=term, count=count)
             cl.variants[term] = count
+            cl.programs.update(program_counter_by_term.get(term, Counter()))
             clusters.append(cl)
 
     out = []
@@ -259,6 +322,11 @@ def cluster_terms(counter: Counter) -> List[dict]:
             {
                 "label": label,
                 "count": c.count,
+                "top_program": c.programs.most_common(1)[0][0] if c.programs else "Unknown Programme",
+                "program_counts": [
+                    {"program": p, "count": n}
+                    for p, n in c.programs.most_common(6)
+                ],
                 "variants": sorted(
                     [{"tag": to_readable_label(t), "count": n} for t, n in c.variants.items()],
                     key=lambda x: x["count"],
@@ -274,12 +342,18 @@ def build_clusters(records: List[dict]) -> dict:
     excluded_country_tags = Counter()
 
     yearly_theme_terms: Dict[int, Dict[str, Counter]] = defaultdict(lambda: defaultdict(Counter))
+    yearly_theme_program_terms: Dict[int, Dict[str, Dict[str, Counter]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(Counter))
+    )
     overall_theme_terms: Dict[str, Counter] = defaultdict(Counter)
+    overall_theme_program_terms: Dict[str, Dict[str, Counter]] = defaultdict(lambda: defaultdict(Counter))
 
     for r in records:
         year = parse_year(r)
         if year is None:
             continue
+
+        program = normalize_program(r.get("program", ""))
 
         tags = [
             *split_tags(r.get("Manual Tags", [])),
@@ -305,32 +379,49 @@ def build_clusters(records: List[dict]) -> dict:
 
             theme = theme_for_tag(standardized)
             yearly_theme_terms[year][theme][standardized] += 1
+            yearly_theme_program_terms[year][theme][standardized][program] += 1
             overall_theme_terms[theme][standardized] += 1
+            overall_theme_program_terms[theme][standardized][program] += 1
 
     years = sorted(yearly_theme_terms.keys())
     by_year = {}
 
     for y in years:
         by_year[str(y)] = {
-            theme: cluster_terms(counter)
-            for theme, counter in sorted(yearly_theme_terms[y].items(), key=lambda x: x[0])
+            theme: cluster_terms(
+                yearly_theme_terms[y].get(theme, Counter()),
+                yearly_theme_program_terms[y].get(theme, {}),
+            )
+            for theme in THEME_KEYWORDS.keys()
         }
 
     overall = {
-        theme: cluster_terms(counter)
-        for theme, counter in sorted(overall_theme_terms.items(), key=lambda x: x[0])
+        theme: cluster_terms(
+            overall_theme_terms.get(theme, Counter()),
+            overall_theme_program_terms.get(theme, {}),
+        )
+        for theme in THEME_KEYWORDS.keys()
     }
 
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "total_records": len(records),
         "years": years,
+        "fixed_themes": [item["theme"] for item in FIXED_THEME_TAXONOMY],
+        "theme_meta": {
+            item["theme"]: {
+                "category": item["category"],
+                "keywords": sorted(item["keywords"]),
+            }
+            for item in FIXED_THEME_TAXONOMY
+        },
+        "overarching_categories": sorted(set(THEME_TO_CATEGORY.values())),
         "excluded_country_tags": sorted(
             [{"tag": t, "count": c} for t, c in excluded_country_tags.items()],
             key=lambda x: x["count"],
             reverse=True,
         ),
-        "themes_defined": list(THEME_KEYWORDS.keys()) + ["Other / Emerging"],
+        "themes_defined": list(THEME_KEYWORDS.keys()),
         "overall": overall,
         "by_year": by_year,
     }
