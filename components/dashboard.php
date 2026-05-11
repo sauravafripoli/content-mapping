@@ -69,16 +69,7 @@
 						<div class="card-body">
 							<h2 class="h6 mb-3">Coverage Summary</h2>
 							<div class="small text-muted mb-2" id="mapping-countries-count">0 countries highlighted</div>
-							<div id="mapping-country-chips" class="mapping-chip-list mb-3"></div>
-
-							<h3 class="h6 mb-2">Data Sources</h3>
-							<ul class="mb-0 ps-3 small">
-								<li>Africa's Climate Agenda.csv</li>
-								<li>Climate Transitions.csv</li>
-								<li>E&amp;S.csv</li>
-								<li>Geopolitics &amp; Geoeconomics.csv</li>
-								<li>Green Tech.csv</li>
-							</ul>
+							<div id="mapping-country-chips" class="mapping-chip-list"></div>
 						</div>
 					</div>
 				</div>
