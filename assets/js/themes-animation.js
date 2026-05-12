@@ -38,6 +38,7 @@ const els = {
   minMentionsInput: document.getElementById('minMentionsInput'),
   minMentionsLabel: document.getElementById('minMentionsLabel'),
   clusterFilterSelect: document.getElementById('clusterFilterSelect'),
+  programFilterSelect: document.getElementById('programFilterSelect'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
   linkDashboard: document.getElementById('taLinkDashboard'),
   linkTimeline: document.getElementById('taLinkTimeline')
@@ -57,6 +58,7 @@ const state = {
   visibleNodeIds: [],
   focusSelectedOnRender: false,
   pendingYearFromUrl: null,
+  pendingProgramFromUrl: null,
   rawClusterPayload: null,
   lastInsightYear: null,
   lastInsightNodes: [],
@@ -64,6 +66,7 @@ const state = {
   storyTimer: null,
   storyNotes: [],
   storyPreviousClusterFilter: 'all',
+  programs: [],
   programColorScale: null
 };
 
@@ -90,6 +93,7 @@ function buildData(clusterPayload) {
   const fixedThemes = Array.isArray(clusterPayload.fixed_themes)
     ? clusterPayload.fixed_themes.map(String)
     : [];
+  const programs = new Set();
 
   const themeMeta = new Map(
     Object.entries(clusterPayload.theme_meta || {}).map(([theme, meta]) => [
@@ -136,6 +140,8 @@ function buildData(clusterPayload) {
             count: Number(p.count) || 0
           }))
           : [];
+        programCounts.forEach((p) => programs.add(p.program));
+        programs.add(String(item.top_program || programCounts[0]?.program || 'Unknown Programme'));
 
         nodes.push({
           id: `${year}-${themeName}-${item.label}-${itemIndex}`,
@@ -154,7 +160,13 @@ function buildData(clusterPayload) {
     byYear.set(year, { nodes, links: [], clusters });
   });
 
-  return { years, byYear, fixedThemes: themeNamesFromPayloadOrData(fixedThemes, byYear), themeMeta };
+  return {
+    years,
+    byYear,
+    fixedThemes: themeNamesFromPayloadOrData(fixedThemes, byYear),
+    themeMeta,
+    programs: [...programs].sort((a, b) => a.localeCompare(b))
+  };
 }
 
 function themeNamesFromPayloadOrData(fixedThemes, byYear) {
@@ -211,7 +223,8 @@ function currentFilterState() {
   const query = String(els.themeSearchInput?.value || '').trim().toLowerCase();
   const minMentions = Math.max(1, Number(els.minMentionsInput?.value || 1));
   const clusterFilter = String(els.clusterFilterSelect?.value || 'all');
-  return { query, minMentions, clusterFilter };
+  const programFilter = String(els.programFilterSelect?.value || 'all');
+  return { query, minMentions, clusterFilter, programFilter };
 }
 
 function populateClusterFilterOptions(clusters) {
@@ -226,6 +239,21 @@ function populateClusterFilterOptions(clusters) {
   els.clusterFilterSelect.innerHTML = options.join('');
   const canKeepPrevious = previous === 'all' || clusters.some((c) => String(c.id) === previous);
   els.clusterFilterSelect.value = canKeepPrevious ? previous : 'all';
+}
+
+function populateProgramFilterOptions(programs) {
+  if (!els.programFilterSelect) return;
+  const previous = String(els.programFilterSelect.value || 'all');
+  const uniquePrograms = [...new Set((programs || []).map((program) => String(program || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+  const options = ['<option value="all">All programmes</option>'];
+  uniquePrograms.forEach((program) => {
+    options.push(`<option value="${escapeHtml(program)}">${escapeHtml(program)}</option>`);
+  });
+
+  els.programFilterSelect.innerHTML = options.join('');
+  const canKeepPrevious = previous === 'all' || uniquePrograms.includes(previous);
+  els.programFilterSelect.value = canKeepPrevious ? previous : 'all';
 }
 
 function showTooltip(event, node) {
@@ -298,12 +326,13 @@ function clusterCenters(nodes) {
 
 function getFilteredNodesForYear(year) {
   const payload = state.dataByYear.get(year) || { nodes: [] };
-  const { query, minMentions, clusterFilter } = currentFilterState();
+  const { query, minMentions, clusterFilter, programFilter } = currentFilterState();
 
   return payload.nodes
     .filter((d) => d.count >= minMentions)
     .filter((d) => !query || d.tag.toLowerCase().includes(query) || d.theme.toLowerCase().includes(query))
     .filter((d) => clusterFilter === 'all' || String(d.cluster) === clusterFilter)
+    .filter((d) => programFilter === 'all' || [d.topProgram, ...(d.programCounts || []).map((p) => p.program)].some((program) => String(program) === programFilter))
     .map((d) => ({ ...d }));
 }
 
@@ -723,6 +752,7 @@ function renderYear() {
   const year = state.years[state.yearIndex];
   const payload = state.dataByYear.get(year) || { nodes: [], links: [], clusters: [] };
   populateClusterFilterOptions(payload.clusters || []);
+  populateProgramFilterOptions(state.programs || []);
 
   const nodes = getFilteredNodesForYear(year);
 
@@ -892,11 +922,12 @@ function updateCrossViewLinks() {
     q: filters.query,
     min: filters.minMentions,
     cluster: filters.clusterFilter,
+    program: filters.programFilter,
     theme: selectedText
   };
 
   if (els.linkDashboard) {
-    els.linkDashboard.href = setLinkHref('dashboard', { year, q: filters.query });
+    els.linkDashboard.href = setLinkHref('dashboard', params);
   }
   if (els.linkTimeline) {
     els.linkTimeline.href = setLinkHref('timeline', params);
@@ -908,6 +939,7 @@ function applyFiltersFromUrl() {
   const q = params.get('q');
   const min = params.get('min');
   const cluster = params.get('cluster');
+  const program = params.get('program');
   const year = params.get('year');
 
   if (q) {
@@ -920,6 +952,9 @@ function applyFiltersFromUrl() {
   }
   if (cluster) {
     els.clusterFilterSelect.value = cluster;
+  }
+  if (program) {
+    state.pendingProgramFromUrl = String(program);
   }
   if (year && Number.isFinite(Number(year))) {
     state.pendingYearFromUrl = Number(year);
@@ -1037,6 +1072,14 @@ function bindEvents() {
     renderYear();
   });
 
+  if (els.programFilterSelect) {
+    els.programFilterSelect.addEventListener('change', () => {
+      stopStoryMode();
+      stopPlayback();
+      renderYear();
+    });
+  }
+
   els.clusterList.addEventListener('click', (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
@@ -1060,6 +1103,7 @@ function bindEvents() {
     els.minMentionsInput.value = '1';
     els.minMentionsLabel.textContent = '1+';
     els.clusterFilterSelect.value = 'all';
+    if (els.programFilterSelect) els.programFilterSelect.value = 'all';
     state.selectedNodeId = null;
     stopStoryMode();
     renderYear();
@@ -1130,12 +1174,23 @@ async function init() {
   }
 
   const clusterPayload = await response.json();
-  const { years, byYear, fixedThemes, themeMeta } = buildData(clusterPayload);
+  const { years, byYear, fixedThemes, themeMeta, programs } = buildData(clusterPayload);
 
   state.years = years;
   state.dataByYear = byYear;
   state.fixedThemes = fixedThemes;
   state.themeMeta = themeMeta;
+  state.programs = programs;
+
+  // Populate programme options early and respect any programme passed via URL
+  populateProgramFilterOptions(state.programs || []);
+  if (state.pendingProgramFromUrl && els.programFilterSelect) {
+    const preferred = String(state.pendingProgramFromUrl || '').trim();
+    if ([...els.programFilterSelect.options].some((o) => o.value === preferred)) {
+      els.programFilterSelect.value = preferred;
+    }
+    state.pendingProgramFromUrl = null;
+  }
 
   if (els.yearRangeChip) {
     const rangeText = years.length ? `${years[0]} → ${years[years.length - 1]}` : '—';

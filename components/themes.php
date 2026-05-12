@@ -52,6 +52,12 @@
           </select>
         </label>
 
+        <label class="ta-filter-wrap">Programme
+          <select id="programFilterSelect">
+            <option value="all">All programmes</option>
+          </select>
+        </label>
+
         <button id="resetFiltersBtn" class="ta-btn" type="button">Reset filters</button>
       </section>
 
@@ -61,17 +67,6 @@
           <div id="clusterTooltip" class="ta-tooltip hidden" role="tooltip"></div>
           <div id="emptyState" class="ta-empty hidden">No theme tags found for this year.</div>
           <div id="taProgramLegend" class="ta-program-legend" aria-label="Programme ring legend"></div>
-          <article class="ta-story-inline" aria-live="polite">
-            <div class="ta-story-inline-header">
-              <div>
-                <h2>Cluster Narrative</h2>
-                <p id="taStoryHeadline" class="ta-story-headline">Select a year or play the animation to see the cluster story.</p>
-              </div>
-              <button id="taStoryModeBtn" class="ta-btn" type="button">Story mode</button>
-            </div>
-            <p id="taStoryBody" class="ta-story-body"></p>
-            <div id="taStoryMeta" class="ta-story-meta-row"></div>
-          </article>
         </section>
 
         <aside class="ta-side-card">

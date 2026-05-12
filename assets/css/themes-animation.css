@@ -296,7 +296,7 @@
   position: relative;
   min-height: 640px;
   overflow: hidden;
-  padding-bottom: 98px;
+  padding-bottom: 16px;
 }
 
 .ta-story-headline {
@@ -423,7 +423,7 @@
   position: absolute;
   left: 14px;
   right: 14px;
-  bottom: 170px;
+  bottom: 12px;
   z-index: 3;
   display: flex;
   flex-wrap: wrap;
@@ -615,16 +615,10 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .ta-story-inline {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-  }
-
   .ta-program-legend {
     left: 12px;
     right: 12px;
-    bottom: 166px;
+    bottom: 12px;
   }
 }
 
