@@ -21,73 +21,105 @@ from typing import Dict, Iterable, List, Tuple
 
 FIXED_THEME_TAXONOMY = [
     {
-        "theme": "Energy Transition & Climate",
+        "theme": "Climate Change and Resilience",
+        "category": "Climate & Sustainability",
+        "keywords": {
+            "climate change", "climate adaptation", "climate impact", "adaptation", "ndc", "loss and damage",
+            "climate justice", "cop", "resilience", "mitigation", "emissions", "decarbon", "net zero",
+        },
+    },
+    {
+        "theme": "Climate Finance",
+        "category": "Climate & Sustainability",
+        "keywords": {
+            "climate finance", "green finance", "green transition financ", "climate investment", "climate fund",
+            "funding mechanism", "low-carbon development", "low carbon development", "sustainable finance",
+        },
+    },
+    {
+        "theme": "Energy Transition and Energy Security",
         "category": "Energy & Resources",
         "keywords": {
-            "climate", "adaptation", "mitigation", "energy", "transition", "renewable", "emissions", "decarbon", "net zero", "cop",
+            "energy transition", "just transition", "inclusive transition", "renewable energy", "energy security",
+            "energy access", "clean energy", "gas", "oil", "methane", "solar", "e-mobility", "emobility",
+            "energy future", "electricity", "power sector",
         },
     },
     {
-        "theme": "Critical Minerals & Industrial Strategy",
+        "theme": "Critical Minerals and Green Value Chains",
         "category": "Energy & Resources",
         "keywords": {
-            "critical mineral", "critical minerals", "mineral", "mining", "battery", "rare earth", "lithium", "cobalt", "nickel", "industrial",
+            "critical mineral", "green mineral", "lithium", "cobalt", "battery", "mining", "lobito corridor",
+            "solar manufacturing", "mineral-led industrial", "mineral led industrial", "green value chain",
+            "rare earth", "nickel",
         },
     },
     {
-        "theme": "Geopolitics, Security & Diplomacy",
-        "category": "Power, Politics & Governance",
+        "theme": "Trade and Regional Integration",
+        "category": "Economy, Trade & Industry",
         "keywords": {
-            "geopolit", "geoeconom", "security", "defence", "defense", "conflict", "strategy", "war", "diplomac", "sahel",
+            "afcfta", "trade finance", "single market", "regional value chain", "investment facilitation",
+            "ecowas", "regional integration", "intra-african trade", "intra african trade", "trade",
         },
     },
     {
-        "theme": "Trade, Finance & Investment",
-        "category": "Economy, Markets & Infrastructure",
+        "theme": "Geopolitics and Strategic Partnerships",
+        "category": "Politics, Governance & Global Relations",
         "keywords": {
-            "trade", "finance", "investment", "debt", "market", "bank", "econom", "capital", "fdi", "value chain",
+            "africa-europe", "africa europe", "china-africa", "china africa", "turkey-africa", "turkey africa",
+            "germany", "great power", "foreign influence", "strategic partnership", "strategic diplomacy",
+            "geopolit", "geoeconom", "diplomac", "international relations", "foreign policy",
         },
     },
     {
-        "theme": "Governance, Policy & Institutions",
-        "category": "Power, Politics & Governance",
+        "theme": "Democracy, Elections and Governance",
+        "category": "Politics, Governance & Global Relations",
         "keywords": {
-            "governance", "policy", "institution", "regulation", "law", "public sector", "state", "democracy", "election", "reform",
+            "democracy", "democratic reform", "election", "political transition", "governance", "constitutional crisis",
+            "state reform", "political accountability", "institution", "public sector", "rule of law",
         },
     },
     {
-        "theme": "Technology, Digital & Innovation",
-        "category": "Innovation & Human Development",
+        "theme": "Digital Transformation and AI Governance",
+        "category": "Technology & Human Development",
         "keywords": {
-            "technology", "digital", "innovation", "ai", "cyber", "data", "platform", "connectivity", "telecom", "startup",
+            "artificial intelligence", "ai governance", "digital policy", "digital taxation", "data governance",
+            "digital identity", "ict infrastructure", "digital public infrastructure", "digital agenda",
+            "digital transformation", "digitalisation", "digitisation", "cyber", "technology policy",
         },
     },
     {
-        "theme": "Infrastructure, Logistics & Connectivity",
-        "category": "Economy, Markets & Infrastructure",
+        "theme": "Youth Employment and Entrepreneurship",
+        "category": "Technology & Human Development",
         "keywords": {
-            "infrastructure", "logistics", "corridor", "transport", "port", "rail", "electricity", "grid", "connectivity", "pipeline",
+            "youth employment", "startup", "green job", "youth entrepreneurship", "entrepreneurship",
+            "innovation ecosystem", "young entrepreneur", "job creation", "youth", "skills development",
         },
     },
     {
-        "theme": "Society, Inclusion & Human Capital",
-        "category": "Innovation & Human Development",
+        "theme": "Food Systems and Sustainable Agriculture",
+        "category": "Climate & Sustainability",
         "keywords": {
-            "education", "health", "gender", "youth", "migration", "skills", "jobs", "social", "human", "inclusion",
+            "food system", "food security", "agriculture", "agritech", "fertilizer", "fertiliser",
+            "territorial market", "climate-smart agriculture", "climate smart agriculture", "post-harvest",
+            "post harvest", "farming", "agricultural",
         },
     },
     {
-        "theme": "Food, Water & Environmental Systems",
-        "category": "Sustainability & Resilience",
+        "theme": "Migration, Health and Social Inclusion",
+        "category": "Technology & Human Development",
         "keywords": {
-            "food", "water", "agri", "agriculture", "land", "biodiversity", "environment", "ecosystem", "resilience", "sustainability",
+            "migration", "youth mobility", "global health", "pandemic", "health", "disability inclusion",
+            "disability", "gender", "feminist policy", "social equity", "social inclusion", "inclusion",
         },
     },
     {
-        "theme": "Regional Integration & Global Partnerships",
-        "category": "Sustainability & Resilience",
+        "theme": "Industrialisation and Economic Transformation",
+        "category": "Economy, Trade & Industry",
         "keywords": {
-            "regional", "integration", "partnership", "cooperation", "afcfta", "multilateral", "eu", "china", "united states", "global",
+            "manufacturing", "economic diversification", "industrial policy", "domestic resource mobilisation",
+            "domestic resource mobilization", "productive capacity", "economic transformation", "industrialisation",
+            "industrialization", "industry", "value addition", "development finance", "investment", "economy",
         },
     },
 ]
@@ -118,6 +150,7 @@ TAG_CANONICAL_REPLACEMENTS = {
 
 # Rules to convert noisy/variant tag phrases into readable, standard cluster labels.
 TAG_STANDARDIZATION_RULES: List[Tuple[re.Pattern, str]] = [
+    (re.compile(r"\b(global\s+climate\s+finance|climate\s+finance|green\s+finance|sustainable\s+finance)\b"), "Climate Finance"),
     (re.compile(r"\b(critical\s+minerals?|critical\s+raw\s+materials?)\b"), "Critical Minerals"),
     (re.compile(r"\b(climate\s+adaptation)\b"), "Climate Adaptation"),
     (re.compile(r"\b(climate\s+mitigation)\b"), "Climate Mitigation"),
@@ -145,6 +178,7 @@ NOISE_TAGS = {
     "africa policy research institute",
     "africa",
     "publication format",
+    "trademark",
 }
 
 COUNTRY_SEED = {
@@ -268,10 +302,10 @@ def is_country_tag(tag: str, country_lexicon: set[str]) -> bool:
     return compact in country_lexicon
 
 
-def theme_for_tag(tag: str) -> str:
+def theme_for_tag(tag: str) -> str | None:
     tag_norm = normalize_text(tag)
-    best_theme = FIXED_THEME_TAXONOMY[-1]["theme"]
-    best_score = -1
+    best_theme = None
+    best_score = 0
 
     for theme, keywords in THEME_KEYWORDS.items():
         score = sum(1 for k in keywords if k in tag_norm)
@@ -378,6 +412,10 @@ def build_clusters(records: List[dict]) -> dict:
                 continue
 
             theme = theme_for_tag(standardized)
+            # Keep the taxonomy controlled: tags that do not match one of the
+            # approved topics are omitted instead of creating or polluting a topic.
+            if theme is None:
+                continue
             yearly_theme_terms[year][theme][standardized] += 1
             yearly_theme_program_terms[year][theme][standardized][program] += 1
             overall_theme_terms[theme][standardized] += 1
