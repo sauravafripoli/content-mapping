@@ -127,6 +127,21 @@ FIXED_THEME_TAXONOMY = [
 THEME_KEYWORDS = {item["theme"]: item["keywords"] for item in FIXED_THEME_TAXONOMY}
 THEME_TO_CATEGORY = {item["theme"]: item["category"] for item in FIXED_THEME_TAXONOMY}
 
+# Controlled, auditable cross-theme relationships. These rules are applied
+# during JSON generation so every consumer receives the same assignments.
+THEME_OVERLAP_RULES: List[Tuple[re.Pattern, List[str]]] = [
+    (re.compile(r"climate-smart|food security|agricultur"), ["Climate Change and Resilience", "Food Systems and Sustainable Agriculture"]),
+    (re.compile(r"climate financ|green financ"), ["Climate Change and Resilience", "Climate Finance"]),
+    (re.compile(r"energy transition|renewable energy|clean energy|emobility|e-mobility"), ["Climate Change and Resilience", "Energy Transition and Energy Security"]),
+    (re.compile(r"critical mineral|green mineral|lithium|mining|lobito"), ["Critical Minerals and Green Value Chains", "Industrialisation and Economic Transformation"]),
+    (re.compile(r"green industrial|low-carbon economy|green economy"), ["Energy Transition and Energy Security", "Industrialisation and Economic Transformation"]),
+    (re.compile(r"climate diplomacy"), ["Climate Change and Resilience", "Geopolitics and Strategic Partnerships"]),
+    (re.compile(r"youth|employment|entrepreneur|startup|green job"), ["Youth Employment and Entrepreneurship", "Industrialisation and Economic Transformation"]),
+    (re.compile(r"cyber|artificial intelligence|\bai\b|digital"), ["Digital Transformation and AI Governance", "Democracy, Elections and Governance"]),
+    (re.compile(r"gender|migration|health|inclusion"), ["Migration, Health and Social Inclusion", "Democracy, Elections and Governance"]),
+    (re.compile(r"trade|regional integration|afcfta"), ["Trade and Regional Integration", "Industrialisation and Economic Transformation"]),
+]
+
 TAG_CANONICAL_REPLACEMENTS = {
     "critical mineral": "critical minerals",
     "critical raw material": "critical minerals",
@@ -316,6 +331,34 @@ def theme_for_tag(tag: str) -> str | None:
     return best_theme
 
 
+def topic_assignments_for_tag(tag: str, primary_theme: str) -> List[dict]:
+    assignments = [
+        {
+            "topic": primary_theme,
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy",
+        }
+    ]
+    related = set()
+    tag_norm = normalize_text(tag)
+    for pattern, themes in THEME_OVERLAP_RULES:
+        if pattern.search(tag_norm):
+            related.update(theme for theme in themes if theme != primary_theme)
+
+    assignments.extend(
+        {
+            "topic": theme,
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule",
+        }
+        for theme in THEME_KEYWORDS
+        if theme in related
+    )
+    return assignments
+
+
 def similarity(a: str, b: str) -> float:
     if a == b:
         return 1.0
@@ -326,7 +369,11 @@ def similarity(a: str, b: str) -> float:
     return (jacc * 0.45) + (seq * 0.55)
 
 
-def cluster_terms(counter: Counter, program_counter_by_term: Dict[str, Counter] | None = None) -> List[dict]:
+def cluster_terms(
+    counter: Counter,
+    program_counter_by_term: Dict[str, Counter] | None = None,
+    primary_theme: str = "",
+) -> List[dict]:
     program_counter_by_term = program_counter_by_term or {}
     clusters: List[Cluster] = []
     ordered = sorted(counter.items(), key=lambda x: x[1], reverse=True)
@@ -357,6 +404,7 @@ def cluster_terms(counter: Counter, program_counter_by_term: Dict[str, Counter] 
                 "label": label,
                 "count": c.count,
                 "top_program": c.programs.most_common(1)[0][0] if c.programs else "Unknown Programme",
+                "topic_assignments": topic_assignments_for_tag(label, primary_theme),
                 "program_counts": [
                     {"program": p, "count": n}
                     for p, n in c.programs.most_common(6)
@@ -429,6 +477,7 @@ def build_clusters(records: List[dict]) -> dict:
             theme: cluster_terms(
                 yearly_theme_terms[y].get(theme, Counter()),
                 yearly_theme_program_terms[y].get(theme, {}),
+                theme,
             )
             for theme in THEME_KEYWORDS.keys()
         }
@@ -437,6 +486,7 @@ def build_clusters(records: List[dict]) -> dict:
         theme: cluster_terms(
             overall_theme_terms.get(theme, Counter()),
             overall_theme_program_terms.get(theme, {}),
+            theme,
         )
         for theme in THEME_KEYWORDS.keys()
     }

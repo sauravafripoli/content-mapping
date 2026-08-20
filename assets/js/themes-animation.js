@@ -148,6 +148,23 @@ function buildData(clusterPayload) {
           : [];
         programCounts.forEach((p) => programs.add(p.program));
         programs.add(String(item.top_program || programCounts[0]?.program || 'Unknown Programme'));
+        const rawAssignments = Array.isArray(item.topic_assignments) && item.topic_assignments.length
+          ? item.topic_assignments
+          : [{ topic: themeName, role: 'primary', strength: 1, source: 'legacy_fallback' }];
+        const topicAssignments = rawAssignments
+          .map((assignment) => {
+            const topic = String(assignment.topic || '');
+            const topicId = themeNames.indexOf(topic);
+            if (topicId < 0) return null;
+            return {
+              id: topicId,
+              topic,
+              role: assignment.role === 'primary' ? 'primary' : 'related',
+              strength: Number(assignment.strength) || (assignment.role === 'primary' ? 1 : 0.65),
+              source: String(assignment.source || 'generated_data')
+            };
+          })
+          .filter(Boolean);
 
         nodes.push({
           id: `${year}-${themeName}-${item.label}-${itemIndex}`,
@@ -158,7 +175,10 @@ function buildData(clusterPayload) {
           theme: themeName,
           category: meta.category,
           topProgram: String(item.top_program || programCounts[0]?.program || 'Unknown Programme'),
-          programCounts
+          programCounts,
+          topicAssignments,
+          relatedClusterIds: topicAssignments.map((assignment) => assignment.id),
+          relatedTopics: topicAssignments.map((assignment) => assignment.topic)
         });
       });
     });
@@ -382,19 +402,6 @@ const TOPIC_LAYOUT = {
   'Industrialisation and Economic Transformation': [0.53, 0.51]
 };
 
-const OVERLAP_RULES = [
-  [/climate-smart|food security|agricultur/, ['Climate Change and Resilience', 'Food Systems and Sustainable Agriculture']],
-  [/climate financ|green financ/, ['Climate Change and Resilience', 'Climate Finance']],
-  [/energy transition|renewable energy|clean energy|emobility|e-mobility/, ['Climate Change and Resilience', 'Energy Transition and Energy Security']],
-  [/critical mineral|green mineral|lithium|mining|lobito/, ['Critical Minerals and Green Value Chains', 'Industrialisation and Economic Transformation']],
-  [/green industrial|low-carbon economy|green economy/, ['Energy Transition and Energy Security', 'Industrialisation and Economic Transformation']],
-  [/climate diplomacy/, ['Climate Change and Resilience', 'Geopolitics and Strategic Partnerships']],
-  [/youth|employment|entrepreneur|startup|green job/, ['Youth Employment and Entrepreneurship', 'Industrialisation and Economic Transformation']],
-  [/cyber|artificial intelligence|\bai\b|digital/, ['Digital Transformation and AI Governance', 'Democracy, Elections and Governance']],
-  [/gender|migration|health|inclusion/, ['Migration, Health and Social Inclusion', 'Democracy, Elections and Governance']],
-  [/trade|regional integration|afcfta/, ['Trade and Regional Integration', 'Industrialisation and Economic Transformation']]
-];
-
 function clusterCenters(clusters) {
   const map = new Map();
 
@@ -407,20 +414,8 @@ function clusterCenters(clusters) {
   return map;
 }
 
-function relatedClusterIds(node, clusters) {
-  const idsByName = new Map(clusters.map((cluster) => [cluster.lead, cluster.id]));
-  const names = new Set([node.theme]);
-  const searchable = `${node.tag} ${node.theme}`.toLowerCase();
-
-  OVERLAP_RULES.forEach(([pattern, topics]) => {
-    if (pattern.test(searchable)) topics.forEach((topic) => names.add(topic));
-  });
-
-  return [...names].map((name) => idsByName.get(name)).filter(Number.isInteger);
-}
-
-function nodeTarget(node, centers, clusters) {
-  const relatedIds = relatedClusterIds(node, clusters);
+function nodeTarget(node, centers) {
+  const relatedIds = node.relatedClusterIds || [node.cluster];
   const primary = centers.get(node.cluster) || { x: state.width / 2, y: state.height / 2 };
   const secondary = relatedIds.filter((id) => id !== node.cluster).map((id) => centers.get(id)).filter(Boolean);
   if (!secondary.length) {
@@ -991,28 +986,12 @@ function renderYear() {
     .range([7, 31]);
 
   nodes.forEach((n) => {
-    const target = nodeTarget(n, centers, payload.clusters || []);
+    const target = nodeTarget(n, centers);
     n.targetX = target.x;
     n.targetY = target.y;
     n.x = target.x + stableOffset(n.id, 'x');
     n.y = target.y + stableOffset(n.id, 'y');
     n.r = rScale(n.count);
-    n.relatedClusterIds = relatedClusterIds(n, payload.clusters || []);
-    n.relatedTopics = n.relatedClusterIds
-      .map((id) => (payload.clusters || []).find((cluster) => cluster.id === id)?.lead)
-      .filter(Boolean);
-    n.topicAssignments = n.relatedClusterIds
-      .map((id) => {
-        const topic = (payload.clusters || []).find((cluster) => cluster.id === id)?.lead;
-        if (!topic) return null;
-        return {
-          id,
-          topic,
-          role: id === n.cluster ? 'primary' : 'related',
-          strength: id === n.cluster ? 1 : 0.65
-        };
-      })
-      .filter(Boolean);
   });
 
   ensureProgramColorScale(nodes);

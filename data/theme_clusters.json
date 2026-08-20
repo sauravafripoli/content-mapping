@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T07:52:19.953169+00:00",
+  "generated_at": "2026-08-20T14:01:08.795178+00:00",
   "total_records": 191,
   "years": [
     2021,
@@ -365,6 +365,14 @@
         "label": "Adaptation",
         "count": 4,
         "top_program": "Africa's Climate Agenda",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Africa's Climate Agenda",
@@ -386,6 +394,14 @@
         "label": "Climate Justice",
         "count": 2,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -403,6 +419,14 @@
         "label": "Resilience Building",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -420,6 +444,14 @@
         "label": "Transport Emissions",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -437,6 +469,14 @@
         "label": "Climate Change",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -454,6 +494,14 @@
         "label": "Copperbelt",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -471,6 +519,14 @@
         "label": "Economic Resilience",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -488,6 +544,14 @@
         "label": "Transitional Climate Justice",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -505,6 +569,14 @@
         "label": "Pandemic Resilience",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -522,6 +594,14 @@
         "label": "Cop",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -539,6 +619,14 @@
         "label": "Cop30",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -558,6 +646,20 @@
         "label": "Climate Finance",
         "count": 11,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Climate Finance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -581,6 +683,20 @@
         "label": "Energy Transition",
         "count": 11,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -606,6 +722,20 @@
         "label": "Renewable Energy",
         "count": 10,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -631,6 +761,14 @@
         "label": "Oil And Gas",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -648,6 +786,14 @@
         "label": "International Turmoil",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -665,6 +811,14 @@
         "label": "Electricity Access",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -682,6 +836,14 @@
         "label": "Gas Reserves",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -699,6 +861,14 @@
         "label": "Gas Infrastructure",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -716,6 +886,14 @@
         "label": "Solar",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -733,6 +911,20 @@
         "label": "Emobility",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -752,6 +944,20 @@
         "label": "Critical Minerals",
         "count": 7,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -777,6 +983,20 @@
         "label": "Lithium",
         "count": 2,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -798,6 +1018,20 @@
         "label": "Lobito Corridor",
         "count": 2,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -815,6 +1049,20 @@
         "label": "Nigeria Mining",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -832,6 +1080,20 @@
         "label": "Sustainable Mining",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -849,6 +1111,20 @@
         "label": "Green Mineral Partnerships",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -866,6 +1142,14 @@
         "label": "Rare Earth Minerals",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -883,6 +1167,14 @@
         "label": "Battery Mineral Value Chains",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -900,6 +1192,14 @@
         "label": "Battery Industry",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -917,6 +1217,20 @@
         "label": "Mining",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Critical Minerals and Green Value Chains",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -936,6 +1250,20 @@
         "label": "Trade",
         "count": 21,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Trade and Regional Integration",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -957,6 +1285,20 @@
         "label": "Regional Integration",
         "count": 5,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Trade and Regional Integration",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -978,6 +1320,14 @@
         "label": "Single Market",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Trade and Regional Integration",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -995,6 +1345,14 @@
         "label": "Ecowas And Au",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Trade and Regional Integration",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -1014,6 +1372,14 @@
         "label": "Geopolitics & Geoeconomics",
         "count": 19,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1039,6 +1405,14 @@
         "label": "Diplomacy",
         "count": 14,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1056,6 +1430,14 @@
         "label": "Foreign Policy",
         "count": 6,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1077,6 +1459,14 @@
         "label": "International Relations",
         "count": 4,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1094,6 +1484,20 @@
         "label": "Climate Diplomacy",
         "count": 2,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1111,6 +1515,20 @@
         "label": "Climate Diplomacy Nigeria",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1128,6 +1546,14 @@
         "label": "Technology Diplomacy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1145,6 +1571,14 @@
         "label": "Economic Diplomacy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1162,6 +1596,14 @@
         "label": "Feminist Foreign Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1179,6 +1621,14 @@
         "label": "Foreign Influence",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1196,6 +1646,14 @@
         "label": "Global Diplomacy",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Geopolitics and Strategic Partnerships",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -1215,6 +1673,14 @@
         "label": "Governance",
         "count": 21,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1236,6 +1702,14 @@
         "label": "Elections",
         "count": 11,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1253,6 +1727,14 @@
         "label": "Democracy",
         "count": 9,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1270,6 +1752,14 @@
         "label": "Public Sector",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1287,6 +1777,14 @@
         "label": "Presidential Elections",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1306,6 +1804,20 @@
         "label": "Digital Transformation",
         "count": 4,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Digital Transformation and AI Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1323,6 +1835,20 @@
         "label": "Cybersecurity",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Digital Transformation and AI Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1340,6 +1866,20 @@
         "label": "Artificial Intelligence",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Digital Transformation and AI Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1357,6 +1897,14 @@
         "label": "Technology Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Digital Transformation and AI Governance",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1376,6 +1924,20 @@
         "label": "Youth",
         "count": 4,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Youth Employment and Entrepreneurship",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -1393,6 +1955,20 @@
         "label": "Youth's",
         "count": 1,
         "top_program": "Africa's Climate Agenda",
+        "topic_assignments": [
+          {
+            "topic": "Youth Employment and Entrepreneurship",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Africa's Climate Agenda",
@@ -1410,6 +1986,20 @@
         "label": "Entrepreneurship",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Youth Employment and Entrepreneurship",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -1427,6 +2017,20 @@
         "label": "Startup",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Youth Employment and Entrepreneurship",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -1446,6 +2050,20 @@
         "label": "Agriculture",
         "count": 3,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1467,6 +2085,20 @@
         "label": "Food Security",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1484,6 +2116,20 @@
         "label": "Climate-smart Agriculture",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1501,6 +2147,20 @@
         "label": "Food Security Nigeria",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1518,6 +2178,20 @@
         "label": "Agriculture Policy",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1535,6 +2209,20 @@
         "label": "Agricultural Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1552,6 +2240,14 @@
         "label": "Fertilizer",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1569,6 +2265,14 @@
         "label": "Agrifood Systems",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1586,6 +2290,20 @@
         "label": "Agriculture Technology",
         "count": 1,
         "top_program": "Green Tech",
+        "topic_assignments": [
+          {
+            "topic": "Food Systems and Sustainable Agriculture",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Climate Change and Resilience",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Green Tech",
@@ -1605,6 +2323,20 @@
         "label": "Gender",
         "count": 3,
         "top_program": "Africa's Climate Agenda",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Africa's Climate Agenda",
@@ -1630,6 +2362,20 @@
         "label": "Migration",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1651,6 +2397,20 @@
         "label": "Public Health",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1668,6 +2428,20 @@
         "label": "Healthcare Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1685,6 +2459,14 @@
         "label": "Pandemic",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1702,6 +2484,20 @@
         "label": "Migration Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1719,6 +2515,20 @@
         "label": "Health Policy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1736,6 +2546,20 @@
         "label": "Disability Inclusion",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Migration, Health and Social Inclusion",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Democracy, Elections and Governance",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -1755,6 +2579,14 @@
         "label": "Investment",
         "count": 4,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1772,6 +2604,14 @@
         "label": "Political Economy",
         "count": 3,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1793,6 +2633,14 @@
         "label": "Foreign Investment",
         "count": 3,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1810,6 +2658,20 @@
         "label": "Green Economy",
         "count": 2,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1827,6 +2689,14 @@
         "label": "Investment Sustainability",
         "count": 2,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1848,6 +2718,14 @@
         "label": "Industrialization",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1865,6 +2743,14 @@
         "label": "Industrial Policy",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1882,6 +2768,14 @@
         "label": "Manufacturing",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1899,6 +2793,14 @@
         "label": "Industrialisation",
         "count": 2,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1920,6 +2822,20 @@
         "label": "Green Industrial Policy",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1937,6 +2853,20 @@
         "label": "Low-carbon Economy",
         "count": 1,
         "top_program": "Climate Transitions",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          },
+          {
+            "topic": "Energy Transition and Energy Security",
+            "role": "related",
+            "strength": 0.65,
+            "source": "controlled_overlap_rule"
+          }
+        ],
         "program_counts": [
           {
             "program": "Climate Transitions",
@@ -1954,6 +2884,14 @@
         "label": "Economy Society",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1971,6 +2909,14 @@
         "label": "Economic Diversification",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -1988,6 +2934,14 @@
         "label": "Economy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2005,6 +2959,14 @@
         "label": "Knowledge Economy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2022,6 +2984,14 @@
         "label": "Investment Agency",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2039,6 +3009,14 @@
         "label": "Cement Industry",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2056,6 +3034,14 @@
         "label": "Investment Promotion",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2073,6 +3059,14 @@
         "label": "Local Economy",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2090,6 +3084,14 @@
         "label": "Energy Investment",
         "count": 1,
         "top_program": "E&S",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "E&S",
@@ -2107,6 +3109,14 @@
         "label": "Value Addition",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -2124,6 +3134,14 @@
         "label": "Foreign Direct Investment",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
+        "topic_assignments": [
+          {
+            "topic": "Industrialisation and Economic Transformation",
+            "role": "primary",
+            "strength": 1.0,
+            "source": "controlled_taxonomy"
+          }
+        ],
         "program_counts": [
           {
             "program": "Geopolitics & Geoeconomics",
@@ -2150,6 +3168,20 @@
           "label": "Trade",
           "count": 3,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2169,6 +3201,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 3,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2186,6 +3226,14 @@
           "label": "Diplomacy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2205,6 +3253,14 @@
           "label": "Governance",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2222,6 +3278,14 @@
           "label": "Elections",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2239,6 +3303,14 @@
           "label": "Democracy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2261,6 +3333,20 @@
           "label": "Migration",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2280,6 +3366,14 @@
           "label": "Foreign Investment",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2297,6 +3391,14 @@
           "label": "Economic Diversification",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2318,6 +3420,14 @@
           "label": "Adaptation",
           "count": 1,
           "top_program": "Africa's Climate Agenda",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Africa's Climate Agenda",
@@ -2338,6 +3448,20 @@
           "label": "Renewable Energy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2355,6 +3479,14 @@
           "label": "Oil And Gas",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2372,6 +3504,14 @@
           "label": "International Turmoil",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2393,6 +3533,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 4,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2410,6 +3558,14 @@
           "label": "Foreign Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2427,6 +3583,14 @@
           "label": "International Relations",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2444,6 +3608,14 @@
           "label": "Technology Diplomacy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2461,6 +3633,14 @@
           "label": "Diplomacy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2480,6 +3660,14 @@
           "label": "Elections",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2497,6 +3685,14 @@
           "label": "Democracy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2514,6 +3710,14 @@
           "label": "Governance",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2533,6 +3737,20 @@
           "label": "Digital Transformation",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Digital Transformation and AI Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2555,6 +3773,14 @@
           "label": "Foreign Investment",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2572,6 +3798,14 @@
           "label": "Industrialization",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2593,6 +3827,14 @@
           "label": "Adaptation",
           "count": 2,
           "top_program": "Africa's Climate Agenda",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Africa's Climate Agenda",
@@ -2610,6 +3852,14 @@
           "label": "Climate Change",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2630,6 +3880,20 @@
           "label": "Renewable Energy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2650,6 +3914,20 @@
           "label": "Trade",
           "count": 8,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2667,6 +3945,20 @@
           "label": "Regional Integration",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2684,6 +3976,14 @@
           "label": "Single Market",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2703,6 +4003,14 @@
           "label": "Diplomacy",
           "count": 6,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2720,6 +4028,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 4,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2737,6 +4053,14 @@
           "label": "International Relations",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2754,6 +4078,14 @@
           "label": "Foreign Policy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2771,6 +4103,14 @@
           "label": "Feminist Foreign Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2790,6 +4130,14 @@
           "label": "Elections",
           "count": 5,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2807,6 +4155,14 @@
           "label": "Governance",
           "count": 5,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2824,6 +4180,14 @@
           "label": "Democracy",
           "count": 3,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2841,6 +4205,14 @@
           "label": "Presidential Elections",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2861,6 +4233,20 @@
           "label": "Youth's",
           "count": 1,
           "top_program": "Africa's Climate Agenda",
+          "topic_assignments": [
+            {
+              "topic": "Youth Employment and Entrepreneurship",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Africa's Climate Agenda",
@@ -2878,6 +4264,20 @@
           "label": "Youth",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Youth Employment and Entrepreneurship",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -2897,6 +4297,20 @@
           "label": "Food Security",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2914,6 +4328,20 @@
           "label": "Agriculture",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2931,6 +4359,14 @@
           "label": "Fertilizer",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2950,6 +4386,20 @@
           "label": "Gender",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2967,6 +4417,20 @@
           "label": "Migration Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -2984,6 +4448,20 @@
           "label": "Public Health",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3001,6 +4479,20 @@
           "label": "Health Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3020,6 +4512,14 @@
           "label": "Investment",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3037,6 +4537,14 @@
           "label": "Political Economy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3054,6 +4562,14 @@
           "label": "Economy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3071,6 +4587,14 @@
           "label": "Investment Agency",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3088,6 +4612,14 @@
           "label": "Investment Promotion",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3105,6 +4637,14 @@
           "label": "Local Economy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3126,6 +4666,14 @@
           "label": "Copperbelt",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3145,6 +4693,20 @@
           "label": "Climate Finance",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Climate Finance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3164,6 +4726,20 @@
           "label": "Renewable Energy",
           "count": 3,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3181,6 +4757,20 @@
           "label": "Energy Transition",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3198,6 +4788,14 @@
           "label": "Solar",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3217,6 +4815,14 @@
           "label": "Rare Earth Minerals",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3234,6 +4840,14 @@
           "label": "Battery Mineral Value Chains",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3251,6 +4865,20 @@
           "label": "Lithium",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3268,6 +4896,14 @@
           "label": "Battery Industry",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3287,6 +4923,20 @@
           "label": "Trade",
           "count": 5,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3304,6 +4954,20 @@
           "label": "Regional Integration",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3323,6 +4987,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 4,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3344,6 +5016,14 @@
           "label": "Diplomacy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3361,6 +5041,14 @@
           "label": "Foreign Policy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3378,6 +5066,14 @@
           "label": "Economic Diplomacy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3395,6 +5091,14 @@
           "label": "Foreign Influence",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3414,6 +5118,14 @@
           "label": "Governance",
           "count": 5,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3431,6 +5143,14 @@
           "label": "Elections",
           "count": 3,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3448,6 +5168,14 @@
           "label": "Democracy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3465,6 +5193,14 @@
           "label": "Public Sector",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3484,6 +5220,20 @@
           "label": "Digital Transformation",
           "count": 3,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Digital Transformation and AI Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3501,6 +5251,20 @@
           "label": "Cybersecurity",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Digital Transformation and AI Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3518,6 +5282,20 @@
           "label": "Artificial Intelligence",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Digital Transformation and AI Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3535,6 +5313,14 @@
           "label": "Technology Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Digital Transformation and AI Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3557,6 +5343,14 @@
           "label": "Industrial Policy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3574,6 +5368,14 @@
           "label": "Manufacturing",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3591,6 +5393,14 @@
           "label": "Investment",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3608,6 +5418,14 @@
           "label": "Foreign Investment",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3625,6 +5443,14 @@
           "label": "Knowledge Economy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3642,6 +5468,14 @@
           "label": "Cement Industry",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3659,6 +5493,14 @@
           "label": "Industrialization",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -3680,6 +5522,14 @@
           "label": "Climate Justice",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3697,6 +5547,14 @@
           "label": "Resilience Building",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3714,6 +5572,14 @@
           "label": "Transport Emissions",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3731,6 +5597,14 @@
           "label": "Economic Resilience",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3748,6 +5622,14 @@
           "label": "Transitional Climate Justice",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3765,6 +5647,14 @@
           "label": "Pandemic Resilience",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3784,6 +5674,20 @@
           "label": "Climate Finance",
           "count": 9,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Finance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3807,6 +5711,20 @@
           "label": "Energy Transition",
           "count": 7,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3828,6 +5746,20 @@
           "label": "Renewable Energy",
           "count": 5,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3849,6 +5781,14 @@
           "label": "Gas Reserves",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3866,6 +5806,14 @@
           "label": "Gas Infrastructure",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3883,6 +5831,20 @@
           "label": "Emobility",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -3902,6 +5864,20 @@
           "label": "Critical Minerals",
           "count": 7,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3927,6 +5903,20 @@
           "label": "Lobito Corridor",
           "count": 2,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3944,6 +5934,20 @@
           "label": "Sustainable Mining",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -3961,6 +5965,20 @@
           "label": "Green Mineral Partnerships",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3978,6 +5996,20 @@
           "label": "Mining",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -3997,6 +6029,20 @@
           "label": "Trade",
           "count": 3,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4018,6 +6064,20 @@
           "label": "Regional Integration",
           "count": 2,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4035,6 +6095,14 @@
           "label": "Ecowas And Au",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4054,6 +6122,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4075,6 +6151,20 @@
           "label": "Climate Diplomacy",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4092,6 +6182,14 @@
           "label": "Diplomacy",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4109,6 +6207,20 @@
           "label": "Climate Diplomacy Nigeria",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4126,6 +6238,14 @@
           "label": "Foreign Policy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4145,6 +6265,14 @@
           "label": "Governance",
           "count": 5,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4166,6 +6294,14 @@
           "label": "Democracy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4186,6 +6322,20 @@
           "label": "Youth",
           "count": 3,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Youth Employment and Entrepreneurship",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4203,6 +6353,20 @@
           "label": "Entrepreneurship",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Youth Employment and Entrepreneurship",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4220,6 +6384,20 @@
           "label": "Startup",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Youth Employment and Entrepreneurship",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4239,6 +6417,20 @@
           "label": "Agriculture",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4260,6 +6452,20 @@
           "label": "Climate-smart Agriculture",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4277,6 +6483,20 @@
           "label": "Food Security Nigeria",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4294,6 +6514,20 @@
           "label": "Agriculture Policy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4311,6 +6545,14 @@
           "label": "Agrifood Systems",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4330,6 +6572,20 @@
           "label": "Gender",
           "count": 2,
           "top_program": "Africa's Climate Agenda",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Africa's Climate Agenda",
@@ -4351,6 +6607,20 @@
           "label": "Healthcare Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4368,6 +6638,14 @@
           "label": "Pandemic",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4385,6 +6663,20 @@
           "label": "Public Health",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4402,6 +6694,20 @@
           "label": "Migration",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4419,6 +6725,20 @@
           "label": "Disability Inclusion",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Migration, Health and Social Inclusion",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4438,6 +6758,14 @@
           "label": "Investment Sustainability",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4459,6 +6787,14 @@
           "label": "Political Economy",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4476,6 +6812,20 @@
           "label": "Green Economy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4493,6 +6843,20 @@
           "label": "Green Industrial Policy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4510,6 +6874,20 @@
           "label": "Low-carbon Economy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4527,6 +6905,14 @@
           "label": "Industrialisation",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4544,6 +6930,14 @@
           "label": "Energy Investment",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4561,6 +6955,14 @@
           "label": "Foreign Direct Investment",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4582,6 +6984,14 @@
           "label": "Adaptation",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4599,6 +7009,14 @@
           "label": "Cop",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4616,6 +7034,14 @@
           "label": "Cop30",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4635,6 +7061,20 @@
           "label": "Climate Finance",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Climate Finance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4654,6 +7094,20 @@
           "label": "Energy Transition",
           "count": 3,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4675,6 +7129,14 @@
           "label": "Electricity Access",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4694,6 +7156,20 @@
           "label": "Nigeria Mining",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4711,6 +7187,20 @@
           "label": "Lithium",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Critical Minerals and Green Value Chains",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4730,6 +7220,20 @@
           "label": "Trade",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Trade and Regional Integration",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4749,6 +7253,14 @@
           "label": "Geopolitics & Geoeconomics",
           "count": 2,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4770,6 +7282,14 @@
           "label": "International Relations",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4787,6 +7307,14 @@
           "label": "Diplomacy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4804,6 +7332,14 @@
           "label": "Global Diplomacy",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Geopolitics and Strategic Partnerships",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4823,6 +7359,14 @@
           "label": "Governance",
           "count": 2,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Democracy, Elections and Governance",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4844,6 +7388,20 @@
           "label": "Agricultural Policy",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4861,6 +7419,20 @@
           "label": "Food Security",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4878,6 +7450,20 @@
           "label": "Agriculture Technology",
           "count": 1,
           "top_program": "Green Tech",
+          "topic_assignments": [
+            {
+              "topic": "Food Systems and Sustainable Agriculture",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Climate Change and Resilience",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Green Tech",
@@ -4898,6 +7484,20 @@
           "label": "Green Economy",
           "count": 1,
           "top_program": "Climate Transitions",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            },
+            {
+              "topic": "Energy Transition and Energy Security",
+              "role": "related",
+              "strength": 0.65,
+              "source": "controlled_overlap_rule"
+            }
+          ],
           "program_counts": [
             {
               "program": "Climate Transitions",
@@ -4915,6 +7515,14 @@
           "label": "Economy Society",
           "count": 1,
           "top_program": "E&S",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "E&S",
@@ -4932,6 +7540,14 @@
           "label": "Value Addition",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
@@ -4949,6 +7565,14 @@
           "label": "Industrialisation",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
+          "topic_assignments": [
+            {
+              "topic": "Industrialisation and Economic Transformation",
+              "role": "primary",
+              "strength": 1.0,
+              "source": "controlled_taxonomy"
+            }
+          ],
           "program_counts": [
             {
               "program": "Geopolitics & Geoeconomics",
