@@ -18,20 +18,11 @@ const els = {
   clearSelectionBtn: document.getElementById('taClearSelectionBtn'),
   yearRangeChip: document.getElementById('taYearRangeChip'),
   themeCountChip: document.getElementById('taThemeCountChip'),
-  kpiMentions: document.getElementById('taKpiMentions'),
-  kpiGrowth: document.getElementById('taKpiGrowth'),
-  kpiClusters: document.getElementById('taKpiClusters'),
-  kpiDiversity: document.getElementById('taKpiDiversity'),
-  impactBars: document.getElementById('taImpactBars'),
-  trendSvg: document.getElementById('taTrendSvg'),
-  risingList: document.getElementById('taRisingList'),
   storyModeBtn: document.getElementById('taStoryModeBtn'),
   storyHeadline: document.getElementById('taStoryHeadline'),
   storyBody: document.getElementById('taStoryBody'),
   storyMeta: document.getElementById('taStoryMeta'),
-  exportImpactPngBtn: document.getElementById('taExportImpactPngBtn'),
-  exportTrendPngBtn: document.getElementById('taExportTrendPngBtn'),
-  exportCsvBtn: document.getElementById('taExportCsvBtn'),
+  exportMapPngBtn: document.getElementById('taExportMapPngBtn'),
   playPauseBtn: document.getElementById('playPauseBtn'),
   prevYearBtn: document.getElementById('prevYearBtn'),
   nextYearBtn: document.getElementById('nextYearBtn'),
@@ -879,19 +870,39 @@ function downloadBlob(blob, filename) {
 
 function exportSvgAsPng(svgElement, filename) {
   if (!svgElement) return;
-  const xml = new XMLSerializer().serializeToString(svgElement);
+  const w = Math.max(600, svgElement.clientWidth || 800);
+  const h = Math.max(260, svgElement.clientHeight || 320);
+  const clone = svgElement.cloneNode(true);
+  clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+  clone.setAttribute('width', String(w));
+  clone.setAttribute('height', String(h));
+  clone.setAttribute('viewBox', `0 0 ${w} ${h}`);
+
+  const sourceElements = [svgElement, ...svgElement.querySelectorAll('*')];
+  const clonedElements = [clone, ...clone.querySelectorAll('*')];
+  const styleProperties = [
+    'fill', 'fill-opacity', 'stroke', 'stroke-width', 'stroke-opacity', 'stroke-dasharray',
+    'opacity', 'font-family', 'font-size', 'font-weight', 'letter-spacing', 'paint-order'
+  ];
+  sourceElements.forEach((source, index) => {
+    const computed = window.getComputedStyle(source);
+    const target = clonedElements[index];
+    styleProperties.forEach((property) => target.style.setProperty(property, computed.getPropertyValue(property)));
+  });
+
+  const xml = new XMLSerializer().serializeToString(clone);
   const svgBlob = new Blob([xml], { type: 'image/svg+xml;charset=utf-8' });
   const url = URL.createObjectURL(svgBlob);
   const image = new Image();
 
   image.onload = () => {
-    const w = Math.max(600, svgElement.clientWidth || 800);
-    const h = Math.max(260, svgElement.clientHeight || 320);
     const canvas = document.createElement('canvas');
-    canvas.width = w;
-    canvas.height = h;
+    const pixelRatio = 2;
+    canvas.width = w * pixelRatio;
+    canvas.height = h * pixelRatio;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+    ctx.scale(pixelRatio, pixelRatio);
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, w, h);
     ctx.drawImage(image, 0, 0, w, h);
@@ -900,6 +911,7 @@ function exportSvgAsPng(svgElement, filename) {
     }, 'image/png');
     URL.revokeObjectURL(url);
   };
+  image.onerror = () => URL.revokeObjectURL(url);
 
   image.src = url;
 }
@@ -1125,7 +1137,6 @@ function renderYear() {
       renderSelectedTheme(null, [], year);
     }
     renderProgramLegend([]);
-    renderInsights(year, []);
     return;
   }
 
@@ -1315,7 +1326,6 @@ function renderYear() {
   }
 
   updateCrossViewLinks();
-  renderInsights(year, nodes);
   const storyNote = state.storyNotes.find((note) => note.year === year) || null;
   renderClusterSummary(visibleClusters, storyNote?.dominantClusterId ?? null);
 
@@ -1602,22 +1612,10 @@ function bindEvents() {
     });
   }
 
-  if (els.exportImpactPngBtn) {
-    els.exportImpactPngBtn.addEventListener('click', () => {
-      const year = state.lastInsightYear || state.years[state.yearIndex] || 'year';
-      exportSvgAsPng(els.impactBars, `impact-by-cluster-${year}.png`);
-    });
-  }
-
-  if (els.exportTrendPngBtn) {
-    els.exportTrendPngBtn.addEventListener('click', () => {
-      exportSvgAsPng(els.trendSvg, 'mentions-trend.png');
-    });
-  }
-
-  if (els.exportCsvBtn) {
-    els.exportCsvBtn.addEventListener('click', () => {
-      exportInsightsCsv();
+  if (els.exportMapPngBtn) {
+    els.exportMapPngBtn.addEventListener('click', () => {
+      const year = state.years[state.yearIndex] || 'year';
+      exportSvgAsPng(els.svg, `apri-theme-map-${year}.png`);
     });
   }
 

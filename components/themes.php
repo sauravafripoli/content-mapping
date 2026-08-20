@@ -63,12 +63,12 @@
 
       <div class="ta-grid">
         <section class="ta-chart-card">
-          <details class="ta-map-guide">
-            <summary>How to read this map</summary>
+          <div class="ta-map-guide">
+            <div class="ta-map-guide-summary" tabindex="0">How to read this map</div>
             <div class="ta-map-guide-panel">
               <div class="ta-map-guide-item">
                 <span class="ta-guide-symbol ta-guide-anchor" aria-hidden="true">12</span>
-                <span><strong>Topic anchor</strong> — one of the 12 controlled topics; the number shows mentions.</span>
+                <span><strong>Theme anchor</strong> — one of the 12 controlled themes; the number shows mentions.</span>
               </div>
               <div class="ta-map-guide-item">
                 <span class="ta-guide-symbol ta-guide-bubble" aria-hidden="true"></span>
@@ -82,13 +82,19 @@
                 <span class="ta-guide-symbol ta-guide-overlap" aria-hidden="true"></span>
                 <span><strong>Overlap</strong> — a solid line marks the primary theme; dashed lines mark related themes.</span>
               </div>
-              <p class="ta-map-guide-actions"><strong>Hover</strong> to preview connections. <strong>Click</strong> to keep them visible; click again to clear.</p>
+              <p class="ta-map-guide-actions"><strong>Explore:</strong> Hover over a tag or theme to preview its connections. Click once to select it and keep its overlaps visible; click it again to clear the selection.</p>
+              <p class="ta-map-guide-actions"><strong>Move around:</strong> Drag the canvas to pan. Use the mouse wheel, trackpad pinch, or <strong>+</strong> and <strong>−</strong> controls to zoom. Select <strong>↺</strong> to restore the full map.</p>
+              <p class="ta-map-guide-actions"><strong>Inspect:</strong> The side panel shows details for the selected tag or theme. Filters and the year control update what appears on the map.</p>
+              <p class="ta-map-guide-actions"><strong>Save:</strong> Select <strong>Export Map PNG</strong> to download the current map as an image.</p>
             </div>
-          </details>
+          </div>
           <div class="ta-zoom-controls" aria-label="Map zoom controls">
             <button id="taZoomInBtn" type="button" aria-label="Zoom in" title="Zoom in">+</button>
             <button id="taZoomOutBtn" type="button" aria-label="Zoom out" title="Zoom out">−</button>
             <button id="taResetZoomBtn" type="button" aria-label="Reset map view" title="Reset map view">↺</button>
+          </div>
+          <div class="ta-map-export">
+            <button id="taExportMapPngBtn" class="ta-btn" type="button">Export Map PNG</button>
           </div>
           <svg id="clusterSvg" aria-label="Theme cluster animation"></svg>
           <div id="clusterTooltip" class="ta-tooltip hidden" role="tooltip"></div>
@@ -116,46 +122,6 @@
         </aside>
       </div>
 
-      <section class="ta-insights">
-        <div class="ta-kpi-grid">
-          <article class="ta-kpi-card">
-            <div class="ta-kpi-label">Mentions (current year)</div>
-            <div id="taKpiMentions" class="ta-kpi-value">0</div>
-          </article>
-          <article class="ta-kpi-card">
-            <div class="ta-kpi-label">Year-on-year momentum</div>
-            <div id="taKpiGrowth" class="ta-kpi-value">—</div>
-          </article>
-          <article class="ta-kpi-card">
-            <div class="ta-kpi-label">Active themes</div>
-            <div id="taKpiClusters" class="ta-kpi-value">0</div>
-          </article>
-          <article class="ta-kpi-card">
-            <div class="ta-kpi-label">Theme concentration index</div>
-            <div id="taKpiDiversity" class="ta-kpi-value">—</div>
-          </article>
-        </div>
-
-        <div class="ta-export-row">
-          <button id="taExportImpactPngBtn" class="ta-btn" type="button">Export Impact PNG</button>
-          <button id="taExportTrendPngBtn" class="ta-btn" type="button">Export Trend PNG</button>
-          <button id="taExportCsvBtn" class="ta-btn" type="button">Export CSV</button>
-        </div>
-
-        <div class="ta-insights-grid">
-          <article class="ta-insight-card ta-insight-card--impact">
-            <h2>Impact by Theme (current year)</h2>
-            <svg id="taImpactBars" class="ta-mini-chart" aria-label="Impact by theme"></svg>
-          </article>
-
-          <article class="ta-insight-card">
-            <h2>Mentions Trend Across Years</h2>
-            <svg id="taTrendSvg" class="ta-mini-chart" aria-label="Mentions trend by year"></svg>
-            <h3 class="mt-2">Top Rising Themes</h3>
-            <ul id="taRisingList" class="ta-cluster-list"></ul>
-          </article>
-        </div>
-      </section>
     </div>
   </section>
 </main>
