@@ -1,7 +1,8 @@
 {
-  "generated_at": "2026-08-05T07:28:26.306471+00:00",
-  "total_records": 57,
+  "generated_at": "2026-08-20T07:52:19.953169+00:00",
+  "total_records": 191,
   "years": [
+    2021,
     2022,
     2023,
     2024,
@@ -244,59 +245,91 @@
   ],
   "excluded_country_tags": [
     {
-      "tag": "ghana",
-      "count": 6
-    },
-    {
       "tag": "china",
-      "count": 4
-    },
-    {
-      "tag": "global south",
-      "count": 4
-    },
-    {
-      "tag": "nigeria",
-      "count": 3
-    },
-    {
-      "tag": "south africa",
-      "count": 3
+      "count": 12
     },
     {
       "tag": "brics",
-      "count": 3
+      "count": 12
+    },
+    {
+      "tag": "nigeria",
+      "count": 11
+    },
+    {
+      "tag": "ecowas",
+      "count": 11
+    },
+    {
+      "tag": "germany",
+      "count": 10
+    },
+    {
+      "tag": "ghana",
+      "count": 8
+    },
+    {
+      "tag": "south africa",
+      "count": 8
+    },
+    {
+      "tag": "afcfta",
+      "count": 8
+    },
+    {
+      "tag": "global south",
+      "count": 6
     },
     {
       "tag": "kenya",
+      "count": 5
+    },
+    {
+      "tag": "drc",
+      "count": 5
+    },
+    {
+      "tag": "west africa",
+      "count": 4
+    },
+    {
+      "tag": "zambia",
+      "count": 4
+    },
+    {
+      "tag": "senegal",
       "count": 3
+    },
+    {
+      "tag": "united states",
+      "count": 2
+    },
+    {
+      "tag": "zimbabwe",
+      "count": 2
+    },
+    {
+      "tag": "turkey",
+      "count": 2
     },
     {
       "tag": "south-south cooperation",
       "count": 1
     },
     {
-      "tag": "west africa",
+      "tag": "russia",
       "count": 1
     },
     {
-      "tag": "turkey",
+      "tag": "chad",
       "count": 1
     },
     {
-      "tag": "drc",
-      "count": 1
-    },
-    {
-      "tag": "zambia",
+      "tag": "angola",
       "count": 1
     },
     {
       "tag": "egypt",
-      "count": 1
-    },
-    {
-      "tag": "ecowas",
       "count": 1
     },
     {
@@ -308,11 +341,7 @@
       "count": 1
     },
     {
-      "tag": "afcfta",
-      "count": 1
-    },
-    {
-      "tag": "united states",
+      "tag": "indonesia",
       "count": 1
     }
   ],
@@ -334,18 +363,22 @@
     "Climate Change and Resilience": [
       {
         "label": "Adaptation",
-        "count": 3,
+        "count": 4,
         "top_program": "Africa's Climate Agenda",
         "program_counts": [
           {
             "program": "Africa's Climate Agenda",
             "count": 3
+          },
+          {
+            "program": "Climate Transitions",
+            "count": 1
           }
         ],
         "variants": [
           {
             "tag": "Adaptation",
-            "count": 3
+            "count": 4
           }
         ]
       },
@@ -401,6 +434,91 @@
         ]
       },
       {
+        "label": "Climate Change",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Climate Change",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Copperbelt",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Copperbelt",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Economic Resilience",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Economic Resilience",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Transitional Climate Justice",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Transitional Climate Justice",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Pandemic Resilience",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Pandemic Resilience",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Cop",
         "count": 1,
         "top_program": "Green Tech",
@@ -438,18 +556,22 @@
     "Climate Finance": [
       {
         "label": "Climate Finance",
-        "count": 9,
+        "count": 11,
         "top_program": "Climate Transitions",
         "program_counts": [
           {
             "program": "Climate Transitions",
             "count": 9
+          },
+          {
+            "program": "E&S",
+            "count": 2
           }
         ],
         "variants": [
           {
             "tag": "Climate Finance",
-            "count": 9
+            "count": 11
           }
         ]
       }
@@ -457,29 +579,16 @@
     "Energy Transition and Energy Security": [
       {
         "label": "Energy Transition",
-        "count": 8,
+        "count": 11,
         "top_program": "Climate Transitions",
         "program_counts": [
           {
             "program": "Climate Transitions",
             "count": 8
-          }
-        ],
-        "variants": [
+          },
           {
-            "tag": "Energy Transition",
-            "count": 8
-          }
-        ]
-      },
-      {
-        "label": "Renewable Energy",
-        "count": 5,
-        "top_program": "Climate Transitions",
-        "program_counts": [
-          {
-            "program": "Climate Transitions",
-            "count": 4
+            "program": "Geopolitics & Geoeconomics",
+            "count": 2
           },
           {
             "program": "E&S",
@@ -488,8 +597,135 @@
         ],
         "variants": [
           {
+            "tag": "Energy Transition",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "label": "Renewable Energy",
+        "count": 10,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 4
+          },
+          {
+            "program": "E&S",
+            "count": 3
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 3
+          }
+        ],
+        "variants": [
+          {
             "tag": "Renewable Energy",
-            "count": 5
+            "count": 10
+          }
+        ]
+      },
+      {
+        "label": "Oil And Gas",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Oil And Gas",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "International Turmoil",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "International Turmoil",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Electricity Access",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Electricity Access",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Gas Reserves",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Gas Reserves",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Gas Infrastructure",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Gas Infrastructure",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Solar",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Solar",
+            "count": 1
           }
         ]
       },
@@ -538,6 +774,44 @@
         ]
       },
       {
+        "label": "Lithium",
+        "count": 2,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Lithium",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Lobito Corridor",
+        "count": 2,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Lobito Corridor",
+            "count": 2
+          }
+        ]
+      },
+      {
         "label": "Nigeria Mining",
         "count": 1,
         "top_program": "Climate Transitions",
@@ -550,23 +824,6 @@
         "variants": [
           {
             "tag": "Nigeria Mining",
-            "count": 1
-          }
-        ]
-      },
-      {
-        "label": "Lithium",
-        "count": 1,
-        "top_program": "Climate Transitions",
-        "program_counts": [
-          {
-            "program": "Climate Transitions",
-            "count": 1
-          }
-        ],
-        "variants": [
-          {
-            "tag": "Lithium",
             "count": 1
           }
         ]
@@ -589,23 +846,6 @@
         ]
       },
       {
-        "label": "Lobito Corridor",
-        "count": 1,
-        "top_program": "Geopolitics & Geoeconomics",
-        "program_counts": [
-          {
-            "program": "Geopolitics & Geoeconomics",
-            "count": 1
-          }
-        ],
-        "variants": [
-          {
-            "tag": "Lobito Corridor",
-            "count": 1
-          }
-        ]
-      },
-      {
         "label": "Green Mineral Partnerships",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
@@ -621,32 +861,9 @@
             "count": 1
           }
         ]
-      }
-    ],
-    "Trade and Regional Integration": [
-      {
-        "label": "Trade",
-        "count": 4,
-        "top_program": "Climate Transitions",
-        "program_counts": [
-          {
-            "program": "Climate Transitions",
-            "count": 3
-          },
-          {
-            "program": "E&S",
-            "count": 1
-          }
-        ],
-        "variants": [
-          {
-            "tag": "Trade",
-            "count": 4
-          }
-        ]
       },
       {
-        "label": "Regional Integration",
+        "label": "Rare Earth Minerals",
         "count": 1,
         "top_program": "Geopolitics & Geoeconomics",
         "program_counts": [
@@ -657,7 +874,136 @@
         ],
         "variants": [
           {
+            "tag": "Rare Earth Minerals",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Battery Mineral Value Chains",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Battery Mineral Value Chains",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Battery Industry",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Battery Industry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Mining",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Mining",
+            "count": 1
+          }
+        ]
+      }
+    ],
+    "Trade and Regional Integration": [
+      {
+        "label": "Trade",
+        "count": 21,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 17
+          },
+          {
+            "program": "Climate Transitions",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Trade",
+            "count": 21
+          }
+        ]
+      },
+      {
+        "label": "Regional Integration",
+        "count": 5,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 3
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
             "tag": "Regional Integration",
+            "count": 5
+          }
+        ]
+      },
+      {
+        "label": "Single Market",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Single Market",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Ecowas And Au",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Ecowas And Au",
             "count": 1
           }
         ]
@@ -666,18 +1012,81 @@
     "Geopolitics and Strategic Partnerships": [
       {
         "label": "Geopolitics & Geoeconomics",
-        "count": 2,
-        "top_program": "Climate Transitions",
+        "count": 19,
+        "top_program": "E&S",
         "program_counts": [
+          {
+            "program": "E&S",
+            "count": 16
+          },
           {
             "program": "Climate Transitions",
             "count": 2
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
           }
         ],
         "variants": [
           {
             "tag": "Geopolitics & Geoeconomics",
-            "count": 2
+            "count": 19
+          }
+        ]
+      },
+      {
+        "label": "Diplomacy",
+        "count": 14,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 14
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Diplomacy",
+            "count": 14
+          }
+        ]
+      },
+      {
+        "label": "Foreign Policy",
+        "count": 6,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 5
+          },
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Foreign Policy",
+            "count": 6
+          }
+        ]
+      },
+      {
+        "label": "International Relations",
+        "count": 4,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "International Relations",
+            "count": 4
           }
         ]
       },
@@ -716,18 +1125,69 @@
         ]
       },
       {
-        "label": "Foreign Policy",
+        "label": "Technology Diplomacy",
         "count": 1,
-        "top_program": "Climate Transitions",
+        "top_program": "E&S",
         "program_counts": [
           {
-            "program": "Climate Transitions",
+            "program": "E&S",
             "count": 1
           }
         ],
         "variants": [
           {
-            "tag": "Foreign Policy",
+            "tag": "Technology Diplomacy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Economic Diplomacy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Economic Diplomacy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Feminist Foreign Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Feminist Foreign Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Foreign Influence",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Foreign Influence",
             "count": 1
           }
         ]
@@ -753,9 +1213,13 @@
     "Democracy, Elections and Governance": [
       {
         "label": "Governance",
-        "count": 3,
-        "top_program": "Climate Transitions",
+        "count": 21,
+        "top_program": "E&S",
         "program_counts": [
+          {
+            "program": "E&S",
+            "count": 18
+          },
           {
             "program": "Climate Transitions",
             "count": 3
@@ -764,12 +1228,97 @@
         "variants": [
           {
             "tag": "Governance",
-            "count": 3
+            "count": 21
+          }
+        ]
+      },
+      {
+        "label": "Elections",
+        "count": 11,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 11
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Elections",
+            "count": 11
+          }
+        ]
+      },
+      {
+        "label": "Democracy",
+        "count": 9,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 9
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Democracy",
+            "count": 9
+          }
+        ]
+      },
+      {
+        "label": "Public Sector",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Public Sector",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Presidential Elections",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Presidential Elections",
+            "count": 1
           }
         ]
       }
     ],
     "Digital Transformation and AI Governance": [
+      {
+        "label": "Digital Transformation",
+        "count": 4,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Digital Transformation",
+            "count": 4
+          }
+        ]
+      },
       {
         "label": "Cybersecurity",
         "count": 1,
@@ -783,6 +1332,40 @@
         "variants": [
           {
             "tag": "Cybersecurity",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Artificial Intelligence",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Artificial Intelligence",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Technology Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Technology Policy",
             "count": 1
           }
         ]
@@ -860,6 +1443,44 @@
     ],
     "Food Systems and Sustainable Agriculture": [
       {
+        "label": "Agriculture",
+        "count": 3,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          },
+          {
+            "program": "Climate Transitions",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Agriculture",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Food Security",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Food Security",
+            "count": 2
+          }
+        ]
+      },
+      {
         "label": "Climate-smart Agriculture",
         "count": 1,
         "top_program": "Climate Transitions",
@@ -911,6 +1532,57 @@
         ]
       },
       {
+        "label": "Agricultural Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Agricultural Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Fertilizer",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Fertilizer",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Agrifood Systems",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Agrifood Systems",
+            "count": 1
+          }
+        ]
+      },
+      {
         "label": "Agriculture Technology",
         "count": 1,
         "top_program": "Green Tech",
@@ -931,23 +1603,209 @@
     "Migration, Health and Social Inclusion": [
       {
         "label": "Gender",
-        "count": 1,
+        "count": 3,
         "top_program": "Africa's Climate Agenda",
         "program_counts": [
           {
             "program": "Africa's Climate Agenda",
+            "count": 1
+          },
+          {
+            "program": "E&S",
+            "count": 1
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
             "count": 1
           }
         ],
         "variants": [
           {
             "tag": "Gender",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Migration",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Migration",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Public Health",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Public Health",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Healthcare Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Healthcare Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Pandemic",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Pandemic",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Migration Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Migration Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Health Policy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Health Policy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Disability Inclusion",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Disability Inclusion",
             "count": 1
           }
         ]
       }
     ],
     "Industrialisation and Economic Transformation": [
+      {
+        "label": "Investment",
+        "count": 4,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 4
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Investment",
+            "count": 4
+          }
+        ]
+      },
+      {
+        "label": "Political Economy",
+        "count": 3,
+        "top_program": "Climate Transitions",
+        "program_counts": [
+          {
+            "program": "Climate Transitions",
+            "count": 2
+          },
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Political Economy",
+            "count": 3
+          }
+        ]
+      },
+      {
+        "label": "Foreign Investment",
+        "count": 3,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 3
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Foreign Investment",
+            "count": 3
+          }
+        ]
+      },
       {
         "label": "Green Economy",
         "count": 2,
@@ -966,36 +1824,95 @@
         ]
       },
       {
-        "label": "Political Economy",
+        "label": "Investment Sustainability",
         "count": 2,
         "top_program": "Climate Transitions",
         "program_counts": [
           {
             "program": "Climate Transitions",
-            "count": 2
-          }
-        ],
-        "variants": [
+            "count": 1
+          },
           {
-            "tag": "Political Economy",
-            "count": 2
-          }
-        ]
-      },
-      {
-        "label": "Investment Sustainability",
-        "count": 1,
-        "top_program": "Climate Transitions",
-        "program_counts": [
-          {
-            "program": "Climate Transitions",
+            "program": "Geopolitics & Geoeconomics",
             "count": 1
           }
         ],
         "variants": [
           {
             "tag": "Investment Sustainability",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Industrialization",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Industrialization",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Industrial Policy",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Industrial Policy",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Manufacturing",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 2
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Manufacturing",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "label": "Industrialisation",
+        "count": 2,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
             "count": 1
+          },
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Industrialisation",
+            "count": 2
           }
         ]
       },
@@ -1049,10 +1966,352 @@
             "count": 1
           }
         ]
+      },
+      {
+        "label": "Economic Diversification",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Economic Diversification",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Economy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Economy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Knowledge Economy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Knowledge Economy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Investment Agency",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Investment Agency",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Cement Industry",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Cement Industry",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Investment Promotion",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Investment Promotion",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Local Economy",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Local Economy",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Energy Investment",
+        "count": 1,
+        "top_program": "E&S",
+        "program_counts": [
+          {
+            "program": "E&S",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Energy Investment",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Value Addition",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Value Addition",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "label": "Foreign Direct Investment",
+        "count": 1,
+        "top_program": "Geopolitics & Geoeconomics",
+        "program_counts": [
+          {
+            "program": "Geopolitics & Geoeconomics",
+            "count": 1
+          }
+        ],
+        "variants": [
+          {
+            "tag": "Foreign Direct Investment",
+            "count": 1
+          }
+        ]
       }
     ]
   },
   "by_year": {
+    "2021": {
+      "Climate Change and Resilience": [],
+      "Climate Finance": [],
+      "Energy Transition and Energy Security": [],
+      "Critical Minerals and Green Value Chains": [],
+      "Trade and Regional Integration": [
+        {
+          "label": "Trade",
+          "count": 3,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 3
+            }
+          ]
+        }
+      ],
+      "Geopolitics and Strategic Partnerships": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 3,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Diplomacy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Diplomacy",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "Democracy, Elections and Governance": [
+        {
+          "label": "Governance",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Elections",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Elections",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Democracy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Democracy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Digital Transformation and AI Governance": [],
+      "Youth Employment and Entrepreneurship": [],
+      "Food Systems and Sustainable Agriculture": [],
+      "Migration, Health and Social Inclusion": [
+        {
+          "label": "Migration",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Migration",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Industrialisation and Economic Transformation": [
+        {
+          "label": "Foreign Investment",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Investment",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Economic Diversification",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economic Diversification",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
     "2022": {
       "Climate Change and Resilience": [
         {
@@ -1074,16 +2333,259 @@
         }
       ],
       "Climate Finance": [],
-      "Energy Transition and Energy Security": [],
+      "Energy Transition and Energy Security": [
+        {
+          "label": "Renewable Energy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Renewable Energy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Oil And Gas",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Oil And Gas",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "International Turmoil",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "International Turmoil",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "Critical Minerals and Green Value Chains": [],
       "Trade and Regional Integration": [],
-      "Geopolitics and Strategic Partnerships": [],
-      "Democracy, Elections and Governance": [],
-      "Digital Transformation and AI Governance": [],
+      "Geopolitics and Strategic Partnerships": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 4,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 4
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "Foreign Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "International Relations",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "International Relations",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Technology Diplomacy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Technology Diplomacy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Diplomacy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Diplomacy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Democracy, Elections and Governance": [
+        {
+          "label": "Elections",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Elections",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Democracy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Democracy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Governance",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "Digital Transformation and AI Governance": [
+        {
+          "label": "Digital Transformation",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Digital Transformation",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "Youth Employment and Entrepreneurship": [],
       "Food Systems and Sustainable Agriculture": [],
       "Migration, Health and Social Inclusion": [],
-      "Industrialisation and Economic Transformation": []
+      "Industrialisation and Economic Transformation": [
+        {
+          "label": "Foreign Investment",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Investment",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Industrialization",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Industrialization",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "2023": {
       "Climate Change and Resilience": [
@@ -1103,14 +2605,256 @@
               "count": 2
             }
           ]
+        },
+        {
+          "label": "Climate Change",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Change",
+              "count": 1
+            }
+          ]
         }
       ],
       "Climate Finance": [],
-      "Energy Transition and Energy Security": [],
+      "Energy Transition and Energy Security": [
+        {
+          "label": "Renewable Energy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Renewable Energy",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "Critical Minerals and Green Value Chains": [],
-      "Trade and Regional Integration": [],
-      "Geopolitics and Strategic Partnerships": [],
-      "Democracy, Elections and Governance": [],
+      "Trade and Regional Integration": [
+        {
+          "label": "Trade",
+          "count": 8,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 8
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 8
+            }
+          ]
+        },
+        {
+          "label": "Regional Integration",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Regional Integration",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Single Market",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Single Market",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics and Strategic Partnerships": [
+        {
+          "label": "Diplomacy",
+          "count": 6,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 6
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Diplomacy",
+              "count": 6
+            }
+          ]
+        },
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 4,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 4
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "International Relations",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "International Relations",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Foreign Policy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Policy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Feminist Foreign Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Feminist Foreign Policy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Democracy, Elections and Governance": [
+        {
+          "label": "Elections",
+          "count": 5,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 5
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Elections",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Governance",
+          "count": 5,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 5
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Democracy",
+          "count": 3,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Democracy",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Presidential Elections",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Presidential Elections",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "Digital Transformation and AI Governance": [],
       "Youth Employment and Entrepreneurship": [
         {
@@ -1148,19 +2892,611 @@
           ]
         }
       ],
-      "Food Systems and Sustainable Agriculture": [],
-      "Migration, Health and Social Inclusion": [],
-      "Industrialisation and Economic Transformation": []
+      "Food Systems and Sustainable Agriculture": [
+        {
+          "label": "Food Security",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Food Security",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Agriculture",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agriculture",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Fertilizer",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Fertilizer",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Migration, Health and Social Inclusion": [
+        {
+          "label": "Gender",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Gender",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Migration Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Migration Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Public Health",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Public Health",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Health Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Health Policy",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Industrialisation and Economic Transformation": [
+        {
+          "label": "Investment",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Investment",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Political Economy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Political Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Economy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Investment Agency",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Investment Agency",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Investment Promotion",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Investment Promotion",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Local Economy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Local Economy",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "2024": {
-      "Climate Change and Resilience": [],
-      "Climate Finance": [],
-      "Energy Transition and Energy Security": [],
-      "Critical Minerals and Green Value Chains": [],
-      "Trade and Regional Integration": [],
-      "Geopolitics and Strategic Partnerships": [],
-      "Democracy, Elections and Governance": [],
+      "Climate Change and Resilience": [
+        {
+          "label": "Copperbelt",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Copperbelt",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Climate Finance": [
+        {
+          "label": "Climate Finance",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Climate Finance",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Energy Transition and Energy Security": [
+        {
+          "label": "Renewable Energy",
+          "count": 3,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Renewable Energy",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Energy Transition",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Energy Transition",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Solar",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Solar",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Critical Minerals and Green Value Chains": [
+        {
+          "label": "Rare Earth Minerals",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Rare Earth Minerals",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Battery Mineral Value Chains",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Battery Mineral Value Chains",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Lithium",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Lithium",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Battery Industry",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Battery Industry",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Trade and Regional Integration": [
+        {
+          "label": "Trade",
+          "count": 5,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 5
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Trade",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Regional Integration",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Regional Integration",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Geopolitics and Strategic Partnerships": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 4,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            },
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "label": "Diplomacy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Diplomacy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Foreign Policy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Policy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Economic Diplomacy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economic Diplomacy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Foreign Influence",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Influence",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "Democracy, Elections and Governance": [
+        {
+          "label": "Governance",
+          "count": 5,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 5
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Elections",
+          "count": 3,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Elections",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Democracy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Democracy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Public Sector",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Public Sector",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "Digital Transformation and AI Governance": [
+        {
+          "label": "Digital Transformation",
+          "count": 3,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 3
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Digital Transformation",
+              "count": 3
+            }
+          ]
+        },
         {
           "label": "Cybersecurity",
           "count": 1,
@@ -1177,12 +3513,166 @@
               "count": 1
             }
           ]
+        },
+        {
+          "label": "Artificial Intelligence",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Artificial Intelligence",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Technology Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Technology Policy",
+              "count": 1
+            }
+          ]
         }
       ],
       "Youth Employment and Entrepreneurship": [],
       "Food Systems and Sustainable Agriculture": [],
       "Migration, Health and Social Inclusion": [],
-      "Industrialisation and Economic Transformation": []
+      "Industrialisation and Economic Transformation": [
+        {
+          "label": "Industrial Policy",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Industrial Policy",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Manufacturing",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Manufacturing",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Investment",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Investment",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Foreign Investment",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Investment",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Knowledge Economy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Knowledge Economy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Cement Industry",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Cement Industry",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Industrialization",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Industrialization",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "2025": {
       "Climate Change and Resilience": [
@@ -1236,23 +3726,78 @@
               "count": 1
             }
           ]
+        },
+        {
+          "label": "Economic Resilience",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Economic Resilience",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Transitional Climate Justice",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Transitional Climate Justice",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Pandemic Resilience",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Pandemic Resilience",
+              "count": 1
+            }
+          ]
         }
       ],
       "Climate Finance": [
         {
           "label": "Climate Finance",
-          "count": 8,
+          "count": 9,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
               "count": 8
+            },
+            {
+              "program": "E&S",
+              "count": 1
             }
           ],
           "variants": [
             {
               "tag": "Climate Finance",
-              "count": 8
+              "count": 9
             }
           ]
         }
@@ -1260,18 +3805,22 @@
       "Energy Transition and Energy Security": [
         {
           "label": "Energy Transition",
-          "count": 6,
+          "count": 7,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
               "count": 6
+            },
+            {
+              "program": "E&S",
+              "count": 1
             }
           ],
           "variants": [
             {
               "tag": "Energy Transition",
-              "count": 6
+              "count": 7
             }
           ]
         },
@@ -1293,6 +3842,40 @@
             {
               "tag": "Renewable Energy",
               "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Gas Reserves",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Gas Reserves",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Gas Infrastructure",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Gas Infrastructure",
+              "count": 1
             }
           ]
         },
@@ -1341,6 +3924,23 @@
           ]
         },
         {
+          "label": "Lobito Corridor",
+          "count": 2,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Lobito Corridor",
+              "count": 2
+            }
+          ]
+        },
+        {
           "label": "Sustainable Mining",
           "count": 1,
           "top_program": "Climate Transitions",
@@ -1358,23 +3958,6 @@
           ]
         },
         {
-          "label": "Lobito Corridor",
-          "count": 1,
-          "top_program": "Geopolitics & Geoeconomics",
-          "program_counts": [
-            {
-              "program": "Geopolitics & Geoeconomics",
-              "count": 1
-            }
-          ],
-          "variants": [
-            {
-              "tag": "Lobito Corridor",
-              "count": 1
-            }
-          ]
-        },
-        {
           "label": "Green Mineral Partnerships",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
@@ -1387,6 +3970,23 @@
           "variants": [
             {
               "tag": "Green Mineral Partnerships",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Mining",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Mining",
               "count": 1
             }
           ]
@@ -1416,6 +4016,23 @@
         },
         {
           "label": "Regional Integration",
+          "count": 2,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Regional Integration",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Ecowas And Au",
           "count": 1,
           "top_program": "Geopolitics & Geoeconomics",
           "program_counts": [
@@ -1426,13 +4043,34 @@
           ],
           "variants": [
             {
-              "tag": "Regional Integration",
+              "tag": "Ecowas And Au",
               "count": 1
             }
           ]
         }
       ],
       "Geopolitics and Strategic Partnerships": [
+        {
+          "label": "Geopolitics & Geoeconomics",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Geopolitics & Geoeconomics",
+              "count": 2
+            }
+          ]
+        },
         {
           "label": "Climate Diplomacy",
           "count": 2,
@@ -1451,19 +4089,19 @@
           ]
         },
         {
-          "label": "Geopolitics & Geoeconomics",
-          "count": 1,
-          "top_program": "Climate Transitions",
+          "label": "Diplomacy",
+          "count": 2,
+          "top_program": "E&S",
           "program_counts": [
             {
-              "program": "Climate Transitions",
-              "count": 1
+              "program": "E&S",
+              "count": 2
             }
           ],
           "variants": [
             {
-              "tag": "Geopolitics & Geoeconomics",
-              "count": 1
+              "tag": "Diplomacy",
+              "count": 2
             }
           ]
         },
@@ -1505,18 +4143,39 @@
       "Democracy, Elections and Governance": [
         {
           "label": "Governance",
-          "count": 3,
+          "count": 5,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
               "count": 3
+            },
+            {
+              "program": "E&S",
+              "count": 2
             }
           ],
           "variants": [
             {
               "tag": "Governance",
-              "count": 3
+              "count": 5
+            }
+          ]
+        },
+        {
+          "label": "Democracy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Democracy",
+              "count": 1
             }
           ]
         }
@@ -1577,6 +4236,27 @@
       ],
       "Food Systems and Sustainable Agriculture": [
         {
+          "label": "Agriculture",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agriculture",
+              "count": 2
+            }
+          ]
+        },
+        {
           "label": "Climate-smart Agriculture",
           "count": 1,
           "top_program": "Climate Transitions",
@@ -1626,28 +4306,155 @@
               "count": 1
             }
           ]
+        },
+        {
+          "label": "Agrifood Systems",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agrifood Systems",
+              "count": 1
+            }
+          ]
         }
       ],
       "Migration, Health and Social Inclusion": [
         {
           "label": "Gender",
-          "count": 1,
+          "count": 2,
           "top_program": "Africa's Climate Agenda",
           "program_counts": [
             {
               "program": "Africa's Climate Agenda",
+              "count": 1
+            },
+            {
+              "program": "Geopolitics & Geoeconomics",
               "count": 1
             }
           ],
           "variants": [
             {
               "tag": "Gender",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "Healthcare Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Healthcare Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Pandemic",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Pandemic",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Public Health",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Public Health",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Migration",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Migration",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Disability Inclusion",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Disability Inclusion",
               "count": 1
             }
           ]
         }
       ],
       "Industrialisation and Economic Transformation": [
+        {
+          "label": "Investment Sustainability",
+          "count": 2,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Investment Sustainability",
+              "count": 2
+            }
+          ]
+        },
         {
           "label": "Political Economy",
           "count": 2,
@@ -1678,23 +4485,6 @@
           "variants": [
             {
               "tag": "Green Economy",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "label": "Investment Sustainability",
-          "count": 1,
-          "top_program": "Climate Transitions",
-          "program_counts": [
-            {
-              "program": "Climate Transitions",
-              "count": 1
-            }
-          ],
-          "variants": [
-            {
-              "tag": "Investment Sustainability",
               "count": 1
             }
           ]
@@ -1732,11 +4522,79 @@
               "count": 1
             }
           ]
+        },
+        {
+          "label": "Industrialisation",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Industrialisation",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Energy Investment",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Energy Investment",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Foreign Direct Investment",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Foreign Direct Investment",
+              "count": 1
+            }
+          ]
         }
       ]
     },
     "2026": {
       "Climate Change and Resilience": [
+        {
+          "label": "Adaptation",
+          "count": 1,
+          "top_program": "Climate Transitions",
+          "program_counts": [
+            {
+              "program": "Climate Transitions",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Adaptation",
+              "count": 1
+            }
+          ]
+        },
         {
           "label": "Cop",
           "count": 1,
@@ -1794,18 +4652,39 @@
       "Energy Transition and Energy Security": [
         {
           "label": "Energy Transition",
-          "count": 2,
+          "count": 3,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
               "count": 2
+            },
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
             }
           ],
           "variants": [
             {
               "tag": "Energy Transition",
-              "count": 2
+              "count": 3
+            }
+          ]
+        },
+        {
+          "label": "Electricity Access",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Electricity Access",
+              "count": 1
             }
           ]
         }
@@ -1849,18 +4728,18 @@
       "Trade and Regional Integration": [
         {
           "label": "Trade",
-          "count": 1,
+          "count": 2,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
-              "count": 1
+              "count": 2
             }
           ],
           "variants": [
             {
               "tag": "Trade",
-              "count": 1
+              "count": 2
             }
           ]
         }
@@ -1868,17 +4747,55 @@
       "Geopolitics and Strategic Partnerships": [
         {
           "label": "Geopolitics & Geoeconomics",
-          "count": 1,
+          "count": 2,
           "top_program": "Climate Transitions",
           "program_counts": [
             {
               "program": "Climate Transitions",
+              "count": 1
+            },
+            {
+              "program": "E&S",
               "count": 1
             }
           ],
           "variants": [
             {
               "tag": "Geopolitics & Geoeconomics",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "label": "International Relations",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "International Relations",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Diplomacy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Diplomacy",
               "count": 1
             }
           ]
@@ -1901,10 +4818,62 @@
           ]
         }
       ],
-      "Democracy, Elections and Governance": [],
+      "Democracy, Elections and Governance": [
+        {
+          "label": "Governance",
+          "count": 2,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 2
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Governance",
+              "count": 2
+            }
+          ]
+        }
+      ],
       "Digital Transformation and AI Governance": [],
       "Youth Employment and Entrepreneurship": [],
       "Food Systems and Sustainable Agriculture": [
+        {
+          "label": "Agricultural Policy",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Agricultural Policy",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Food Security",
+          "count": 1,
+          "top_program": "E&S",
+          "program_counts": [
+            {
+              "program": "E&S",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Food Security",
+              "count": 1
+            }
+          ]
+        },
         {
           "label": "Agriculture Technology",
           "count": 1,
@@ -1955,6 +4924,40 @@
           "variants": [
             {
               "tag": "Economy Society",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Value Addition",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Value Addition",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "label": "Industrialisation",
+          "count": 1,
+          "top_program": "Geopolitics & Geoeconomics",
+          "program_counts": [
+            {
+              "program": "Geopolitics & Geoeconomics",
+              "count": 1
+            }
+          ],
+          "variants": [
+            {
+              "tag": "Industrialisation",
               "count": 1
             }
           ]
