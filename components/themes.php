@@ -85,6 +85,11 @@
               <p class="ta-map-guide-actions"><strong>Hover</strong> to preview connections. <strong>Click</strong> to keep them visible; click again to clear.</p>
             </div>
           </details>
+          <div class="ta-zoom-controls" aria-label="Map zoom controls">
+            <button id="taZoomInBtn" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+            <button id="taZoomOutBtn" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+            <button id="taResetZoomBtn" type="button" aria-label="Reset map view" title="Reset map view">↺</button>
+          </div>
           <svg id="clusterSvg" aria-label="Theme cluster animation"></svg>
           <div id="clusterTooltip" class="ta-tooltip hidden" role="tooltip"></div>
           <div id="emptyState" class="ta-empty hidden">No theme tags found for this year.</div>

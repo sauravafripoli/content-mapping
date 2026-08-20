@@ -44,6 +44,9 @@ const els = {
   clusterFilterSelect: document.getElementById('clusterFilterSelect'),
   programFilterSelect: document.getElementById('programFilterSelect'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
+  zoomInBtn: document.getElementById('taZoomInBtn'),
+  zoomOutBtn: document.getElementById('taZoomOutBtn'),
+  resetZoomBtn: document.getElementById('taResetZoomBtn'),
   linkDashboard: document.getElementById('taLinkDashboard'),
   linkTimeline: document.getElementById('taLinkTimeline')
 };
@@ -73,7 +76,9 @@ const state = {
   storyNotes: [],
   storyPreviousClusterFilter: 'all',
   programs: [],
-  programColorScale: null
+  programColorScale: null,
+  zoomBehavior: null,
+  zoomTransform: null
 };
 
 function setLinkHref(baseView, params = {}) {
@@ -206,6 +211,23 @@ function setupSvg() {
   const box = els.svg.getBoundingClientRect();
   state.width = box.width;
   state.height = box.height;
+}
+
+function zoomMapBy(factor) {
+  if (!state.zoomBehavior || !els.svg) return;
+  d3.select(els.svg)
+    .transition()
+    .duration(220)
+    .call(state.zoomBehavior.scaleBy, factor);
+}
+
+function resetMapZoom() {
+  if (!state.zoomBehavior || !els.svg) return;
+  state.zoomTransform = d3.zoomIdentity;
+  d3.select(els.svg)
+    .transition()
+    .duration(260)
+    .call(state.zoomBehavior.transform, d3.zoomIdentity);
 }
 
 function ensureProgramColorScale(nodes = []) {
@@ -361,23 +383,35 @@ function renderSelectedThemeAnchor(theme, nodes, clusters, year) {
   if (els.clearSelectionBtn) els.clearSelectionBtn.hidden = false;
 
   const themeNodes = nodes.filter((node) => node.cluster === theme.id);
+  const associatedNodes = nodes.filter((node) => node.relatedClusterIds.includes(theme.id));
   const mentions = d3.sum(themeNodes, (node) => node.count);
   const programmeCounts = d3.rollups(
     themeNodes.flatMap((node) => node.programCounts || []),
     (items) => d3.sum(items, (item) => item.count),
     (item) => item.program
   ).sort((a, b) => b[1] - a[1]);
-  const connectedIds = new Set(
-    themeNodes.flatMap((node) => node.relatedClusterIds || []).filter((id) => id !== theme.id)
-  );
-  const connectedThemes = clusters.filter((cluster) => connectedIds.has(cluster.id));
+  const overlapStats = new Map();
+  associatedNodes.forEach((node) => {
+    node.relatedClusterIds
+      .filter((id) => id !== theme.id)
+      .forEach((id) => {
+        const current = overlapStats.get(id) || { mentions: 0, tags: new Set() };
+        current.mentions += node.count;
+        current.tags.add(node.id);
+        overlapStats.set(id, current);
+      });
+  });
+  const connectedThemes = clusters
+    .filter((cluster) => overlapStats.has(cluster.id))
+    .map((cluster) => ({ ...cluster, ...overlapStats.get(cluster.id), tagCount: overlapStats.get(cluster.id).tags.size }))
+    .sort((a, b) => b.mentions - a.mentions || b.tagCount - a.tagCount);
 
   els.selectedThemeTitle.textContent = theme.lead;
   els.selectedThemeMeta.textContent = `${year} · ${mentions} mentions · ${themeNodes.length} tags · ${programmeCounts.length} programmes · Click the anchor again or use Clear selection.`;
 
   const overlaps = connectedThemes.length
-    ? `<li class="ta-selected-overlap"><strong>Connected themes:</strong> ${connectedThemes.map((cluster) => escapeHtml(cluster.lead)).join(' · ')}</li>`
-    : '<li class="ta-selected-overlap"><strong>Connected themes:</strong> None in the current year.</li>';
+    ? `<li class="ta-selected-overlap"><strong>Strongest overlaps</strong><ol class="ta-overlap-ranking">${connectedThemes.map((cluster) => `<li><span class="ta-overlap-theme"><span class="dot" style="background:${cluster.color}"></span>${escapeHtml(cluster.lead)}</span><span class="ta-overlap-count">${cluster.mentions} shared mentions · ${cluster.tagCount} ${cluster.tagCount === 1 ? 'tag' : 'tags'}</span></li>`).join('')}</ol></li>`
+    : '<li class="ta-selected-overlap"><strong>Strongest overlaps:</strong> None in the current year.</li>';
   const programmes = programmeCounts.length
     ? `<li><strong>Top programmes:</strong> ${programmeCounts.slice(0, 3).map(([program, count]) => `${escapeHtml(program)} (${count})`).join(' · ')}</li>`
     : '<li><strong>Top programmes:</strong> No programme data.</li>';
@@ -447,14 +481,14 @@ function stableAngle(value) {
   return (hash % 360) * (Math.PI / 180);
 }
 
-function getFilteredNodesForYear(year) {
+function getFilteredNodesForYear(year, options = {}) {
   const payload = state.dataByYear.get(year) || { nodes: [] };
   const { query, minMentions, clusterFilter, programFilter } = currentFilterState();
 
   return payload.nodes
     .filter((d) => d.count >= minMentions)
     .filter((d) => !query || d.tag.toLowerCase().includes(query) || d.theme.toLowerCase().includes(query))
-    .filter((d) => clusterFilter === 'all' || String(d.cluster) === clusterFilter)
+    .filter((d) => options.ignoreThemeFilter || clusterFilter === 'all' || String(d.cluster) === clusterFilter)
     .filter((d) => programFilter === 'all' || [d.topProgram, ...(d.programCounts || []).map((p) => p.program)].some((program) => String(program) === programFilter))
     .map((d) => ({ ...d }));
 }
@@ -878,6 +912,7 @@ function renderYear() {
   populateProgramFilterOptions(state.programs || []);
 
   const nodes = getFilteredNodesForYear(year);
+  const themeContextNodes = getFilteredNodesForYear(year, { ignoreThemeFilter: true });
 
   const visibleClusterIds = new Set(nodes.map((n) => n.cluster));
   const visibleClusters = (payload.clusters || []).filter((c) => visibleClusterIds.has(c.id));
@@ -893,7 +928,49 @@ function renderYear() {
   const svg = d3.select(els.svg);
   svg.selectAll('*').remove();
 
-  const g = svg.append('g');
+  const g = svg.append('g').attr('class', 'ta-zoom-layer');
+  function applySemanticZoom(transform) {
+    const k = Math.max(0.7, transform?.k || 1);
+    const sizeScale = Math.sqrt(k);
+    g.attr('transform', transform);
+
+    g.selectAll('circle.ta-node')
+      .attr('r', (node) => node.r / sizeScale)
+      .style('stroke-width', (node) => `${(node.id === state.selectedNodeId ? 2.6 : 1.2) / k}px`);
+    g.selectAll('circle.ta-program-ring')
+      .attr('r', (node) => (node.r / sizeScale) + (4 / k))
+      .attr('stroke-width', (node) => (node.id === state.selectedNodeId ? 4 : 2.8) / k);
+    g.selectAll('.ta-topic-anchor circle')
+      .attr('r', (cluster) => (cluster.renderRadius || 27) / sizeScale)
+      .style('stroke-width', `${2 / k}px`);
+    g.selectAll('.ta-topic-anchor.is-selected circle, .ta-topic-anchor.is-related circle')
+      .style('stroke-width', `${3 / k}px`);
+    g.selectAll('.ta-topic-anchor-value')
+      .style('font-size', `${14 / k}px`)
+      .style('stroke-width', `${3 / k}px`);
+    g.selectAll('.ta-topic-region-title')
+      .attr('y', (cluster) => ((cluster.renderRadius || 27) / sizeScale) + (17 / k))
+      .style('font-size', `${10 / k}px`)
+      .style('stroke-width', `${3 / k}px`)
+      .selectAll('tspan')
+      .attr('dy', (_, index) => index === 0 ? 0 : 13 / k);
+    g.selectAll('.ta-node-label')
+      .attr('font-size', (node) => (node.labelFontSize || 10) / k)
+      .attr('stroke-width', 3 / k);
+    g.selectAll('.ta-focus-link')
+      .style('stroke-width', (link) => `${(link.role === 'primary' ? 2.6 : 1.35) / k}px`)
+      .style('stroke-dasharray', (link) => link.role === 'related' ? `${5 / k} ${5 / k}` : null);
+  }
+
+  state.zoomBehavior = d3.zoom()
+    .scaleExtent([0.7, 4])
+    .on('zoom', (event) => {
+      state.zoomTransform = event.transform;
+      applySemanticZoom(event.transform);
+    });
+  svg.call(state.zoomBehavior).on('dblclick.zoom', null);
+  svg.call(state.zoomBehavior.transform, state.zoomTransform || d3.zoomIdentity);
+
   const centers = clusterCenters(payload.clusters || []);
   const filteredCountByCluster = d3.rollup(nodes, (items) => d3.sum(items, (item) => item.count), (item) => item.cluster);
   const anchorRadius = d3.scaleSqrt()
@@ -933,7 +1010,10 @@ function renderYear() {
     });
 
   topicGroups.append('circle')
-    .attr('r', (cluster) => anchorRadius(filteredCountByCluster.get(cluster.id) || 0))
+    .attr('r', (cluster) => {
+      cluster.renderRadius = anchorRadius(filteredCountByCluster.get(cluster.id) || 0);
+      return cluster.renderRadius;
+    })
     .attr('fill', (cluster) => cluster.color)
     .attr('stroke', (cluster) => cluster.color);
 
@@ -972,7 +1052,7 @@ function renderYear() {
     renderClusterSummary([]);
     const emptySelectedTheme = (payload.clusters || []).find((cluster) => cluster.id === state.selectedThemeId) || null;
     if (emptySelectedTheme) {
-      renderSelectedThemeAnchor(emptySelectedTheme, [], payload.clusters || [], year);
+      renderSelectedThemeAnchor(emptySelectedTheme, themeContextNodes, payload.clusters || [], year);
     } else {
       renderSelectedTheme(null, [], year);
     }
@@ -1023,6 +1103,8 @@ function renderYear() {
       .join('path')
       .attr('class', (item) => `ta-focus-link is-${item.role}`)
       .attr('data-strength', (item) => item.strength)
+      .style('stroke-width', (item) => `${(item.role === 'primary' ? 2.6 : 1.35) / (state.zoomTransform?.k || 1)}px`)
+      .style('stroke-dasharray', (item) => item.role === 'related' ? `${5 / (state.zoomTransform?.k || 1)} ${5 / (state.zoomTransform?.k || 1)}` : null)
       .attr('d', (item) => focusPath(node, item.point));
   }
 
@@ -1118,7 +1200,10 @@ function renderYear() {
     .attr('class', 'ta-node-label')
     .text((d) => d.tag)
     .attr('text-anchor', 'middle')
-    .attr('font-size', (d) => Math.max(10, Math.min(14, d.r * 0.32)))
+    .attr('font-size', (d) => {
+      d.labelFontSize = Math.max(10, Math.min(14, d.r * 0.32));
+      return d.labelFontSize;
+    })
     .attr('font-weight', 700)
     .attr('fill', '#111827')
     .attr('paint-order', 'stroke')
@@ -1143,7 +1228,7 @@ function renderYear() {
 
       circleSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
       ringSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
-      textSel.attr('x', (d) => d.x).attr('y', (d) => d.y + 3);
+      textSel.attr('x', (d) => d.x).attr('y', (d) => d.y + (3 / (state.zoomTransform?.k || 1)));
     });
 
   renderTopThemes(nodes);
@@ -1156,7 +1241,7 @@ function renderYear() {
   }
   const selectedTheme = (payload.clusters || []).find((cluster) => cluster.id === state.selectedThemeId) || null;
   if (selectedTheme) {
-    renderSelectedThemeAnchor(selectedTheme, nodes, payload.clusters || [], year);
+    renderSelectedThemeAnchor(selectedTheme, themeContextNodes, payload.clusters || [], year);
   } else {
     renderSelectedTheme(selectedNode, nodes, year);
   }
@@ -1175,6 +1260,7 @@ function renderYear() {
     .attr('stroke-opacity', (d) => (d.id === state.selectedNodeId ? 1 : 0.95));
 
   restorePinnedFocus();
+  applySemanticZoom(state.zoomTransform || d3.zoomIdentity);
 
   if (state.focusSelectedOnRender && state.selectedNodeId) {
     const selectedEl = circleSel.filter((d) => d.id === state.selectedNodeId).node();
@@ -1395,6 +1481,16 @@ function bindEvents() {
     stopStoryMode();
     renderYear();
   });
+
+  if (els.zoomInBtn) {
+    els.zoomInBtn.addEventListener('click', () => zoomMapBy(1.3));
+  }
+  if (els.zoomOutBtn) {
+    els.zoomOutBtn.addEventListener('click', () => zoomMapBy(1 / 1.3));
+  }
+  if (els.resetZoomBtn) {
+    els.resetZoomBtn.addEventListener('click', resetMapZoom);
+  }
 
   if (els.clearSelectionBtn) {
     els.clearSelectionBtn.addEventListener('click', () => {
