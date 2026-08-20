@@ -408,6 +408,85 @@
   width: 100%;
   height: 640px;
   display: block;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(248, 250, 252, 0) 0%, rgba(241, 245, 249, 0.58) 100%);
+}
+
+.ta-topic-anchor {
+  cursor: pointer;
+  transition: opacity 180ms ease;
+}
+
+.ta-topic-anchor circle {
+  fill-opacity: 0.18;
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+  transition: fill-opacity 180ms ease, stroke-opacity 180ms ease, transform 180ms ease;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.ta-topic-anchor.has-content circle {
+  fill-opacity: 0.28;
+}
+
+.ta-topic-anchor.is-related circle,
+.ta-topic-anchor:hover circle,
+.ta-topic-anchor:focus circle {
+  fill-opacity: 0.48;
+  stroke-opacity: 1;
+  stroke-width: 3;
+  transform: scale(1.08);
+}
+
+.ta-topic-anchor.is-muted {
+  opacity: 0.22;
+}
+
+.ta-topic-region-title,
+.ta-topic-region-count {
+  text-anchor: middle;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.94);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.ta-topic-region-title {
+  fill: #1f2937;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ta-topic-anchor-value {
+  fill: #111827;
+  text-anchor: middle;
+  font-size: 14px;
+  font-weight: 900;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 3px;
+}
+
+.ta-topic-anchor.is-empty {
+  opacity: 0.55;
+}
+
+.ta-focus-link {
+  fill: none;
+  stroke: #475569;
+  stroke-width: 1.5;
+  stroke-opacity: 0.58;
+  stroke-dasharray: 4 4;
+  pointer-events: none;
+}
+
+.ta-tooltip-overlap {
+  color: #fde68a;
+  font-weight: 700;
 }
 
 .ta-empty {

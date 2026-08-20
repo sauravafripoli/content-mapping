@@ -1,6 +1,6 @@
 const CLUSTER_URL = new URL('../../data/theme_clusters.json', import.meta.url).href;
 
-const palette = ['#60a5fa', '#f59e0b', '#34d399', '#c084fc', '#f472b6', '#22d3ee', '#fb7185', '#4ade80', '#f97316', '#a78bfa'];
+const palette = ['#60a5fa', '#f59e0b', '#34d399', '#c084fc', '#f472b6', '#22d3ee', '#fb7185', '#4ade80', '#f97316', '#a78bfa', '#14b8a6', '#eab308'];
 
 const els = {
   svg: document.getElementById('clusterSvg'),
@@ -264,7 +264,10 @@ function showTooltip(event, node) {
     .join(' · ');
   const programLine = topPrograms || escapeHtml(node.topProgram || 'Unknown Programme');
 
-  els.tooltip.innerHTML = `<strong>${escapeHtml(node.tag)}</strong><br>${escapeHtml(node.theme)} · ${escapeHtml(node.category || 'Cross-cutting')}<br>${node.count} mentions<br><span class="ta-tooltip-program">Programme: ${programLine}</span>`;
+  const overlapLine = (node.relatedTopics || []).length > 1
+    ? `<br><span class="ta-tooltip-overlap">Overlap: ${node.relatedTopics.map(escapeHtml).join(' ↔ ')}</span>`
+    : '';
+  els.tooltip.innerHTML = `<strong>${escapeHtml(node.tag)}</strong><br>${escapeHtml(node.theme)} · ${escapeHtml(node.category || 'Cross-cutting')}<br>${node.count} mentions${overlapLine}<br><span class="ta-tooltip-program">Programme: ${programLine}</span>`;
   els.tooltip.classList.remove('hidden');
 
   const cardBox = els.svg.parentElement?.getBoundingClientRect();
@@ -306,22 +309,89 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
     .join('') || '<li>No related themes in current filters.</li>';
 }
 
-function clusterCenters(nodes) {
-  const clusterIds = [...new Set(nodes.map((n) => n.cluster))];
-  const radius = Math.min(state.width, state.height) * 0.26;
-  const centerX = state.width / 2;
-  const centerY = state.height / 2;
+const TOPIC_LAYOUT = {
+  'Climate Change and Resilience': [0.18, 0.17],
+  'Climate Finance': [0.40, 0.11],
+  'Energy Transition and Energy Security': [0.63, 0.15],
+  'Critical Minerals and Green Value Chains': [0.83, 0.25],
+  'Trade and Regional Integration': [0.89, 0.48],
+  'Geopolitics and Strategic Partnerships': [0.82, 0.72],
+  'Democracy, Elections and Governance': [0.64, 0.85],
+  'Digital Transformation and AI Governance': [0.42, 0.88],
+  'Youth Employment and Entrepreneurship': [0.22, 0.80],
+  'Migration, Health and Social Inclusion': [0.10, 0.59],
+  'Food Systems and Sustainable Agriculture': [0.12, 0.36],
+  'Industrialisation and Economic Transformation': [0.53, 0.51]
+};
+
+const OVERLAP_RULES = [
+  [/climate-smart|food security|agricultur/, ['Climate Change and Resilience', 'Food Systems and Sustainable Agriculture']],
+  [/climate financ|green financ/, ['Climate Change and Resilience', 'Climate Finance']],
+  [/energy transition|renewable energy|clean energy|emobility|e-mobility/, ['Climate Change and Resilience', 'Energy Transition and Energy Security']],
+  [/critical mineral|green mineral|lithium|mining|lobito/, ['Critical Minerals and Green Value Chains', 'Industrialisation and Economic Transformation']],
+  [/green industrial|low-carbon economy|green economy/, ['Energy Transition and Energy Security', 'Industrialisation and Economic Transformation']],
+  [/climate diplomacy/, ['Climate Change and Resilience', 'Geopolitics and Strategic Partnerships']],
+  [/youth|employment|entrepreneur|startup|green job/, ['Youth Employment and Entrepreneurship', 'Industrialisation and Economic Transformation']],
+  [/cyber|artificial intelligence|\bai\b|digital/, ['Digital Transformation and AI Governance', 'Democracy, Elections and Governance']],
+  [/gender|migration|health|inclusion/, ['Migration, Health and Social Inclusion', 'Democracy, Elections and Governance']],
+  [/trade|regional integration|afcfta/, ['Trade and Regional Integration', 'Industrialisation and Economic Transformation']]
+];
+
+function clusterCenters(clusters) {
   const map = new Map();
 
-  clusterIds.forEach((id, i) => {
-    const angle = (i / Math.max(1, clusterIds.length)) * Math.PI * 2;
-    map.set(id, {
-      x: centerX + Math.cos(angle) * radius,
-      y: centerY + Math.sin(angle) * radius * 0.72
-    });
+  clusters.forEach((cluster, index) => {
+    const fallback = [0.13 + (index % 4) * 0.247, 0.19 + Math.floor(index / 4) * 0.31];
+    const [xRatio, yRatio] = TOPIC_LAYOUT[cluster.lead] || fallback;
+    map.set(cluster.id, { x: state.width * xRatio, y: state.height * yRatio });
   });
 
   return map;
+}
+
+function relatedClusterIds(node, clusters) {
+  const idsByName = new Map(clusters.map((cluster) => [cluster.lead, cluster.id]));
+  const names = new Set([node.theme]);
+  const searchable = `${node.tag} ${node.theme}`.toLowerCase();
+
+  OVERLAP_RULES.forEach(([pattern, topics]) => {
+    if (pattern.test(searchable)) topics.forEach((topic) => names.add(topic));
+  });
+
+  return [...names].map((name) => idsByName.get(name)).filter(Number.isInteger);
+}
+
+function nodeTarget(node, centers, clusters) {
+  const relatedIds = relatedClusterIds(node, clusters);
+  const primary = centers.get(node.cluster) || { x: state.width / 2, y: state.height / 2 };
+  const secondary = relatedIds.filter((id) => id !== node.cluster).map((id) => centers.get(id)).filter(Boolean);
+  if (!secondary.length) {
+    const angle = stableAngle(node.id);
+    const orbit = 54;
+    return {
+      x: primary.x + Math.cos(angle) * orbit,
+      y: primary.y + Math.sin(angle) * orbit
+    };
+  }
+
+  const secondaryWeight = secondary.length > 1 ? 0.18 : 0.32;
+  const primaryWeight = 1 - (secondaryWeight * secondary.length);
+  return {
+    x: (primary.x * primaryWeight) + secondary.reduce((sum, point) => sum + point.x * secondaryWeight, 0),
+    y: (primary.y * primaryWeight) + secondary.reduce((sum, point) => sum + point.y * secondaryWeight, 0)
+  };
+}
+
+function stableOffset(value, axis) {
+  let hash = axis === 'x' ? 17 : 31;
+  for (const char of String(value)) hash = ((hash * 33) ^ char.charCodeAt(0)) >>> 0;
+  return ((hash % 1000) / 1000 - 0.5) * 24;
+}
+
+function stableAngle(value) {
+  let hash = 23;
+  for (const char of String(value)) hash = ((hash * 37) ^ char.charCodeAt(0)) >>> 0;
+  return (hash % 360) * (Math.PI / 180);
 }
 
 function getFilteredNodesForYear(year) {
@@ -759,7 +829,6 @@ function renderYear() {
   const visibleClusterIds = new Set(nodes.map((n) => n.cluster));
   const visibleClusters = (payload.clusters || []).filter((c) => visibleClusterIds.has(c.id));
   state.visibleNodeIds = nodes.map((n) => n.id);
-  const links = [];
 
   if (els.themeCountChip) {
     els.themeCountChip.textContent = `Visible themes: ${nodes.length}`;
@@ -771,6 +840,70 @@ function renderYear() {
   const svg = d3.select(els.svg);
   svg.selectAll('*').remove();
 
+  const g = svg.append('g');
+  const centers = clusterCenters(payload.clusters || []);
+  const filteredCountByCluster = d3.rollup(nodes, (items) => d3.sum(items, (item) => item.count), (item) => item.cluster);
+  const anchorRadius = d3.scaleSqrt()
+    .domain([0, d3.max(payload.clusters || [], (cluster) => filteredCountByCluster.get(cluster.id) || 0) || 1])
+    .range([27, 43]);
+
+  const topicLayer = g.append('g').attr('class', 'ta-topic-anchors');
+  const topicGroups = topicLayer.selectAll('g.ta-topic-region')
+    .data(payload.clusters || [], (cluster) => cluster.id)
+    .join('g')
+    .attr('class', (cluster) => `ta-topic-region ta-topic-anchor${visibleClusterIds.has(cluster.id) ? ' has-content' : ' is-empty'}`)
+    .attr('transform', (cluster) => {
+      const center = centers.get(cluster.id) || { x: state.width / 2, y: state.height / 2 };
+      return `translate(${center.x},${center.y})`;
+    })
+    .attr('role', 'button')
+    .attr('tabindex', 0)
+    .on('click', (_, cluster) => {
+      els.clusterFilterSelect.value = String(cluster.id);
+      renderYear();
+    })
+    .on('keydown', (event, cluster) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      els.clusterFilterSelect.value = String(cluster.id);
+      renderYear();
+    });
+
+  topicGroups.append('circle')
+    .attr('r', (cluster) => anchorRadius(filteredCountByCluster.get(cluster.id) || 0))
+    .attr('fill', (cluster) => cluster.color)
+    .attr('stroke', (cluster) => cluster.color);
+
+  topicGroups.append('text')
+    .attr('class', 'ta-topic-anchor-value')
+    .attr('y', 4)
+    .text((cluster) => filteredCountByCluster.get(cluster.id) || 0);
+
+  topicGroups.append('text')
+    .attr('class', 'ta-topic-region-title')
+    .attr('y', (cluster) => anchorRadius(filteredCountByCluster.get(cluster.id) || 0) + 17)
+    .each(function renderTopicName(cluster) {
+      const words = cluster.lead.split(/\s+/);
+      const lines = [];
+      let line = '';
+      words.forEach((word) => {
+        const candidate = line ? `${line} ${word}` : word;
+        if (candidate.length > 27 && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = candidate;
+        }
+      });
+      if (line) lines.push(line);
+      d3.select(this).selectAll('tspan')
+        .data(lines.slice(0, 2))
+        .join('tspan')
+        .attr('x', 0)
+        .attr('dy', (_, index) => index === 0 ? 0 : 13)
+        .text((label) => label);
+    });
+
   if (!nodes.length) {
     renderTopThemes([]);
     renderClusterSummary([]);
@@ -780,28 +913,51 @@ function renderYear() {
     return;
   }
 
-  const g = svg.append('g');
-  const centers = clusterCenters(nodes);
-
   const rScale = d3.scaleSqrt()
     .domain([1, d3.max(nodes, (d) => d.count) || 1])
-    .range([8, 48]);
+    .range([7, 31]);
 
   nodes.forEach((n) => {
-    const c = centers.get(n.cluster) || { x: state.width / 2, y: state.height / 2 };
-    n.x = c.x + (Math.random() - 0.5) * 30;
-    n.y = c.y + (Math.random() - 0.5) * 30;
+    const target = nodeTarget(n, centers, payload.clusters || []);
+    n.targetX = target.x;
+    n.targetY = target.y;
+    n.x = target.x + stableOffset(n.id, 'x');
+    n.y = target.y + stableOffset(n.id, 'y');
     n.r = rScale(n.count);
+    n.relatedClusterIds = relatedClusterIds(n, payload.clusters || []);
+    n.relatedTopics = n.relatedClusterIds
+      .map((id) => (payload.clusters || []).find((cluster) => cluster.id === id)?.lead)
+      .filter(Boolean);
   });
 
   ensureProgramColorScale(nodes);
 
-  const linkSel = g.selectAll('line')
-    .data(links)
-    .join('line')
-    .attr('stroke', '#cbd5e1')
-    .attr('stroke-opacity', (d) => Math.min(0.45, 0.08 + d.weight * 0.04))
-    .attr('stroke-width', (d) => Math.min(2.2, 0.6 + d.weight * 0.25));
+  const focusLinkLayer = g.append('g').attr('class', 'ta-focus-links');
+  let activeFocusNode = null;
+
+  function focusPath(node, target) {
+    const midX = (node.x + target.x) / 2;
+    const midY = (node.y + target.y) / 2;
+    const dx = target.x - node.x;
+    const dy = target.y - node.y;
+    const bend = Math.min(24, Math.hypot(dx, dy) * 0.08);
+    const length = Math.hypot(dx, dy) || 1;
+    const controlX = midX - (dy / length) * bend;
+    const controlY = midY + (dx / length) * bend;
+    return `M${node.x},${node.y} Q${controlX},${controlY} ${target.x},${target.y}`;
+  }
+
+  function renderFocusLinks(node) {
+    activeFocusNode = node || null;
+    const targets = node
+      ? node.relatedClusterIds.map((id) => ({ id, point: centers.get(id) })).filter((item) => item.point)
+      : [];
+    focusLinkLayer.selectAll('path')
+      .data(targets, (item) => item.id)
+      .join('path')
+      .attr('class', 'ta-focus-link')
+      .attr('d', (item) => focusPath(node, item.point));
+  }
 
   const ringSel = g.selectAll('circle.ta-program-ring')
     .data(nodes, (d) => d.id)
@@ -813,6 +969,11 @@ function renderYear() {
     .attr('stroke-width', 2.8)
     .attr('stroke-opacity', 0.95)
     .attr('pointer-events', 'none');
+
+  const labelledNodeIds = new Set(
+    d3.groups(nodes, (node) => node.cluster)
+      .flatMap(([, clusterNodes]) => clusterNodes.sort((a, b) => b.count - a.count).slice(0, 2).map((node) => node.id))
+  );
 
   const circleSel = g.selectAll('circle.ta-node')
     .data(nodes, (d) => d.id)
@@ -826,9 +987,20 @@ function renderYear() {
     .attr('tabindex', 0)
     .attr('role', 'button')
     .attr('aria-label', (d) => `${d.tag}, ${d.theme}, ${d.category || 'Cross-cutting'}, ${d.count} mentions, programme ${d.topProgram || 'Unknown Programme'}`)
-    .on('mouseenter', (event, d) => showTooltip(event, d))
+    .on('mouseenter', (event, d) => {
+      showTooltip(event, d);
+      textSel.attr('opacity', (node) => labelledNodeIds.has(node.id) || node.id === d.id ? 1 : 0);
+      topicGroups.classed('is-related', (cluster) => d.relatedClusterIds.includes(cluster.id));
+      topicGroups.classed('is-muted', (cluster) => !d.relatedClusterIds.includes(cluster.id));
+      renderFocusLinks(d);
+    })
     .on('mousemove', (event, d) => showTooltip(event, d))
-    .on('mouseleave', hideTooltip)
+    .on('mouseleave', () => {
+      hideTooltip();
+      textSel.attr('opacity', (node) => labelledNodeIds.has(node.id) || node.id === state.selectedNodeId ? 1 : 0);
+      topicGroups.classed('is-related', false).classed('is-muted', false);
+      renderFocusLinks(null);
+    })
     .on('keydown', (event, d) => {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
@@ -842,9 +1014,10 @@ function renderYear() {
       renderYear();
     });
 
-  const textSel = g.selectAll('text')
+  const textSel = g.selectAll('text.ta-node-label')
     .data(nodes, (d) => d.id)
     .join('text')
+    .attr('class', 'ta-node-label')
     .text((d) => d.tag)
     .attr('text-anchor', 'middle')
     .attr('font-size', (d) => Math.max(10, Math.min(14, d.r * 0.32)))
@@ -853,6 +1026,7 @@ function renderYear() {
     .attr('paint-order', 'stroke')
     .attr('stroke', '#fff')
     .attr('stroke-width', 3)
+    .attr('opacity', (d) => labelledNodeIds.has(d.id) || d.id === state.selectedNodeId ? 1 : 0)
     .attr('pointer-events', 'none');
 
   if (state.simulation) {
@@ -860,18 +1034,14 @@ function renderYear() {
   }
 
   state.simulation = d3.forceSimulation(nodes)
-    .force('x', d3.forceX((d) => (centers.get(d.cluster) || { x: state.width / 2 }).x).strength(0.12))
-    .force('y', d3.forceY((d) => (centers.get(d.cluster) || { y: state.height / 2 }).y).strength(0.12))
-    .force('charge', d3.forceManyBody().strength(-35))
-    .force('collide', d3.forceCollide((d) => d.r + 2).strength(0.9))
+    .force('x', d3.forceX((d) => d.targetX).strength(0.3))
+    .force('y', d3.forceY((d) => d.targetY).strength(0.3))
+    .force('charge', d3.forceManyBody().strength(-18))
+    .force('collide', d3.forceCollide((d) => d.r + 3).strength(0.95))
     .alpha(0.95)
     .alphaDecay(0.035)
     .on('tick', () => {
-      linkSel
-        .attr('x1', (d) => d.source.x)
-        .attr('y1', (d) => d.source.y)
-        .attr('x2', (d) => d.target.x)
-        .attr('y2', (d) => d.target.y);
+      if (activeFocusNode) renderFocusLinks(activeFocusNode);
 
       circleSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
       ringSel.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
