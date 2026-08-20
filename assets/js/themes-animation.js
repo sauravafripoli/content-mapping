@@ -55,6 +55,7 @@ const state = {
   width: 0,
   height: 0,
   selectedNodeId: null,
+  pinnedNodeId: null,
   visibleNodeIds: [],
   focusSelectedOnRender: false,
   pendingYearFromUrl: null,
@@ -304,9 +305,15 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 8);
 
-  els.selectedThemeRelated.innerHTML = related
+  const connectedTopics = (selectedNode.relatedTopics || []).filter((topic) => topic !== selectedNode.theme);
+  const overlapMarkup = connectedTopics.length
+    ? `<li class="ta-selected-overlap"><strong>Overlaps with:</strong> ${connectedTopics.map(escapeHtml).join(' · ')}</li>`
+    : '<li class="ta-selected-overlap"><strong>Overlap:</strong> Primary topic only</li>';
+
+  const relatedMarkup = related
     .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count}) <span style="color:#6b7280">· ${escapeHtml(n.topProgram || 'Unknown Programme')}</span></li>`)
     .join('') || '<li>No related themes in current filters.</li>';
+  els.selectedThemeRelated.innerHTML = overlapMarkup + relatedMarkup;
 }
 
 const TOPIC_LAYOUT = {
@@ -959,6 +966,20 @@ function renderYear() {
       .attr('d', (item) => focusPath(node, item.point));
   }
 
+  function applyNodeFocus(node) {
+    textSel.attr('opacity', (item) => labelledNodeIds.has(item.id) || item.id === node?.id || item.id === state.selectedNodeId ? 1 : 0);
+    topicGroups.classed('is-related', (cluster) => Boolean(node?.relatedClusterIds.includes(cluster.id)));
+    topicGroups.classed('is-muted', (cluster) => Boolean(node && !node.relatedClusterIds.includes(cluster.id)));
+    circleSel.classed('is-pinned', (item) => item.id === state.pinnedNodeId);
+    renderFocusLinks(node);
+  }
+
+  function restorePinnedFocus() {
+    const pinnedNode = nodes.find((item) => item.id === state.pinnedNodeId) || null;
+    if (!pinnedNode && state.pinnedNodeId) state.pinnedNodeId = null;
+    applyNodeFocus(pinnedNode);
+  }
+
   const ringSel = g.selectAll('circle.ta-program-ring')
     .data(nodes, (d) => d.id)
     .join('circle')
@@ -989,17 +1010,12 @@ function renderYear() {
     .attr('aria-label', (d) => `${d.tag}, ${d.theme}, ${d.category || 'Cross-cutting'}, ${d.count} mentions, programme ${d.topProgram || 'Unknown Programme'}`)
     .on('mouseenter', (event, d) => {
       showTooltip(event, d);
-      textSel.attr('opacity', (node) => labelledNodeIds.has(node.id) || node.id === d.id ? 1 : 0);
-      topicGroups.classed('is-related', (cluster) => d.relatedClusterIds.includes(cluster.id));
-      topicGroups.classed('is-muted', (cluster) => !d.relatedClusterIds.includes(cluster.id));
-      renderFocusLinks(d);
+      applyNodeFocus(d);
     })
     .on('mousemove', (event, d) => showTooltip(event, d))
     .on('mouseleave', () => {
       hideTooltip();
-      textSel.attr('opacity', (node) => labelledNodeIds.has(node.id) || node.id === state.selectedNodeId ? 1 : 0);
-      topicGroups.classed('is-related', false).classed('is-muted', false);
-      renderFocusLinks(null);
+      restorePinnedFocus();
     })
     .on('keydown', (event, d) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -1010,8 +1026,18 @@ function renderYear() {
       }
     })
     .on('click', (_, d) => {
-      state.selectedNodeId = d.id;
-      renderYear();
+      const isUnselecting = state.pinnedNodeId === d.id;
+      state.pinnedNodeId = isUnselecting ? null : d.id;
+      state.selectedNodeId = isUnselecting ? null : d.id;
+      renderSelectedTheme(isUnselecting ? null : d, nodes, year);
+      circleSel
+        .attr('stroke-width', (node) => (node.id === state.selectedNodeId ? 2.6 : 1.2))
+        .attr('stroke', (node) => (node.id === state.selectedNodeId ? '#111827' : '#fff'));
+      ringSel
+        .attr('stroke-width', (node) => (node.id === state.selectedNodeId ? 4 : 2.8))
+        .attr('stroke-opacity', (node) => (node.id === state.selectedNodeId ? 1 : 0.95));
+      restorePinnedFocus();
+      updateCrossViewLinks();
     });
 
   const textSel = g.selectAll('text.ta-node-label')
@@ -1069,6 +1095,8 @@ function renderYear() {
   ringSel
     .attr('stroke-width', (d) => (d.id === state.selectedNodeId ? 4 : 2.8))
     .attr('stroke-opacity', (d) => (d.id === state.selectedNodeId ? 1 : 0.95));
+
+  restorePinnedFocus();
 
   if (state.focusSelectedOnRender && state.selectedNodeId) {
     const selectedEl = circleSel.filter((d) => d.id === state.selectedNodeId).node();

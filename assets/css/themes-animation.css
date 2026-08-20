@@ -484,6 +484,15 @@
   pointer-events: none;
 }
 
+.ta-node.is-pinned {
+  filter: drop-shadow(0 0 5px rgba(17, 24, 39, 0.55));
+}
+
+.ta-selected-overlap {
+  margin-bottom: 7px;
+  color: #334155;
+}
+
 .ta-tooltip-overlap {
   color: #fde68a;
   font-weight: 700;
