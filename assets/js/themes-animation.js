@@ -866,13 +866,15 @@ function renderYear() {
     .attr('role', 'button')
     .attr('tabindex', 0)
     .on('click', (_, cluster) => {
-      els.clusterFilterSelect.value = String(cluster.id);
+      const clusterId = String(cluster.id);
+      els.clusterFilterSelect.value = els.clusterFilterSelect.value === clusterId ? 'all' : clusterId;
       renderYear();
     })
     .on('keydown', (event, cluster) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
-      els.clusterFilterSelect.value = String(cluster.id);
+      const clusterId = String(cluster.id);
+      els.clusterFilterSelect.value = els.clusterFilterSelect.value === clusterId ? 'all' : clusterId;
       renderYear();
     });
 

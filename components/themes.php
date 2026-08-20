@@ -63,6 +63,28 @@
 
       <div class="ta-grid">
         <section class="ta-chart-card">
+          <details class="ta-map-guide">
+            <summary>How to read this map</summary>
+            <div class="ta-map-guide-panel">
+              <div class="ta-map-guide-item">
+                <span class="ta-guide-symbol ta-guide-anchor" aria-hidden="true">12</span>
+                <span><strong>Topic anchor</strong> — one of the 12 controlled topics; the number shows mentions.</span>
+              </div>
+              <div class="ta-map-guide-item">
+                <span class="ta-guide-symbol ta-guide-bubble" aria-hidden="true"></span>
+                <span><strong>Theme bubble</strong> — size reflects how often the tag is mentioned.</span>
+              </div>
+              <div class="ta-map-guide-item">
+                <span class="ta-guide-symbol ta-guide-ring" aria-hidden="true"></span>
+                <span><strong>Outer ring</strong> — color identifies the leading APRI programme.</span>
+              </div>
+              <div class="ta-map-guide-item">
+                <span class="ta-guide-symbol ta-guide-overlap" aria-hidden="true"></span>
+                <span><strong>Overlap</strong> — bubbles between anchors connect to more than one topic.</span>
+              </div>
+              <p class="ta-map-guide-actions"><strong>Hover</strong> to preview connections. <strong>Click</strong> to keep them visible; click again to clear.</p>
+            </div>
+          </details>
           <svg id="clusterSvg" aria-label="Theme cluster animation"></svg>
           <div id="clusterTooltip" class="ta-tooltip hidden" role="tooltip"></div>
           <div id="emptyState" class="ta-empty hidden">No theme tags found for this year.</div>
