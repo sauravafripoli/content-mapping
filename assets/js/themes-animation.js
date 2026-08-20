@@ -270,8 +270,11 @@ function showTooltip(event, node) {
     .join(' · ');
   const programLine = topPrograms || escapeHtml(node.topProgram || 'Unknown Programme');
 
-  const overlapLine = (node.relatedTopics || []).length > 1
-    ? `<br><span class="ta-tooltip-overlap">Overlap: ${node.relatedTopics.map(escapeHtml).join(' ↔ ')}</span>`
+  const topicLinks = (node.topicAssignments || [])
+    .map((assignment) => `${assignment.role === 'primary' ? 'Primary' : 'Related'}: ${escapeHtml(assignment.topic)}`)
+    .join('<br>');
+  const overlapLine = topicLinks
+    ? `<br><span class="ta-tooltip-overlap">${topicLinks}</span>`
     : '';
   els.tooltip.innerHTML = `<strong>${escapeHtml(node.tag)}</strong><br>${escapeHtml(node.theme)} · ${escapeHtml(node.category || 'Cross-cutting')}<br>${node.count} mentions${overlapLine}<br><span class="ta-tooltip-program">Programme: ${programLine}</span>`;
   els.tooltip.classList.remove('hidden');
@@ -315,10 +318,10 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 8);
 
-  const connectedTopics = (selectedNode.relatedTopics || []).filter((topic) => topic !== selectedNode.theme);
+  const connectedTopics = (selectedNode.topicAssignments || []).filter((assignment) => assignment.role === 'related');
   const overlapMarkup = connectedTopics.length
-    ? `<li class="ta-selected-overlap"><strong>Overlaps with:</strong> ${connectedTopics.map(escapeHtml).join(' · ')}</li>`
-    : '<li class="ta-selected-overlap"><strong>Overlap:</strong> Primary topic only</li>';
+    ? `<li class="ta-selected-overlap"><strong>Related themes:</strong> ${connectedTopics.map((assignment) => escapeHtml(assignment.topic)).join(' · ')}</li>`
+    : '<li class="ta-selected-overlap"><strong>Overlap:</strong> Primary theme only</li>';
 
   const relatedMarkup = related
     .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count}) <span style="color:#6b7280">· ${escapeHtml(n.topProgram || 'Unknown Programme')}</span></li>`)
@@ -998,6 +1001,18 @@ function renderYear() {
     n.relatedTopics = n.relatedClusterIds
       .map((id) => (payload.clusters || []).find((cluster) => cluster.id === id)?.lead)
       .filter(Boolean);
+    n.topicAssignments = n.relatedClusterIds
+      .map((id) => {
+        const topic = (payload.clusters || []).find((cluster) => cluster.id === id)?.lead;
+        if (!topic) return null;
+        return {
+          id,
+          topic,
+          role: id === n.cluster ? 'primary' : 'related',
+          strength: id === n.cluster ? 1 : 0.65
+        };
+      })
+      .filter(Boolean);
   });
 
   ensureProgramColorScale(nodes);
@@ -1020,17 +1035,30 @@ function renderYear() {
   function renderFocusLinks(node) {
     activeFocusNode = node || null;
     const targets = node
-      ? node.relatedClusterIds.map((id) => ({ id, point: centers.get(id) })).filter((item) => item.point)
+      ? node.topicAssignments
+        .map((assignment) => ({ ...assignment, point: centers.get(assignment.id) }))
+        .filter((item) => item.point)
       : [];
     focusLinkLayer.selectAll('path')
       .data(targets, (item) => item.id)
       .join('path')
-      .attr('class', 'ta-focus-link')
+      .attr('class', (item) => `ta-focus-link is-${item.role}`)
+      .attr('data-strength', (item) => item.strength)
       .attr('d', (item) => focusPath(node, item.point));
   }
 
   function applyNodeFocus(node) {
-    textSel.attr('opacity', (item) => labelledNodeIds.has(item.id) || item.id === node?.id || item.id === state.selectedNodeId ? 1 : 0);
+    const relatedIds = new Set(node?.relatedClusterIds || []);
+    const isConnected = (item) => !node || item.id === node.id || item.relatedClusterIds.some((id) => relatedIds.has(id));
+
+    circleSel
+      .attr('opacity', (item) => isConnected(item) ? 1 : 0.16)
+      .classed('is-focus-source', (item) => item.id === node?.id);
+    ringSel.attr('opacity', (item) => isConnected(item) ? 1 : 0.12);
+    textSel.attr('opacity', (item) => {
+      if (!node) return labelledNodeIds.has(item.id) || item.id === state.selectedNodeId ? 1 : 0;
+      return item.id === node.id || (isConnected(item) && labelledNodeIds.has(item.id)) ? 1 : 0;
+    });
     topicGroups.classed('is-related', (cluster) => Boolean(node?.relatedClusterIds.includes(cluster.id)));
     topicGroups.classed('is-muted', (cluster) => Boolean(node && !node.relatedClusterIds.includes(cluster.id)));
     circleSel.classed('is-pinned', (item) => item.id === state.pinnedNodeId);

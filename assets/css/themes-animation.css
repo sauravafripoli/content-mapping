@@ -606,14 +606,33 @@
 .ta-focus-link {
   fill: none;
   stroke: #475569;
-  stroke-width: 1.5;
-  stroke-opacity: 0.58;
-  stroke-dasharray: 4 4;
   pointer-events: none;
+  transition: stroke-opacity 160ms ease;
+}
+
+.ta-focus-link.is-primary {
+  stroke-width: 2.6;
+  stroke-opacity: 0.86;
+}
+
+.ta-focus-link.is-related {
+  stroke-width: 1.35;
+  stroke-opacity: 0.48;
+  stroke-dasharray: 5 5;
 }
 
 .ta-node.is-pinned {
   filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 7px rgba(17, 24, 39, 0.78));
+}
+
+#clusterSvg .ta-node,
+#clusterSvg .ta-program-ring,
+#clusterSvg .ta-node-label {
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+#clusterSvg .ta-node.is-focus-source {
+  filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 8px rgba(17, 24, 39, 0.72));
 }
 
 .ta-selected-overlap {

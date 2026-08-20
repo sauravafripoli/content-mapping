@@ -80,7 +80,7 @@
               </div>
               <div class="ta-map-guide-item">
                 <span class="ta-guide-symbol ta-guide-overlap" aria-hidden="true"></span>
-                <span><strong>Overlap</strong> — bubbles between anchors connect to more than one topic.</span>
+                <span><strong>Overlap</strong> — a solid line marks the primary theme; dashed lines mark related themes.</span>
               </div>
               <p class="ta-map-guide-actions"><strong>Hover</strong> to preview connections. <strong>Click</strong> to keep them visible; click again to clear.</p>
             </div>
