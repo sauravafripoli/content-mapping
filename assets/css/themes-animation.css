@@ -725,6 +725,53 @@
   font-size: 0.75rem;
 }
 
+.ta-selected-publications {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid #e2e8f0;
+  list-style: none;
+}
+
+.ta-publication-heading {
+  display: block;
+  margin-top: 9px;
+}
+
+.ta-publication-list {
+  display: grid;
+  gap: 7px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ta-publication-item {
+  display: grid;
+  gap: 2px;
+  padding: 7px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  line-height: 1.35;
+}
+
+.ta-publication-item a {
+  color: #1d4ed8;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.ta-publication-item a:hover,
+.ta-publication-item a:focus-visible {
+  text-decoration: underline;
+}
+
+.ta-publication-item span,
+.ta-publication-empty {
+  color: #64748b;
+  font-size: 0.74rem;
+}
+
 .ta-tooltip-overlap {
   color: #fde68a;
   font-weight: 700;

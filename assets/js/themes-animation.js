@@ -68,6 +68,9 @@ const state = {
   focusSelectedOnRender: false,
   pendingYearFromUrl: null,
   pendingProgramFromUrl: null,
+  pendingClusterFromUrl: null,
+  pendingTagFromUrl: null,
+  pendingTagThemeFromUrl: null,
   rawClusterPayload: null,
   lastInsightYear: null,
   lastInsightNodes: [],
@@ -98,6 +101,17 @@ function escapeHtml(value) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
+}
+
+function safeHttpUrl(value) {
+  try {
+    const raw = String(value || '').trim();
+    if (!raw) return '';
+    const url = new URL(raw, window.location.href);
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : '';
+  } catch {
+    return '';
+  }
 }
 
 function buildData(clusterPayload) {
@@ -170,6 +184,17 @@ function buildData(clusterPayload) {
             };
           })
           .filter(Boolean);
+        const publications = Array.isArray(item.publications)
+          ? item.publications.map((publication) => ({
+            key: String(publication.key || ''),
+            title: String(publication.title || 'Untitled publication'),
+            url: safeHttpUrl(publication.url),
+            date: String(publication.date || ''),
+            year: Number(publication.year) || null,
+            author: String(publication.author || ''),
+            program: String(publication.program || '')
+          }))
+          : [];
 
         nodes.push({
           id: `${year}-${themeName}-${item.label}-${itemIndex}`,
@@ -183,12 +208,32 @@ function buildData(clusterPayload) {
           programCounts,
           topicAssignments,
           relatedClusterIds: topicAssignments.map((assignment) => assignment.id),
-          relatedTopics: topicAssignments.map((assignment) => assignment.topic)
+          relatedTopics: topicAssignments.map((assignment) => assignment.topic),
+          publications
         });
       });
     });
 
     byYear.set(year, { nodes, links: [], clusters });
+  });
+
+  const tagHistory = new Map();
+  byYear.forEach((payload, year) => {
+    payload.nodes.forEach((node) => {
+      const historyKey = `${node.theme}::${String(node.tag).toLowerCase()}`;
+      const history = tagHistory.get(historyKey) || { years: new Set(), publications: new Map() };
+      history.years.add(year);
+      node.publications.forEach((publication) => history.publications.set(publication.key || publication.url || publication.title, publication));
+      tagHistory.set(historyKey, history);
+    });
+  });
+  byYear.forEach((payload) => {
+    payload.nodes.forEach((node) => {
+      const history = tagHistory.get(`${node.theme}::${String(node.tag).toLowerCase()}`);
+      node.activeYears = [...(history?.years || [])].sort((a, b) => a - b);
+      node.allPublications = [...(history?.publications.values() || [])]
+        .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    });
   });
 
   return {
@@ -335,6 +380,24 @@ function hideTooltip() {
   els.tooltip.classList.add('hidden');
 }
 
+function publicationListMarkup(publications, limit = 6) {
+  const unique = new Map();
+  publications.forEach((publication) => {
+    unique.set(publication.key || publication.url || publication.title, publication);
+  });
+  const items = [...unique.values()].slice(0, limit);
+  if (!items.length) return '<li class="ta-publication-empty">No matching publications available.</li>';
+
+  return items.map((publication) => {
+    const meta = [publication.year, publication.author, publication.program].filter(Boolean).map(escapeHtml).join(' · ');
+    const title = escapeHtml(publication.title || 'Untitled publication');
+    const titleMarkup = publication.url
+      ? `<a href="${escapeHtml(publication.url)}" target="_blank" rel="noopener noreferrer">${title}</a>`
+      : title;
+    return `<li class="ta-publication-item">${titleMarkup}${meta ? `<span>${meta}</span>` : ''}</li>`;
+  }).join('');
+}
+
 function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
   if (els.selectionHeading) els.selectionHeading.textContent = 'Selected Tag';
   if (els.selectedThemeCard) els.selectedThemeCard.classList.toggle('is-active', Boolean(selectedNode));
@@ -368,7 +431,9 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
   const relatedMarkup = related
     .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count}) <span style="color:#6b7280">· ${escapeHtml(n.topProgram || 'Unknown Programme')}</span></li>`)
     .join('') || '<li>No related tags in current filters.</li>';
-  els.selectedThemeRelated.innerHTML = overlapMarkup + relatedMarkup;
+  const activeYears = (selectedNode.activeYears || []).join(', ') || String(year);
+  const publications = `<li class="ta-selected-publications"><strong>Active years:</strong> ${escapeHtml(activeYears)}<strong class="ta-publication-heading">Matching publications</strong><ul class="ta-publication-list">${publicationListMarkup(selectedNode.allPublications || selectedNode.publications || [])}</ul></li>`;
+  els.selectedThemeRelated.innerHTML = overlapMarkup + relatedMarkup + publications;
 }
 
 function renderSelectedThemeAnchor(theme, nodes, clusters, year) {
@@ -418,7 +483,10 @@ function renderSelectedThemeAnchor(theme, nodes, clusters, year) {
   const tags = [...themeNodes].sort((a, b) => b.count - a.count).slice(0, 8)
     .map((node) => `<li><strong>${escapeHtml(node.tag)}</strong> (${node.count})</li>`)
     .join('') || '<li>No tags match the current filters.</li>';
-  els.selectedThemeRelated.innerHTML = overlaps + programmes + tags;
+  const activeYears = [...new Set(themeNodes.flatMap((node) => node.activeYears || []))].sort((a, b) => a - b);
+  const publications = themeNodes.flatMap((node) => node.allPublications || node.publications || []);
+  const publicationSection = `<li class="ta-selected-publications"><strong>Active years:</strong> ${escapeHtml(activeYears.join(', ') || String(year))}<strong class="ta-publication-heading">Matching publications</strong><ul class="ta-publication-list">${publicationListMarkup(publications)}</ul></li>`;
+  els.selectedThemeRelated.innerHTML = overlaps + programmes + tags + publicationSection;
 }
 
 const TOPIC_LAYOUT = {
@@ -1294,6 +1362,22 @@ function updateCrossViewLinks() {
   if (els.linkTimeline) {
     els.linkTimeline.href = setLinkHref('timeline', params);
   }
+
+  const currentUrl = new URL(window.location.href);
+  currentUrl.searchParams.set('view', 'themes');
+  currentUrl.searchParams.set('year', String(year));
+  const setOrDelete = (key, value, defaultValue = '') => {
+    if (value && String(value) !== String(defaultValue)) currentUrl.searchParams.set(key, String(value));
+    else currentUrl.searchParams.delete(key);
+  };
+  setOrDelete('q', filters.query);
+  setOrDelete('min', filters.minMentions, 1);
+  setOrDelete('cluster', filters.clusterFilter, 'all');
+  setOrDelete('program', filters.programFilter, 'all');
+  const selectedTagNode = (state.dataByYear.get(year)?.nodes || []).find((node) => node.id === state.selectedNodeId);
+  setOrDelete('tag', selectedTagNode?.tag || '');
+  setOrDelete('tagTheme', selectedTagNode?.theme || '');
+  window.history.replaceState({}, '', currentUrl);
 }
 
 function applyFiltersFromUrl() {
@@ -1303,6 +1387,8 @@ function applyFiltersFromUrl() {
   const cluster = params.get('cluster');
   const program = params.get('program');
   const year = params.get('year');
+  const tag = params.get('tag');
+  const tagTheme = params.get('tagTheme');
 
   if (q) {
     els.themeSearchInput.value = q;
@@ -1313,7 +1399,7 @@ function applyFiltersFromUrl() {
     els.minMentionsLabel.textContent = `${bounded}+`;
   }
   if (cluster) {
-    els.clusterFilterSelect.value = cluster;
+    state.pendingClusterFromUrl = String(cluster);
   }
   if (program) {
     state.pendingProgramFromUrl = String(program);
@@ -1321,6 +1407,8 @@ function applyFiltersFromUrl() {
   if (year && Number.isFinite(Number(year))) {
     state.pendingYearFromUrl = Number(year);
   }
+  if (tag) state.pendingTagFromUrl = String(tag);
+  if (tagTheme) state.pendingTagThemeFromUrl = String(tagTheme);
 }
 
 function renderTopThemes(nodes) {
@@ -1600,6 +1688,27 @@ async function init() {
   els.yearSlider.max = String(years.length - 1);
   const urlYearIndex = state.pendingYearFromUrl !== null ? years.indexOf(state.pendingYearFromUrl) : -1;
   const initialIndex = urlYearIndex >= 0 ? urlYearIndex : 0;
+  const initialYear = years[initialIndex];
+  const initialPayload = state.dataByYear.get(initialYear) || { nodes: [], clusters: [] };
+  populateClusterFilterOptions(initialPayload.clusters || []);
+  if (state.pendingClusterFromUrl && [...els.clusterFilterSelect.options].some((option) => option.value === state.pendingClusterFromUrl)) {
+    els.clusterFilterSelect.value = state.pendingClusterFromUrl;
+    state.selectedThemeId = Number(state.pendingClusterFromUrl);
+  }
+  if (state.pendingTagFromUrl) {
+    const restoredNode = initialPayload.nodes.find((node) => (
+      node.tag === state.pendingTagFromUrl
+      && (!state.pendingTagThemeFromUrl || node.theme === state.pendingTagThemeFromUrl)
+    ));
+    if (restoredNode) {
+      state.selectedNodeId = restoredNode.id;
+      state.pinnedNodeId = restoredNode.id;
+      state.selectedThemeId = null;
+    }
+  }
+  state.pendingClusterFromUrl = null;
+  state.pendingTagFromUrl = null;
+  state.pendingTagThemeFromUrl = null;
   els.yearSlider.value = String(initialIndex);
   setYearIndex(initialIndex);
 }

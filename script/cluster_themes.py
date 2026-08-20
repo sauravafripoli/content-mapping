@@ -226,6 +226,7 @@ class Cluster:
     count: int = 0
     variants: Counter = field(default_factory=Counter)
     programs: Counter = field(default_factory=Counter)
+    publications: Dict[str, dict] = field(default_factory=dict)
 
 
 def normalize_text(value: str) -> str:
@@ -372,9 +373,11 @@ def similarity(a: str, b: str) -> float:
 def cluster_terms(
     counter: Counter,
     program_counter_by_term: Dict[str, Counter] | None = None,
+    publications_by_term: Dict[str, Dict[str, dict]] | None = None,
     primary_theme: str = "",
 ) -> List[dict]:
     program_counter_by_term = program_counter_by_term or {}
+    publications_by_term = publications_by_term or {}
     clusters: List[Cluster] = []
     ordered = sorted(counter.items(), key=lambda x: x[1], reverse=True)
 
@@ -385,6 +388,7 @@ def cluster_terms(
                 c.count += count
                 c.variants[term] += count
                 c.programs.update(program_counter_by_term.get(term, Counter()))
+                c.publications.update(publications_by_term.get(term, {}))
                 if c.variants[c.label] < c.variants[term]:
                     c.label = term
                 placed = True
@@ -394,6 +398,7 @@ def cluster_terms(
             cl = Cluster(label=term, count=count)
             cl.variants[term] = count
             cl.programs.update(program_counter_by_term.get(term, Counter()))
+            cl.publications.update(publications_by_term.get(term, {}))
             clusters.append(cl)
 
     out = []
@@ -409,6 +414,11 @@ def cluster_terms(
                     {"program": p, "count": n}
                     for p, n in c.programs.most_common(6)
                 ],
+                "publications": sorted(
+                    c.publications.values(),
+                    key=lambda publication: (publication.get("date", ""), publication.get("title", "")),
+                    reverse=True,
+                ),
                 "variants": sorted(
                     [{"tag": to_readable_label(t), "count": n} for t, n in c.variants.items()],
                     key=lambda x: x["count"],
@@ -427,8 +437,12 @@ def build_clusters(records: List[dict]) -> dict:
     yearly_theme_program_terms: Dict[int, Dict[str, Dict[str, Counter]]] = defaultdict(
         lambda: defaultdict(lambda: defaultdict(Counter))
     )
+    yearly_theme_publications: Dict[int, Dict[str, Dict[str, Dict[str, dict]]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(dict))
+    )
     overall_theme_terms: Dict[str, Counter] = defaultdict(Counter)
     overall_theme_program_terms: Dict[str, Dict[str, Counter]] = defaultdict(lambda: defaultdict(Counter))
+    overall_theme_publications: Dict[str, Dict[str, Dict[str, dict]]] = defaultdict(lambda: defaultdict(dict))
 
     for r in records:
         year = parse_year(r)
@@ -436,6 +450,16 @@ def build_clusters(records: List[dict]) -> dict:
             continue
 
         program = normalize_program(r.get("program", ""))
+        publication_key = str(r.get("Key", "")).strip() or f"{program}:{r.get('Title', '')}:{r.get('Date', '')}"
+        publication = {
+            "key": publication_key,
+            "title": str(r.get("Title", "")).strip(),
+            "url": str(r.get("Url", "")).strip(),
+            "date": str(r.get("Date", "")).strip(),
+            "year": year,
+            "author": str(r.get("Author", "")).strip(),
+            "program": program,
+        }
 
         tags = [
             *split_tags(r.get("Manual Tags", [])),
@@ -466,8 +490,10 @@ def build_clusters(records: List[dict]) -> dict:
                 continue
             yearly_theme_terms[year][theme][standardized] += 1
             yearly_theme_program_terms[year][theme][standardized][program] += 1
+            yearly_theme_publications[year][theme][standardized][publication_key] = publication
             overall_theme_terms[theme][standardized] += 1
             overall_theme_program_terms[theme][standardized][program] += 1
+            overall_theme_publications[theme][standardized][publication_key] = publication
 
     years = sorted(yearly_theme_terms.keys())
     by_year = {}
@@ -477,6 +503,7 @@ def build_clusters(records: List[dict]) -> dict:
             theme: cluster_terms(
                 yearly_theme_terms[y].get(theme, Counter()),
                 yearly_theme_program_terms[y].get(theme, {}),
+                yearly_theme_publications[y].get(theme, {}),
                 theme,
             )
             for theme in THEME_KEYWORDS.keys()
@@ -486,6 +513,7 @@ def build_clusters(records: List[dict]) -> dict:
         theme: cluster_terms(
             overall_theme_terms.get(theme, Counter()),
             overall_theme_program_terms.get(theme, {}),
+            overall_theme_publications.get(theme, {}),
             theme,
         )
         for theme in THEME_KEYWORDS.keys()
