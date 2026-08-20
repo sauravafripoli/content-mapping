@@ -9,9 +9,13 @@ const els = {
   programLegend: document.getElementById('taProgramLegend'),
   topThemesList: document.getElementById('topThemesList'),
   clusterList: document.getElementById('clusterList'),
+  selectedThemeCard: document.getElementById('selectedThemeCard'),
+  selectionHeading: document.getElementById('taSelectionHeading'),
   selectedThemeTitle: document.getElementById('selectedThemeTitle'),
   selectedThemeMeta: document.getElementById('selectedThemeMeta'),
   selectedThemeRelated: document.getElementById('selectedThemeRelated'),
+  selectedBadge: document.getElementById('taSelectedBadge'),
+  clearSelectionBtn: document.getElementById('taClearSelectionBtn'),
   yearRangeChip: document.getElementById('taYearRangeChip'),
   themeCountChip: document.getElementById('taThemeCountChip'),
   kpiMentions: document.getElementById('taKpiMentions'),
@@ -55,6 +59,7 @@ const state = {
   width: 0,
   height: 0,
   selectedNodeId: null,
+  selectedThemeId: null,
   pinnedNodeId: null,
   visibleNodeIds: [],
   focusSelectedOnRender: false,
@@ -232,7 +237,7 @@ function populateClusterFilterOptions(clusters) {
   if (!els.clusterFilterSelect) return;
   const previous = String(els.clusterFilterSelect.value || 'all');
 
-  const options = ['<option value="all">All clusters</option>'];
+  const options = ['<option value="all">All themes</option>'];
   clusters.forEach((c) => {
     options.push(`<option value="${c.id}">${escapeHtml(c.lead)} · ${escapeHtml(c.category || 'Cross-cutting')} (${c.size})</option>`);
   });
@@ -286,9 +291,14 @@ function hideTooltip() {
 }
 
 function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
+  if (els.selectionHeading) els.selectionHeading.textContent = 'Selected Tag';
+  if (els.selectedThemeCard) els.selectedThemeCard.classList.toggle('is-active', Boolean(selectedNode));
+  if (els.selectedBadge) els.selectedBadge.hidden = !selectedNode;
+  if (els.clearSelectionBtn) els.clearSelectionBtn.hidden = !selectedNode;
+
   if (!selectedNode) {
-    els.selectedThemeTitle.textContent = 'No theme selected';
-    els.selectedThemeMeta.textContent = 'Click a bubble to inspect details.';
+    els.selectedThemeTitle.textContent = 'No tag selected';
+    els.selectedThemeMeta.textContent = 'Click a tag bubble or theme anchor to inspect details.';
     els.selectedThemeRelated.innerHTML = '';
     return;
   }
@@ -298,7 +308,7 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
     .slice(0, 3)
     .map((p) => `${p.program} (${p.count})`)
     .join(' · ');
-  els.selectedThemeMeta.textContent = `${year} · ${selectedNode.theme} · ${selectedNode.category || 'Cross-cutting'} · ${selectedNode.count} mentions · ${topPrograms || selectedNode.topProgram || 'Unknown Programme'}`;
+  els.selectedThemeMeta.textContent = `${year} · ${selectedNode.theme} · ${selectedNode.category || 'Cross-cutting'} · ${selectedNode.count} mentions · ${topPrograms || selectedNode.topProgram || 'Unknown Programme'} · Click the bubble again or use Clear selection.`;
 
   const related = allVisibleNodes
     .filter((n) => n.cluster === selectedNode.cluster && n.id !== selectedNode.id)
@@ -312,8 +322,46 @@ function renderSelectedTheme(selectedNode, allVisibleNodes, year) {
 
   const relatedMarkup = related
     .map((n) => `<li><strong>${escapeHtml(n.tag)}</strong> (${n.count}) <span style="color:#6b7280">· ${escapeHtml(n.topProgram || 'Unknown Programme')}</span></li>`)
-    .join('') || '<li>No related themes in current filters.</li>';
+    .join('') || '<li>No related tags in current filters.</li>';
   els.selectedThemeRelated.innerHTML = overlapMarkup + relatedMarkup;
+}
+
+function renderSelectedThemeAnchor(theme, nodes, clusters, year) {
+  if (!theme) {
+    renderSelectedTheme(null, nodes, year);
+    return;
+  }
+
+  if (els.selectionHeading) els.selectionHeading.textContent = 'Selected Theme';
+  if (els.selectedThemeCard) els.selectedThemeCard.classList.add('is-active');
+  if (els.selectedBadge) els.selectedBadge.hidden = false;
+  if (els.clearSelectionBtn) els.clearSelectionBtn.hidden = false;
+
+  const themeNodes = nodes.filter((node) => node.cluster === theme.id);
+  const mentions = d3.sum(themeNodes, (node) => node.count);
+  const programmeCounts = d3.rollups(
+    themeNodes.flatMap((node) => node.programCounts || []),
+    (items) => d3.sum(items, (item) => item.count),
+    (item) => item.program
+  ).sort((a, b) => b[1] - a[1]);
+  const connectedIds = new Set(
+    themeNodes.flatMap((node) => node.relatedClusterIds || []).filter((id) => id !== theme.id)
+  );
+  const connectedThemes = clusters.filter((cluster) => connectedIds.has(cluster.id));
+
+  els.selectedThemeTitle.textContent = theme.lead;
+  els.selectedThemeMeta.textContent = `${year} · ${mentions} mentions · ${themeNodes.length} tags · ${programmeCounts.length} programmes · Click the anchor again or use Clear selection.`;
+
+  const overlaps = connectedThemes.length
+    ? `<li class="ta-selected-overlap"><strong>Connected themes:</strong> ${connectedThemes.map((cluster) => escapeHtml(cluster.lead)).join(' · ')}</li>`
+    : '<li class="ta-selected-overlap"><strong>Connected themes:</strong> None in the current year.</li>';
+  const programmes = programmeCounts.length
+    ? `<li><strong>Top programmes:</strong> ${programmeCounts.slice(0, 3).map(([program, count]) => `${escapeHtml(program)} (${count})`).join(' · ')}</li>`
+    : '<li><strong>Top programmes:</strong> No programme data.</li>';
+  const tags = [...themeNodes].sort((a, b) => b.count - a.count).slice(0, 8)
+    .map((node) => `<li><strong>${escapeHtml(node.tag)}</strong> (${node.count})</li>`)
+    .join('') || '<li>No tags match the current filters.</li>';
+  els.selectedThemeRelated.innerHTML = overlaps + programmes + tags;
 }
 
 const TOPIC_LAYOUT = {
@@ -838,7 +886,7 @@ function renderYear() {
   state.visibleNodeIds = nodes.map((n) => n.id);
 
   if (els.themeCountChip) {
-    els.themeCountChip.textContent = `Visible themes: ${nodes.length}`;
+    els.themeCountChip.textContent = `Visible tags: ${nodes.length}`;
   }
 
   els.yearLabel.textContent = year ?? '—';
@@ -858,7 +906,7 @@ function renderYear() {
   const topicGroups = topicLayer.selectAll('g.ta-topic-region')
     .data(payload.clusters || [], (cluster) => cluster.id)
     .join('g')
-    .attr('class', (cluster) => `ta-topic-region ta-topic-anchor${visibleClusterIds.has(cluster.id) ? ' has-content' : ' is-empty'}`)
+    .attr('class', (cluster) => `ta-topic-region ta-topic-anchor${visibleClusterIds.has(cluster.id) ? ' has-content' : ' is-empty'}${state.selectedThemeId === cluster.id ? ' is-selected' : ''}`)
     .attr('transform', (cluster) => {
       const center = centers.get(cluster.id) || { x: state.width / 2, y: state.height / 2 };
       return `translate(${center.x},${center.y})`;
@@ -867,14 +915,22 @@ function renderYear() {
     .attr('tabindex', 0)
     .on('click', (_, cluster) => {
       const clusterId = String(cluster.id);
-      els.clusterFilterSelect.value = els.clusterFilterSelect.value === clusterId ? 'all' : clusterId;
+      const isUnselecting = String(state.selectedThemeId) === clusterId;
+      state.selectedThemeId = isUnselecting ? null : cluster.id;
+      state.selectedNodeId = null;
+      state.pinnedNodeId = null;
+      els.clusterFilterSelect.value = isUnselecting ? 'all' : clusterId;
       renderYear();
     })
     .on('keydown', (event, cluster) => {
       if (event.key !== 'Enter' && event.key !== ' ') return;
       event.preventDefault();
       const clusterId = String(cluster.id);
-      els.clusterFilterSelect.value = els.clusterFilterSelect.value === clusterId ? 'all' : clusterId;
+      const isUnselecting = String(state.selectedThemeId) === clusterId;
+      state.selectedThemeId = isUnselecting ? null : cluster.id;
+      state.selectedNodeId = null;
+      state.pinnedNodeId = null;
+      els.clusterFilterSelect.value = isUnselecting ? 'all' : clusterId;
       renderYear();
     });
 
@@ -916,7 +972,12 @@ function renderYear() {
   if (!nodes.length) {
     renderTopThemes([]);
     renderClusterSummary([]);
-    renderSelectedTheme(null, [], year);
+    const emptySelectedTheme = (payload.clusters || []).find((cluster) => cluster.id === state.selectedThemeId) || null;
+    if (emptySelectedTheme) {
+      renderSelectedThemeAnchor(emptySelectedTheme, [], payload.clusters || [], year);
+    } else {
+      renderSelectedTheme(null, [], year);
+    }
     renderProgramLegend([]);
     renderInsights(year, []);
     return;
@@ -1023,12 +1084,14 @@ function renderYear() {
       if (event.key === 'Enter' || event.key === ' ') {
         event.preventDefault();
         state.selectedNodeId = d.id;
+        state.pinnedNodeId = d.id;
         state.focusSelectedOnRender = true;
         renderYear();
       }
     })
     .on('click', (_, d) => {
       const isUnselecting = state.pinnedNodeId === d.id;
+      state.selectedThemeId = null;
       state.pinnedNodeId = isUnselecting ? null : d.id;
       state.selectedNodeId = isUnselecting ? null : d.id;
       renderSelectedTheme(isUnselecting ? null : d, nodes, year);
@@ -1079,11 +1142,17 @@ function renderYear() {
   renderTopThemes(nodes);
   renderProgramLegend(nodes);
 
-  const selectedNode = nodes.find((n) => n.id === state.selectedNodeId) || nodes[0] || null;
-  if (selectedNode) {
-    state.selectedNodeId = selectedNode.id;
+  const selectedNode = nodes.find((n) => n.id === state.selectedNodeId) || null;
+  if (!selectedNode) {
+    state.selectedNodeId = null;
+    state.pinnedNodeId = null;
   }
-  renderSelectedTheme(selectedNode, nodes, year);
+  const selectedTheme = (payload.clusters || []).find((cluster) => cluster.id === state.selectedThemeId) || null;
+  if (selectedTheme) {
+    renderSelectedThemeAnchor(selectedTheme, nodes, payload.clusters || [], year);
+  } else {
+    renderSelectedTheme(selectedNode, nodes, year);
+  }
 
   updateCrossViewLinks();
   renderInsights(year, nodes);
@@ -1165,7 +1234,7 @@ function renderTopThemes(nodes) {
   const top = [...nodes].sort((a, b) => b.count - a.count).slice(0, 12);
   els.topThemesList.innerHTML = top
     .map((d) => `<li><strong>${escapeHtml(d.tag)}</strong> (${d.count}) <span style="color:#6b7280">· ${escapeHtml(d.theme)} · ${escapeHtml(d.topProgram || 'Unknown Programme')}</span></li>`)
-    .join('') || '<li>No themes in current filters.</li>';
+    .join('') || '<li>No tags in current filters.</li>';
 }
 
 function renderClusterSummary(clusters, highlightedClusterId = null) {
@@ -1174,9 +1243,9 @@ function renderClusterSummary(clusters, highlightedClusterId = null) {
     .map((c) => {
       const isActive = activeCluster !== 'all' && activeCluster === String(c.id);
       const isHighlighted = highlightedClusterId !== null && String(highlightedClusterId) === String(c.id);
-      return `<li><button class="ta-cluster-btn ${isActive ? 'is-active' : ''} ${isHighlighted ? 'is-story-focus' : ''}" type="button" data-cluster-id="${c.id}"><span class="dot" style="background:${c.color}"></span><strong>${escapeHtml(c.lead)}</strong> <span class="ta-cluster-category">${escapeHtml(c.category || 'Cross-cutting')}</span> · ${c.size} themes · ${c.total} mentions</button></li>`;
+      return `<li><button class="ta-cluster-btn ${isActive ? 'is-active' : ''} ${isHighlighted ? 'is-story-focus' : ''}" type="button" data-cluster-id="${c.id}"><span class="dot" style="background:${c.color}"></span><strong>${escapeHtml(c.lead)}</strong> <span class="ta-cluster-category">${escapeHtml(c.category || 'Cross-cutting')}</span> · ${c.size} tags · ${c.total} mentions</button></li>`;
     })
-    .join('') || '<li>No clusters in current filters.</li>';
+    .join('') || '<li>No themes in current filters.</li>';
 }
 
 function selectNodeByOffset(offset) {
@@ -1186,6 +1255,7 @@ function selectNodeByOffset(offset) {
   const safeCurrent = currentIndex >= 0 ? currentIndex : 0;
   const next = Math.max(0, Math.min(state.visibleNodeIds.length - 1, safeCurrent + offset));
   state.selectedNodeId = state.visibleNodeIds[next];
+  state.pinnedNodeId = state.selectedNodeId;
   state.focusSelectedOnRender = true;
   renderYear();
 }
@@ -1267,6 +1337,10 @@ function bindEvents() {
   });
 
   els.clusterFilterSelect.addEventListener('change', () => {
+    const value = String(els.clusterFilterSelect.value || 'all');
+    state.selectedThemeId = value === 'all' ? null : Number(value);
+    state.selectedNodeId = null;
+    state.pinnedNodeId = null;
     stopStoryMode();
     stopPlayback();
     renderYear();
@@ -1290,9 +1364,13 @@ function bindEvents() {
     const clusterId = String(btn.getAttribute('data-cluster-id') || 'all');
     if (els.clusterFilterSelect.value === clusterId) {
       els.clusterFilterSelect.value = 'all';
+      state.selectedThemeId = null;
     } else {
       els.clusterFilterSelect.value = clusterId;
+      state.selectedThemeId = Number(clusterId);
     }
+    state.selectedNodeId = null;
+    state.pinnedNodeId = null;
     stopStoryMode();
     stopPlayback();
     renderYear();
@@ -1305,9 +1383,22 @@ function bindEvents() {
     els.clusterFilterSelect.value = 'all';
     if (els.programFilterSelect) els.programFilterSelect.value = 'all';
     state.selectedNodeId = null;
+    state.pinnedNodeId = null;
+    state.selectedThemeId = null;
     stopStoryMode();
     renderYear();
   });
+
+  if (els.clearSelectionBtn) {
+    els.clearSelectionBtn.addEventListener('click', () => {
+      const wasThemeSelection = state.selectedThemeId !== null;
+      state.selectedNodeId = null;
+      state.pinnedNodeId = null;
+      state.selectedThemeId = null;
+      if (wasThemeSelection) els.clusterFilterSelect.value = 'all';
+      renderYear();
+    });
+  }
 
   if (els.storyModeBtn) {
     els.storyModeBtn.addEventListener('click', () => {

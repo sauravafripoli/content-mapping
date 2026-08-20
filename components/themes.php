@@ -4,11 +4,11 @@
       <header class="ta-hero">
         <div class="ta-hero-copy">
           <p class="ta-kicker">APRI Thematic Intelligence</p>
-          <h1>Theme Clusters Timeline</h1>
-          <p class="ta-sub">Explore how APRI thematic focus evolves over time using tag co-occurrence clusters. Bubble size reflects mention frequency per year.</p>
+          <h1>Theme Relationships Timeline</h1>
+          <p class="ta-sub">Explore how APRI themes and their tags evolve and overlap over time. Bubble size reflects mention frequency per year.</p>
           <div class="ta-hero-meta">
             <span id="taYearRangeChip" class="ta-meta-chip">Years: —</span>
-            <span id="taThemeCountChip" class="ta-meta-chip">Visible themes: 0</span>
+            <span id="taThemeCountChip" class="ta-meta-chip">Visible tags: 0</span>
           </div>
         </div>
         <div class="mapping-view-switcher" role="navigation" aria-label="Mapping views">
@@ -46,9 +46,9 @@
           <span id="minMentionsLabel">1+</span>
         </label>
 
-        <label class="ta-filter-wrap">Cluster
+        <label class="ta-filter-wrap">Theme
           <select id="clusterFilterSelect">
-            <option value="all">All clusters</option>
+            <option value="all">All themes</option>
           </select>
         </label>
 
@@ -72,7 +72,7 @@
               </div>
               <div class="ta-map-guide-item">
                 <span class="ta-guide-symbol ta-guide-bubble" aria-hidden="true"></span>
-                <span><strong>Theme bubble</strong> — size reflects how often the tag is mentioned.</span>
+                <span><strong>Tag bubble</strong> — size reflects how often the tag is mentioned.</span>
               </div>
               <div class="ta-map-guide-item">
                 <span class="ta-guide-symbol ta-guide-ring" aria-hidden="true"></span>
@@ -92,17 +92,21 @@
         </section>
 
         <aside class="ta-side-card">
-          <h2>Selected Theme</h2>
+          <h2 id="taSelectionHeading">Selected Tag</h2>
           <article id="selectedThemeCard" class="ta-selected-theme">
-            <h3 id="selectedThemeTitle">No theme selected</h3>
+            <div class="ta-selected-heading">
+              <span id="taSelectedBadge" class="ta-selected-badge" hidden>Selected</span>
+              <button id="taClearSelectionBtn" class="ta-clear-selection" type="button" hidden>Clear selection</button>
+            </div>
+            <h3 id="selectedThemeTitle">No tag selected</h3>
             <p id="selectedThemeMeta" class="ta-selected-meta">Click a bubble to inspect details.</p>
             <ul id="selectedThemeRelated" class="ta-cluster-list"></ul>
           </article>
 
-          <h2>Cluster Summary</h2>
+          <h2>Theme Summary</h2>
           <ul id="clusterList" class="ta-cluster-list"></ul>
 
-          <h2 class="mt-3">Top Themes</h2>
+          <h2 class="mt-3">Top Tags</h2>
           <ol id="topThemesList" class="ta-top-themes"></ol>
         </aside>
       </div>
@@ -118,7 +122,7 @@
             <div id="taKpiGrowth" class="ta-kpi-value">—</div>
           </article>
           <article class="ta-kpi-card">
-            <div class="ta-kpi-label">Active clusters</div>
+            <div class="ta-kpi-label">Active themes</div>
             <div id="taKpiClusters" class="ta-kpi-value">0</div>
           </article>
           <article class="ta-kpi-card">
@@ -135,8 +139,8 @@
 
         <div class="ta-insights-grid">
           <article class="ta-insight-card ta-insight-card--impact">
-            <h2>Impact by Cluster (current year)</h2>
-            <svg id="taImpactBars" class="ta-mini-chart" aria-label="Impact by cluster"></svg>
+            <h2>Impact by Theme (current year)</h2>
+            <svg id="taImpactBars" class="ta-mini-chart" aria-label="Impact by theme"></svg>
           </article>
 
           <article class="ta-insight-card">
