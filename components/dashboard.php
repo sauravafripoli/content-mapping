@@ -75,6 +75,8 @@
 				</div>
 
 				<div class="col-lg-9 col-xl-10">
+					<div id="mapping-active-filters" class="mapping-active-filters mb-3 d-none" aria-label="Active filters"></div>
+
 					<div class="card shadow-sm border-0 mapping-panel-card mb-4">
 						<div class="card-body">
 							<div class="d-flex flex-wrap gap-2 align-items-center justify-content-between mb-3">
@@ -86,6 +88,16 @@
 
 							<div class="mapping-map-shell" aria-label="Publication coverage map container">
 								<div id="mapping-world-map" class="mapping-world-map" aria-label="World map showing highlighted publication countries"></div>
+								<div id="mapping-map-tooltip" class="mapping-map-tooltip" role="tooltip" aria-hidden="true"></div>
+
+								<div id="mapping-map-legend" class="mapping-map-legend" aria-label="Publication intensity legend">
+									<strong>Publication coverage</strong>
+									<div class="mapping-map-legend-scale" aria-hidden="true"></div>
+									<div class="mapping-map-legend-labels">
+										<span id="mapping-legend-low">1</span>
+										<span id="mapping-legend-high">0 publications</span>
+									</div>
+								</div>
 
 								<div class="mapping-map-controls" aria-label="Map controls">
 									<div class="mapping-control-zoom">

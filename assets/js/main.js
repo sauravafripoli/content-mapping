@@ -22,12 +22,17 @@ const GROUP_EXPANSIONS = {
 };
 
 const COUNTRY_ALIASES = {
-    'united states': ['United States of America', 'United States'],
+    'united states': ['United States of America', 'United States', 'USA', 'US', 'U.S.A.', 'U.S.'],
+    'united states of america': ['United States', 'USA', 'US', 'U.S.A.', 'U.S.'],
+    'usa': ['United States of America', 'United States', 'US'],
     'drc': ['Democratic Republic of the Congo', 'Congo, The Democratic Republic of the'],
+    'democratic republic of the congo': ['DRC', 'Congo, The Democratic Republic of the', 'COD'],
     'south africa': ['South Africa'],
     'cote d\'ivoire': ["Côte d'Ivoire", "Cote d'Ivoire"],
     'cabo verde': ['Cape Verde', 'Cabo Verde'],
-    'the gambia': ['Gambia', 'The Gambia']
+    'the gambia': ['Gambia', 'The Gambia'],
+    'turkey': ['Türkiye', 'Turkey', 'TUR'],
+    'turkiye': ['Türkiye', 'Turkey', 'TUR']
 };
 
 // CRM-style manual view tuning for countries that can behave oddly in world projections.
@@ -57,6 +62,8 @@ const state = {
     baseFiltered: [],
     filtered: [],
     worldFeatures: [],
+    countryMetrics: new Map(),
+    maxCountryCount: 0,
     mapInitialized: false,
     selectedCountryNormalized: null,
     selectedCountryLabel: null,
@@ -75,6 +82,15 @@ const state = {
 };
 
 const els = {};
+
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+}
 
 function setLinkHref(baseView, params = {}) {
     const search = new URLSearchParams({ view: baseView });
@@ -232,17 +248,50 @@ function applyFilters(options = {}) {
     });
 
     state.filtered = state.baseFiltered.filter((record) => recordMatchesSelectedCountry(record));
+    buildCountryMetrics();
 
     if (resetPage) {
         state.currentPage = 1;
     }
 
     updateSelectedCountryStatus();
+    renderActiveFilters();
 
     renderTable();
     renderCountrySummary();
     updateMapHighlights();
     updateCrossViewLinks();
+}
+
+function renderActiveFilters() {
+    if (!els.activeFilters) return;
+
+    const filters = [
+        ['program', 'Programme', els.programFilter.value],
+        ['contentType', 'Content type', els.contentTypeFilter.value],
+        ['year', 'Year', els.yearFilter.value],
+        ['type', 'Item type', els.typeFilter.value],
+        ['q', 'Search', els.searchInput.value.trim()],
+        ['country', 'Country', state.selectedCountryLabel || '']
+    ].filter(([, , value]) => value && value !== 'all');
+
+    if (!filters.length) {
+        els.activeFilters.innerHTML = '';
+        els.activeFilters.classList.add('d-none');
+        return;
+    }
+
+    els.activeFilters.classList.remove('d-none');
+    els.activeFilters.innerHTML = `
+        <span class="mapping-active-filters-label">Active filters</span>
+        ${filters.map(([key, label, value]) => `
+            <button type="button" class="mapping-active-filter" data-filter-key="${key}" title="Remove ${escapeHtml(label)} filter">
+                <span>${escapeHtml(label)}: <strong>${escapeHtml(value)}</strong></span>
+                <span aria-hidden="true">×</span>
+            </button>
+        `).join('')}
+        <button type="button" class="mapping-clear-filters" data-filter-key="all">Clear all</button>
+    `;
 }
 
 function applyFiltersFromUrl() {
@@ -379,9 +428,72 @@ function getCountrySet(records) {
     return countries;
 }
 
+function buildCountryMetrics() {
+    const metrics = new Map();
+
+    state.baseFiltered.forEach((record) => {
+        const countriesInRecord = new Map();
+        record.countries.forEach((entity) => {
+            expandCountryEntity(entity).forEach((country) => {
+                const label = String(country || '').trim();
+                const normalized = normalizeName(label);
+                if (normalized) countriesInRecord.set(normalized, label);
+            });
+        });
+
+        countriesInRecord.forEach((label, normalized) => {
+            const metric = metrics.get(normalized) || {
+                name: label,
+                normalized,
+                count: 0,
+                programmes: new Map()
+            };
+            metric.count += 1;
+            const programme = record.program || 'Unknown Programme';
+            metric.programmes.set(programme, (metric.programmes.get(programme) || 0) + 1);
+            metrics.set(normalized, metric);
+        });
+    });
+
+    state.countryMetrics = metrics;
+    state.maxCountryCount = Math.max(0, ...[...metrics.values()].map((metric) => metric.count));
+}
+
+function getCountryMetricForFeature(feature) {
+    const properties = feature?.properties || {};
+    const identifiers = new Set(
+        [
+            featureName(feature),
+            properties.ADMIN,
+            properties.name,
+            properties.NAME,
+            properties.NAME_EN,
+            properties.FORMAL_EN,
+            properties.ISO_A2,
+            properties.ISO_A3,
+            properties.ADM0_A3
+        ]
+            .map((value) => normalizeName(String(value || '')))
+            .filter(Boolean)
+    );
+
+    for (const metric of state.countryMetrics.values()) {
+        if ([...identifiers].some((identifier) => isCountryNameMatchingFeature(metric.name, identifier))) {
+            return metric;
+        }
+    }
+    return null;
+}
+
+function countryIntensityColor(count) {
+    if (!count || !state.maxCountryCount) return '#e5e7eb';
+    const strength = Math.sqrt(count / state.maxCountryCount);
+    return d3.interpolateRgb('#fde9ad', '#d97706')(0.2 + (strength * 0.8));
+}
+
 function renderCountrySummary() {
-    const set = getCountrySet(state.baseFiltered);
-    const countryList = [...set].sort((a, b) => a.localeCompare(b));
+    const countryList = [...state.countryMetrics.values()]
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
     els.countriesCount.textContent = `${countryList.length} countr${countryList.length === 1 ? 'y' : 'ies'} highlighted`;
 
@@ -392,11 +504,15 @@ function renderCountrySummary() {
 
     els.countryChips.innerHTML = countryList
         .slice(0, 24)
-        .map((name) => `<span class="mapping-chip">${name}</span>`)
+        .map((metric) => {
+            const isActive = state.selectedCountryNormalized
+                && isCountryNameMatchingFeature(metric.name, state.selectedCountryNormalized);
+            return `<button type="button" class="mapping-chip mapping-country-chip${isActive ? ' is-active' : ''}" data-country="${escapeHtml(metric.name)}" aria-pressed="${isActive ? 'true' : 'false'}">${escapeHtml(metric.name)} <span>${metric.count}</span></button>`;
+        })
         .join('');
 
     if (countryList.length > 24) {
-        els.countryChips.innerHTML += `<span class="mapping-chip">+${countryList.length - 24} more</span>`;
+        els.countryChips.innerHTML += `<span class="mapping-chip mapping-chip-more">+${countryList.length - 24} more</span>`;
     }
 }
 
@@ -567,7 +683,10 @@ function updateLabelVisibility() {
         .selectAll('text.mapping-map-country-label')
         .classed('is-visible', (feature) => {
             const name = normalizeName(featureName(feature));
-            return Boolean(state.selectedCountryNormalized && name === state.selectedCountryNormalized);
+            return Boolean(
+                state.selectedCountryNormalized
+                && isCountryNameMatchingFeature(state.selectedCountryLabel || state.selectedCountryNormalized, name)
+            );
         });
 }
 
@@ -592,6 +711,45 @@ function handleCountryClick(event, feature) {
     }
 
     applyFilters({ resetPage: true });
+}
+
+function showCountryTooltip(event, feature) {
+    if (!els.mapTooltip) return;
+    const metric = getCountryMetricForFeature(feature);
+    const country = featureName(feature) || 'Unknown country';
+    const topProgramme = metric
+        ? [...metric.programmes.entries()].sort((a, b) => b[1] - a[1])[0]
+        : null;
+
+    els.mapTooltip.innerHTML = metric
+        ? `<strong>${escapeHtml(country)}</strong><span>${metric.count} publication${metric.count === 1 ? '' : 's'}</span><span>Top programme: ${escapeHtml(topProgramme?.[0] || 'Not available')} (${topProgramme?.[1] || 0})</span><small>Click to filter</small>`
+        : `<strong>${escapeHtml(country)}</strong><span>No publications in the current filters</span>`;
+    els.mapTooltip.classList.add('is-visible');
+    els.mapTooltip.setAttribute('aria-hidden', 'false');
+    moveCountryTooltip(event);
+}
+
+function moveCountryTooltip(event) {
+    if (!els.mapTooltip || !els.mapShell) return;
+    const shellRect = els.mapShell.getBoundingClientRect();
+    const tooltipWidth = els.mapTooltip.offsetWidth || 230;
+    const tooltipHeight = els.mapTooltip.offsetHeight || 100;
+    const left = Math.min(
+        shellRect.width - tooltipWidth - 10,
+        Math.max(10, event.clientX - shellRect.left + 14)
+    );
+    const top = Math.min(
+        shellRect.height - tooltipHeight - 10,
+        Math.max(10, event.clientY - shellRect.top + 14)
+    );
+    els.mapTooltip.style.left = `${left}px`;
+    els.mapTooltip.style.top = `${top}px`;
+}
+
+function hideCountryTooltip() {
+    if (!els.mapTooltip) return;
+    els.mapTooltip.classList.remove('is-visible');
+    els.mapTooltip.setAttribute('aria-hidden', 'true');
 }
 
 function initMap(features) {
@@ -625,6 +783,9 @@ function initMap(features) {
         .attr('class', 'mapping-map-country')
         .attr('d', path)
         .on('click', handleCountryClick)
+        .on('mouseenter', showCountryTooltip)
+        .on('mousemove', moveCountryTooltip)
+        .on('mouseleave', hideCountryTooltip)
         .append('title')
         .text((d) => featureName(d));
 
@@ -699,18 +860,27 @@ function updateMapHighlights() {
         return;
     }
 
-    const highlightLookup = buildHighlightLookup();
-
     state.countryLayer
         .selectAll('path.mapping-map-country')
+        .style('fill', (feature) => countryIntensityColor(getCountryMetricForFeature(feature)?.count || 0))
         .classed('is-highlighted', (feature) => {
-            const name = normalizeName(featureName(feature));
-            return highlightLookup.has(name);
+            return Boolean(getCountryMetricForFeature(feature));
         })
         .classed('is-active', (feature) => {
             const name = normalizeName(featureName(feature));
-            return state.selectedCountryNormalized && name === state.selectedCountryNormalized;
+            return Boolean(
+                state.selectedCountryNormalized
+                && isCountryNameMatchingFeature(state.selectedCountryLabel || state.selectedCountryNormalized, name)
+            );
         });
+
+    if (els.legendHigh) {
+        const max = state.maxCountryCount;
+        els.legendHigh.textContent = `${max} publication${max === 1 ? '' : 's'}`;
+    }
+    if (els.mapLegend) {
+        els.mapLegend.classList.toggle('is-empty', state.maxCountryCount === 0);
+    }
 
     updateLabelVisibility();
 }
@@ -751,6 +921,43 @@ function bindEvents() {
     });
 
     els.searchInput.addEventListener('input', () => applyFilters({ resetPage: true }));
+
+    els.countryChips.addEventListener('click', (event) => {
+        const chip = event.target.closest('button[data-country]');
+        if (!chip) return;
+        const country = chip.dataset.country || '';
+        const normalized = normalizeName(country);
+        const isUnselecting = state.selectedCountryNormalized
+            && isCountryNameMatchingFeature(country, state.selectedCountryNormalized);
+        state.selectedCountryNormalized = isUnselecting ? null : normalized;
+        state.selectedCountryLabel = isUnselecting ? null : country;
+        applyFilters({ resetPage: true });
+    });
+
+    els.activeFilters.addEventListener('click', (event) => {
+        const chip = event.target.closest('button[data-filter-key]');
+        if (!chip) return;
+        const key = chip.dataset.filterKey;
+
+        if (key === 'all') {
+            els.resetButton.click();
+            return;
+        }
+
+        const selectByKey = {
+            program: els.programFilter,
+            contentType: els.contentTypeFilter,
+            year: els.yearFilter,
+            type: els.typeFilter
+        };
+        if (selectByKey[key]) selectByKey[key].value = 'all';
+        if (key === 'q') els.searchInput.value = '';
+        if (key === 'country') {
+            state.selectedCountryNormalized = null;
+            state.selectedCountryLabel = null;
+        }
+        applyFilters({ resetPage: true });
+    });
 
     els.pagination.addEventListener('click', (event) => {
         const button = event.target.closest('button[data-page]');
@@ -820,6 +1027,11 @@ function cacheElements() {
     els.resultsCount = document.getElementById('mapping-results-count');
     els.emptyState = document.getElementById('mapping-empty-state');
     els.worldMap = document.getElementById('mapping-world-map');
+    els.mapShell = document.querySelector('.mapping-map-shell');
+    els.mapTooltip = document.getElementById('mapping-map-tooltip');
+    els.mapLegend = document.getElementById('mapping-map-legend');
+    els.legendHigh = document.getElementById('mapping-legend-high');
+    els.activeFilters = document.getElementById('mapping-active-filters');
     els.countryChips = document.getElementById('mapping-country-chips');
     els.countriesCount = document.getElementById('mapping-countries-count');
     els.resetMapButton = document.getElementById('mapping-reset-map');

@@ -383,6 +383,192 @@ body {
     }
 }
 
+/* Dashboard coverage intensity, tooltips, and removable filters. */
+.mapping-active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.mapping-active-filters-label {
+    margin-right: 0.15rem;
+    color: #475569;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.mapping-active-filter,
+.mapping-clear-filters {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 30px;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid #f3c86c;
+    border-radius: 999px;
+    background: #fff7df;
+    color: #713f12;
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.mapping-active-filter:hover,
+.mapping-active-filter:focus-visible {
+    border-color: #d97706;
+    background: #ffedbd;
+}
+
+.mapping-clear-filters {
+    border-color: transparent;
+    background: transparent;
+    color: #475569;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.mapping-country-chip {
+    cursor: pointer;
+    transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+.mapping-country-chip span {
+    display: inline-grid;
+    min-width: 18px;
+    height: 18px;
+    margin-left: 0.3rem;
+    place-items: center;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 0.68rem;
+}
+
+.mapping-country-chip:hover,
+.mapping-country-chip:focus-visible,
+.mapping-country-chip.is-active {
+    border-color: #d97706;
+    background: #f59e0b;
+    color: #111827;
+    transform: translateY(-1px);
+}
+
+.mapping-chip-more {
+    color: #475569;
+    border-color: #cbd5e1;
+    background: #f8fafc;
+}
+
+.mapping-map-country {
+    cursor: default;
+}
+
+.mapping-map-country.is-highlighted {
+    cursor: pointer;
+}
+
+.mapping-map-country.is-active {
+    fill: #f59e0b !important;
+}
+
+.mapping-map-country.is-highlighted:hover {
+    stroke: #111827;
+    stroke-width: 1px;
+}
+
+.mapping-map-legend {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 4;
+    width: 190px;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+    backdrop-filter: blur(5px);
+    color: #334155;
+    font-size: 0.72rem;
+}
+
+.mapping-map-legend strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #111827;
+    font-size: 0.75rem;
+}
+
+.mapping-map-legend-scale {
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #fde9ad, #f3b33c, #d97706);
+}
+
+.mapping-map-legend-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+}
+
+.mapping-map-legend.is-empty {
+    opacity: 0.55;
+}
+
+.mapping-map-tooltip {
+    position: absolute;
+    z-index: 8;
+    display: grid;
+    visibility: hidden;
+    gap: 0.2rem;
+    width: max-content;
+    max-width: 260px;
+    padding: 0.65rem 0.75rem;
+    border-radius: 9px;
+    background: #111827;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.24);
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(3px);
+    transition: opacity 120ms ease, transform 120ms ease, visibility 120ms ease;
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
+.mapping-map-tooltip.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mapping-map-tooltip strong {
+    font-size: 0.86rem;
+}
+
+.mapping-map-tooltip span,
+.mapping-map-tooltip small {
+    display: block;
+}
+
+.mapping-map-tooltip small {
+    margin-top: 0.2rem;
+    color: #fcd77b;
+}
+
+@media (max-width: 768px) {
+    .mapping-map-legend {
+        left: 18px;
+        bottom: 18px;
+        width: 165px;
+    }
+}
+
 /* Custom utility classes */
 .container {
     max-width: 1200px;
@@ -473,4 +659,3 @@ body {
     border-color: #ffc03c;
     color: #111827;
 }
-
