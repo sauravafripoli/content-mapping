@@ -329,6 +329,7 @@
   z-index: 8;
   width: min(330px, calc(100% - 24px));
   color: #1f2937;
+  pointer-events: none;
 }
 
 .ta-map-guide-summary {
@@ -343,6 +344,7 @@
   cursor: help;
   font-size: 0.76rem;
   font-weight: 800;
+  pointer-events: auto;
 }
 
 .ta-map-guide-summary::before {
