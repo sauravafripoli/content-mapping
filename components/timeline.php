@@ -19,6 +19,20 @@
       </header>
 
       <section class="tl-progress-card">
+        <div class="tl-filter-bar" aria-label="Timeline filters">
+          <label>Programme
+            <select id="tlProgrammeFilter"><option value="all">All programmes</option></select>
+          </label>
+          <label>Content type
+            <select id="tlContentTypeFilter"><option value="all">All content types</option></select>
+          </label>
+          <label>Theme
+            <select id="tlThemeFilter"><option value="all">All themes</option></select>
+          </label>
+          <button id="tlResetFiltersBtn" class="tl-btn" type="button">Reset filters</button>
+          <span id="tlFilterStatus" class="tl-filter-status">Showing all outputs</span>
+        </div>
+
         <div class="tl-controls">
           <div class="tl-controls-group tl-controls-main">
             <button id="tlPlayPauseBtn" class="tl-btn tl-btn-primary" type="button">Play</button>
@@ -52,7 +66,7 @@
           <span id="tlRangeEnd" class="tl-range-edge">Today</span>
         </div>
 
-        <div id="tlMonthDots" class="tl-month-dots" aria-label="Timeline monthly activity"></div>
+        <div id="tlMonthDots" class="tl-month-dots" aria-label="Monthly publication activity histogram"></div>
         <div id="tlDotTooltip" class="tl-dot-tooltip" role="tooltip" aria-hidden="true"></div>
         <div id="tlTimelineAxis" class="tl-axis" aria-hidden="true">
           <div id="tlAxisTicks" class="tl-axis-ticks"></div>
@@ -90,7 +104,7 @@
           </section>
 
           <section class="tl-block">
-            <h3 class="tl-block-title">Latest milestones</h3>
+            <h3 class="tl-block-title">Meaningful milestones</h3>
             <ul id="tlMilestones" class="tl-list"></ul>
           </section>
         </section>
@@ -101,6 +115,7 @@
             <article id="tlSelectedPublication" class="tl-selected-pub">
               <h3 id="tlSelectedTitle">No publication selected</h3>
               <p id="tlSelectedMeta" class="tl-selected-meta">Pick any publication from the list.</p>
+              <dl id="tlSelectedDetails" class="tl-selected-details"></dl>
               <p id="tlSelectedSummary" class="tl-selected-summary"></p>
               <div id="tlSelectedActions" class="tl-selected-actions"></div>
             </article>

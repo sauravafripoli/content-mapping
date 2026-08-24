@@ -1,4 +1,5 @@
 const DATA_URL = new URL('../../data/all_programs.json', import.meta.url).href;
+const THEME_DATA_URL = new URL('../../data/theme_clusters.json', import.meta.url).href;
 const START_DATE = new Date('2021-01-01T00:00:00Z');
 
 const els = {
@@ -29,16 +30,24 @@ const els = {
   typeList: document.getElementById('tlTypeList'),
   selectedTitle: document.getElementById('tlSelectedTitle'),
   selectedMeta: document.getElementById('tlSelectedMeta'),
+  selectedDetails: document.getElementById('tlSelectedDetails'),
   selectedSummary: document.getElementById('tlSelectedSummary'),
   selectedActions: document.getElementById('tlSelectedActions'),
   heroOutputs: document.getElementById('tlHeroOutputs'),
   heroRange: document.getElementById('tlHeroRange'),
   linkDashboard: document.getElementById('tlLinkDashboard'),
-  linkThemes: document.getElementById('tlLinkThemes')
+  linkThemes: document.getElementById('tlLinkThemes'),
+  programmeFilter: document.getElementById('tlProgrammeFilter'),
+  contentTypeFilter: document.getElementById('tlContentTypeFilter'),
+  themeFilter: document.getElementById('tlThemeFilter'),
+  resetFiltersBtn: document.getElementById('tlResetFiltersBtn'),
+  filterStatus: document.getElementById('tlFilterStatus')
 };
 
 const state = {
+  allRecords: [],
   records: [],
+  themeMeta: {},
   monthMarks: [],
   monthActivity: new Map(),
   monthRecords: new Map(),
@@ -50,7 +59,8 @@ const state = {
   selectedRecordId: null,
   queryFilter: '',
   pendingYearFromUrl: null,
-  pendingMonthFromUrl: null
+  pendingMonthFromUrl: null,
+  pendingFilters: {}
 };
 
 function setLinkHref(baseView, params = {}) {
@@ -83,9 +93,83 @@ function parseDate(record) {
 }
 
 function normalizeContentType(record) {
-  const raw = String(record['Content Type'] || record.contentType || record.content_type || '').trim();
+  const raw = String(record['Content Type'] || record.contentType || record.content_type || record['Item Type'] || '').trim();
   if (!raw) return 'Publication';
+  if (raw.toLowerCase() === 'webpage') return 'Webpage';
+  if (raw.toLowerCase() === 'report') return 'Report';
   return raw;
+}
+
+function asArray(value) {
+  if (Array.isArray(value)) return value.map(String).map((item) => item.trim()).filter(Boolean);
+  if (!value) return [];
+  return String(value).split(';').map((item) => item.trim()).filter(Boolean);
+}
+
+function inferThemes(record) {
+  const haystack = [
+    record.Title,
+    record['Abstract Note'],
+    ...asArray(record['Manual Tags']),
+    record['Automatic Tags']
+  ].join(' ').toLowerCase();
+
+  return Object.entries(state.themeMeta)
+    .filter(([, meta]) => (meta.keywords || []).some((keyword) => {
+      const normalized = String(keyword).toLowerCase().trim();
+      if (!normalized) return false;
+      const escaped = normalized.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      return new RegExp(`(^|[^a-z0-9])${escaped}`, 'i').test(haystack);
+    }))
+    .map(([theme]) => theme);
+}
+
+function populateFilter(select, values, allLabel) {
+  if (!select) return;
+  const current = select.value || 'all';
+  select.innerHTML = `<option value="all">${escapeHtml(allLabel)}</option>${[...new Set(values.filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b))
+    .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+    .join('')}`;
+  select.value = [...select.options].some((option) => option.value === current) ? current : 'all';
+}
+
+function updateFilterOptions() {
+  populateFilter(els.programmeFilter, state.allRecords.map((record) => record.programme), 'All programmes');
+  populateFilter(els.contentTypeFilter, state.allRecords.map((record) => record.contentType), 'All content types');
+  populateFilter(els.themeFilter, Object.keys(state.themeMeta), 'All themes');
+}
+
+function applyTimelineFilters({ preserveMonth = true } = {}) {
+  const currentKey = preserveMonth && state.monthMarks[state.index] ? monthKey(state.monthMarks[state.index]) : null;
+  const programme = els.programmeFilter?.value || 'all';
+  const contentType = els.contentTypeFilter?.value || 'all';
+  const theme = els.themeFilter?.value || 'all';
+
+  state.records = state.allRecords.filter((record) => {
+    if (programme !== 'all' && record.programme !== programme) return false;
+    if (contentType !== 'all' && record.contentType !== contentType) return false;
+    if (theme !== 'all' && !record.themes.includes(theme)) return false;
+    return true;
+  });
+
+  buildMonthActivity();
+  renderMonthDots();
+  const restoredIndex = currentKey
+    ? state.monthMarks.findIndex((date) => monthKey(date) === currentKey)
+    : state.monthMarks.length - 1;
+  state.index = restoredIndex >= 0 ? restoredIndex : Math.max(0, state.monthMarks.length - 1);
+  if (els.slider) els.slider.value = String(state.index);
+
+  const activeCount = [programme, contentType, theme].filter((value) => value !== 'all').length;
+  if (els.filterStatus) {
+    els.filterStatus.textContent = activeCount
+      ? `${state.records.length} matching output${state.records.length === 1 ? '' : 's'} · ${activeCount} active filter${activeCount === 1 ? '' : 's'}`
+      : `Showing all ${state.records.length} outputs`;
+  }
+  if (els.heroOutputs) els.heroOutputs.textContent = `Outputs: ${state.records.length}`;
+  state.selectedRecordId = null;
+  render();
 }
 
 function buildMonthMarks(minDate, maxDate) {
@@ -277,17 +361,65 @@ function renderMonthDots() {
     .map((monthDate, idx) => {
       const key = monthKey(monthDate);
       const count = state.monthActivity.get(key) || 0;
-      if (!count) return '';
-
-      const pct = lastIndex > 0 ? (idx / lastIndex) * 100 : 0;
-      const size = Math.max(4, Math.min(8, 4 + (count / maxCount) * 4));
+      const height = count ? Math.max(7, Math.round((count / maxCount) * 58)) : 2;
       const tooltip = buildMonthTooltip(monthDate, count);
       const majorClass = count >= Math.max(2, Math.ceil(maxCount * 0.5)) ? ' is-major' : '';
-      return `<button class="tl-month-dot${majorClass}" type="button" data-index="${idx}" data-tooltip="${escapeHtml(tooltip)}" aria-label="${escapeHtml(tooltip)}" style="left:${pct}%;width:${size}px;height:${size}px;"></button>`;
+      const emptyClass = count ? '' : ' is-empty';
+      return `<button class="tl-month-dot tl-month-bar${majorClass}${emptyClass}" type="button" data-index="${idx}" data-tooltip="${escapeHtml(tooltip)}" aria-label="${escapeHtml(tooltip)}" style="height:${height}px;"></button>`;
     })
     .join('');
 
   els.monthDots.innerHTML = html;
+}
+
+function buildMeaningfulMilestones(upto) {
+  if (!upto.length) return [];
+  const ordered = [...upto].sort((a, b) => a.date - b.date);
+  const milestones = [{
+    date: ordered[0].date,
+    title: 'First output in this timeline view',
+    detail: ordered[0].title || 'Untitled'
+  }];
+
+  const firstByProgramme = new Map();
+  ordered.forEach((record) => {
+    if (!firstByProgramme.has(record.programme)) firstByProgramme.set(record.programme, record);
+  });
+  firstByProgramme.forEach((record, programme) => {
+    milestones.push({
+      date: record.date,
+      title: `${programme} entered the timeline`,
+      detail: record.title || 'First recorded output'
+    });
+  });
+
+  [25, 50, 100, 150].forEach((threshold) => {
+    if (ordered.length < threshold) return;
+    const record = ordered[threshold - 1];
+    milestones.push({
+      date: record.date,
+      title: `${threshold} cumulative outputs reached`,
+      detail: record.title || 'Publication milestone'
+    });
+  });
+
+  const activity = new Map();
+  ordered.forEach((record) => {
+    const key = monthKey(record.date);
+    const item = activity.get(key) || { date: new Date(Date.UTC(record.date.getUTCFullYear(), record.date.getUTCMonth(), 1)), count: 0 };
+    item.count += 1;
+    activity.set(key, item);
+  });
+  const busiest = [...activity.values()].sort((a, b) => b.count - a.count || b.date - a.date)[0];
+  if (busiest) {
+    milestones.push({
+      date: busiest.date,
+      title: `Highest-output month: ${formatMonth(busiest.date)}`,
+      detail: `${busiest.count} publication${busiest.count === 1 ? '' : 's'}`
+    });
+  }
+
+  return milestones.sort((a, b) => b.date - a.date).slice(0, 7);
 }
 
 function computeSnapshot(atDate) {
@@ -310,9 +442,8 @@ function computeSnapshot(atDate) {
     programmesActive.add(r.programme);
   });
 
-  const milestones = [...upto]
-    .sort((a, b) => b.date - a.date)
-    .slice(0, 6);
+  const milestones = buildMeaningfulMilestones(upto);
+  const latestRecord = upto.length ? [...upto].sort((a, b) => b.date - a.date)[0] : null;
 
   const monthPublications = [...inMonth]
     .sort((a, b) => a.date - b.date)
@@ -335,6 +466,7 @@ function computeSnapshot(atDate) {
     monthPublications,
     firstInMonth,
     lastInMonth,
+    latestRecord,
     milestones
   };
 }
@@ -384,17 +516,13 @@ function render() {
       const title = escapeHtml(p.title || 'Untitled');
       const programme = escapeHtml(p.programme || 'Unknown Programme');
       const dateText = escapeHtml(formatFullDate(p.date));
-      const link = getExternalUrl(p);
-      const openLink = link
-        ? `<a class="tl-pub-title" href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">${title}</a>`
-        : `<span class="tl-pub-title">${title}</span>`;
-      return `<li class="${isSelected ? 'is-selected' : ''}"><button class="tl-pub-item" type="button" data-record-id="${p.id}"><span class="tl-pub-date">${dateText}</span>${openLink}<span class="tl-pub-programme">· ${programme}</span></button></li>`;
+      return `<li class="${isSelected ? 'is-selected' : ''}"><button class="tl-pub-item" type="button" data-record-id="${p.id}" aria-pressed="${isSelected ? 'true' : 'false'}"><span class="tl-pub-date">${dateText}</span><span class="tl-pub-title">${title}</span><span class="tl-pub-programme">· ${programme}</span></button></li>`;
     })
     .join('') || '<li>No publications in this month.</li>';
 
   const selectedRecord = snapshot.monthPublications.find((r) => r.id === state.selectedRecordId)
     || snapshot.monthPublications[snapshot.monthPublications.length - 1]
-    || snapshot.milestones[0]
+    || snapshot.latestRecord
     || null;
 
   if (selectedRecord) {
@@ -402,19 +530,31 @@ function render() {
     const extUrl = getExternalUrl(selectedRecord);
     els.selectedTitle.textContent = selectedRecord.title || 'Untitled';
     els.selectedMeta.textContent = `${formatFullDate(selectedRecord.date)} · ${selectedRecord.programme || 'Unknown Programme'} · ${selectedRecord.contentType || 'Publication'}`;
+    if (els.selectedDetails) {
+      const detailRows = [
+        ['Author', selectedRecord.author || 'Not specified'],
+        ['Item type', selectedRecord.itemType || selectedRecord.contentType || 'Publication'],
+        ['Themes', selectedRecord.themes.join(', ') || 'No matched theme'],
+        ['Countries', selectedRecord.countries.join(', ') || 'Not specified']
+      ];
+      els.selectedDetails.innerHTML = detailRows
+        .map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(value)}</dd></div>`)
+        .join('');
+    }
     els.selectedSummary.textContent = selectedRecord.summary || 'No abstract available.';
     els.selectedActions.innerHTML = extUrl
-      ? `<a class="tl-action-link" href="${escapeHtml(extUrl)}" target="_blank" rel="noopener noreferrer">Open publication</a>`
+      ? `<a class="tl-action-link" href="${escapeHtml(extUrl)}" target="_blank" rel="noopener noreferrer">Open publication ↗</a>`
       : '<span class="tl-action-link">No external link</span>';
   } else {
     els.selectedTitle.textContent = 'No publication selected';
     els.selectedMeta.textContent = 'Pick any publication from the list.';
     els.selectedSummary.textContent = '';
+    if (els.selectedDetails) els.selectedDetails.innerHTML = '';
     els.selectedActions.innerHTML = '';
   }
 
   els.milestones.innerHTML = snapshot.milestones
-    .map((m) => `<li><strong>${escapeHtml(m.title || 'Untitled')}</strong> · ${escapeHtml(formatFullDate(m.date))} · ${escapeHtml(m.programme || 'Unknown Programme')}</li>`)
+    .map((milestone) => `<li class="tl-milestone"><time>${escapeHtml(formatFullDate(milestone.date))}</time><span><strong>${escapeHtml(milestone.title)}</strong><small>${escapeHtml(milestone.detail)}</small></span></li>`)
     .join('') || '<li>No milestones yet.</li>';
 
   els.typeList.innerHTML = snapshot.byType
@@ -429,13 +569,18 @@ function updateCrossViewLinks(currentMonthDate) {
   const params = {
     year: currentMonthDate.getUTCFullYear(),
     month: monthToken,
-    q: state.queryFilter
+    q: state.queryFilter,
+    program: els.programmeFilter?.value,
+    contentType: els.contentTypeFilter?.value,
+    theme: els.themeFilter?.value
   };
 
   if (els.linkDashboard) {
     els.linkDashboard.href = setLinkHref('dashboard', {
       year: currentMonthDate.getUTCFullYear(),
-      q: state.queryFilter
+      q: state.queryFilter,
+      program: els.programmeFilter?.value,
+      contentType: els.contentTypeFilter?.value
     });
   }
   if (els.linkThemes) {
@@ -448,6 +593,11 @@ function applyStateFromUrl() {
   const q = String(params.get('q') || '').trim().toLowerCase();
   const year = params.get('year');
   const month = params.get('month');
+  state.pendingFilters = {
+    programme: params.get('program') || 'all',
+    contentType: params.get('contentType') || 'all',
+    theme: params.get('theme') || 'all'
+  };
 
   state.queryFilter = q;
 
@@ -521,6 +671,21 @@ function bindEvents() {
 
   els.speedSelect.addEventListener('change', () => {
     if (state.timer) startPlayback();
+  });
+
+  [els.programmeFilter, els.contentTypeFilter, els.themeFilter].forEach((filter) => {
+    filter?.addEventListener('change', () => {
+      stopPlayback();
+      applyTimelineFilters();
+    });
+  });
+
+  els.resetFiltersBtn?.addEventListener('click', () => {
+    stopPlayback();
+    els.programmeFilter.value = 'all';
+    els.contentTypeFilter.value = 'all';
+    els.themeFilter.value = 'all';
+    applyTimelineFilters();
   });
 
   els.monthPublications.addEventListener('click', (event) => {
@@ -609,11 +774,19 @@ async function init() {
   bindEvents();
   applyStateFromUrl();
 
-  const response = await fetch(DATA_URL, { cache: 'no-store' });
-  if (!response.ok) throw new Error('Failed to load all_programs.json');
+  const [dataResponse, themeResponse] = await Promise.all([
+    fetch(DATA_URL, { cache: 'no-store' }),
+    fetch(THEME_DATA_URL, { cache: 'no-store' })
+  ]);
+  if (!dataResponse.ok) throw new Error('Failed to load all_programs.json');
 
-  const rows = await response.json();
-  state.records = rows
+  const rows = await dataResponse.json();
+  if (themeResponse.ok) {
+    const themePayload = await themeResponse.json();
+    state.themeMeta = themePayload.theme_meta || {};
+  }
+
+  state.allRecords = rows
     .map((r, idx) => ({
       id: idx + 1,
       date: parseDate(r),
@@ -622,7 +795,11 @@ async function init() {
       doi: String(r.DOI || r.doi || '').trim(),
       summary: String(r['Abstract Note'] || r.abstract || '').trim(),
       programme: String(r.program || 'Unknown Programme'),
-      contentType: normalizeContentType(r)
+      contentType: normalizeContentType(r),
+      itemType: String(r['Item Type'] || '').trim(),
+      author: String(r.Author || '').trim(),
+      countries: asArray(r.countries),
+      themes: inferThemes(r)
     }))
     .filter((r) => r.date && r.date >= START_DATE)
     .filter((r) => {
@@ -632,15 +809,39 @@ async function init() {
     })
     .sort((a, b) => a.date - b.date);
 
+  state.records = [...state.allRecords];
+  updateFilterOptions();
+  const pendingSelections = [
+    [els.programmeFilter, state.pendingFilters.programme],
+    [els.contentTypeFilter, state.pendingFilters.contentType],
+    [els.themeFilter, state.pendingFilters.theme]
+  ];
+  pendingSelections.forEach(([select, value]) => {
+    if (select && [...select.options].some((option) => option.value === value)) select.value = value;
+  });
+
   const now = new Date();
   const maxDate = state.records.length ? state.records[state.records.length - 1].date : now;
   state.monthMarks = buildMonthMarks(START_DATE, maxDate > now ? maxDate : now);
+  state.records = state.allRecords.filter((record) => {
+    if (els.programmeFilter.value !== 'all' && record.programme !== els.programmeFilter.value) return false;
+    if (els.contentTypeFilter.value !== 'all' && record.contentType !== els.contentTypeFilter.value) return false;
+    if (els.themeFilter.value !== 'all' && !record.themes.includes(els.themeFilter.value)) return false;
+    return true;
+  });
   buildMonthActivity();
   renderAxisTicks();
   renderMonthDots();
 
   if (els.heroOutputs) {
     els.heroOutputs.textContent = `Outputs: ${state.records.length}`;
+  }
+  if (els.filterStatus) {
+    const activeCount = [els.programmeFilter.value, els.contentTypeFilter.value, els.themeFilter.value]
+      .filter((value) => value !== 'all').length;
+    els.filterStatus.textContent = activeCount
+      ? `${state.records.length} matching output${state.records.length === 1 ? '' : 's'} · ${activeCount} active filter${activeCount === 1 ? '' : 's'}`
+      : `Showing all ${state.records.length} outputs`;
   }
   if (els.heroRange && state.monthMarks.length) {
     els.heroRange.textContent = `Range: ${formatMonth(state.monthMarks[0])} → ${formatMonth(state.monthMarks[state.monthMarks.length - 1])}`;

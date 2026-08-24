@@ -67,8 +67,8 @@
 
 					<div class="card shadow-sm border-0 mt-4 mapping-panel-card">
 						<div class="card-body">
-							<h2 class="h6 mb-3">Coverage Summary</h2>
-							<div class="small text-muted mb-2" id="mapping-countries-count">0 countries highlighted</div>
+							<h2 class="h6 mb-2">Group Selections</h2>
+							<div class="small text-muted mb-2" id="mapping-countries-count">Select a regional group to aggregate its publications.</div>
 							<div id="mapping-country-chips" class="mapping-chip-list"></div>
 						</div>
 					</div>

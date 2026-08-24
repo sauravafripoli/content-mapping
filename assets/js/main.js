@@ -2,6 +2,17 @@ const DATA_URL = new URL('../../data/all_programs.json', import.meta.url).href;
 const WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson';
 
 const GROUP_EXPANSIONS = {
+    AfCFTA: [
+        'Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi', 'Cabo Verde',
+        'Cameroon', 'Central African Republic', 'Chad', 'Comoros', 'Democratic Republic of the Congo',
+        'Republic of the Congo', "Côte d'Ivoire", 'Djibouti', 'Egypt', 'Equatorial Guinea',
+        'Eritrea', 'Eswatini', 'Ethiopia', 'Gabon', 'The Gambia', 'Ghana', 'Guinea',
+        'Guinea-Bissau', 'Kenya', 'Lesotho', 'Liberia', 'Libya', 'Madagascar', 'Malawi',
+        'Mali', 'Mauritania', 'Mauritius', 'Morocco', 'Mozambique', 'Namibia', 'Niger',
+        'Nigeria', 'Rwanda', 'São Tomé and Príncipe', 'Senegal', 'Seychelles', 'Sierra Leone',
+        'Somalia', 'South Africa', 'South Sudan', 'Sudan', 'Tanzania', 'Togo', 'Tunisia',
+        'Uganda', 'Zambia', 'Zimbabwe'
+    ],
     EU: [
         'Austria', 'Belgium', 'Bulgaria', 'Croatia', 'Cyprus', 'Czechia', 'Denmark', 'Estonia',
         'Finland', 'France', 'Germany', 'Greece', 'Hungary', 'Ireland', 'Italy', 'Latvia',
@@ -20,6 +31,11 @@ const GROUP_EXPANSIONS = {
         'Guinea-Bissau', 'Liberia', 'Mali', 'Mauritania', 'Niger', 'Nigeria', 'Senegal', 'Sierra Leone', 'Togo'
     ]
 };
+
+const GROUP_ENTITIES = new Set([
+    'AU-EU', 'AfCFTA', 'BRICS', 'ECOWAS', 'EU', 'EU-China-Africa', 'Global South',
+    'South-South Cooperation', 'West Africa'
+]);
 
 const COUNTRY_ALIASES = {
     'united states': ['United States of America', 'United States', 'USA', 'US', 'U.S.A.', 'U.S.'],
@@ -67,6 +83,7 @@ const state = {
     mapInitialized: false,
     selectedCountryNormalized: null,
     selectedCountryLabel: null,
+    selectedGroup: null,
     mapProjection: null,
     mapPath: null,
     mapSvg: null,
@@ -247,7 +264,7 @@ function applyFilters(options = {}) {
         return true;
     });
 
-    state.filtered = state.baseFiltered.filter((record) => recordMatchesSelectedCountry(record));
+    state.filtered = state.baseFiltered.filter((record) => recordMatchesSelectedGeography(record));
     buildCountryMetrics();
 
     if (resetPage) {
@@ -272,7 +289,8 @@ function renderActiveFilters() {
         ['year', 'Year', els.yearFilter.value],
         ['type', 'Item type', els.typeFilter.value],
         ['q', 'Search', els.searchInput.value.trim()],
-        ['country', 'Country', state.selectedCountryLabel || '']
+        ['country', 'Country', state.selectedCountryLabel || ''],
+        ['group', 'Group', state.selectedGroup || '']
     ].filter(([, , value]) => value && value !== 'all');
 
     if (!filters.length) {
@@ -431,7 +449,8 @@ function getCountrySet(records) {
 function buildCountryMetrics() {
     const metrics = new Map();
 
-    state.baseFiltered.forEach((record) => {
+    const metricRecords = state.selectedGroup ? state.filtered : state.baseFiltered;
+    metricRecords.forEach((record) => {
         const countriesInRecord = new Map();
         record.countries.forEach((entity) => {
             expandCountryEntity(entity).forEach((country) => {
@@ -492,28 +511,29 @@ function countryIntensityColor(count) {
 }
 
 function renderCountrySummary() {
-    const countryList = [...state.countryMetrics.values()]
+    const groups = [...GROUP_ENTITIES]
+        .map((name) => ({
+            name,
+            count: state.baseFiltered.filter((record) => record.countries.some((entity) => normalizeName(entity) === normalizeName(name))).length
+        }))
+        .filter((group) => group.count > 0)
         .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
-    els.countriesCount.textContent = `${countryList.length} countr${countryList.length === 1 ? 'y' : 'ies'} highlighted`;
+    els.countriesCount.textContent = groups.length
+        ? `${groups.length} group${groups.length === 1 ? '' : 's'} available`
+        : 'No group data in the current filters.';
 
-    if (!countryList.length) {
-        els.countryChips.innerHTML = '<span class="text-muted small">No country data in current filter.</span>';
+    if (!groups.length) {
+        els.countryChips.innerHTML = '';
         return;
     }
 
-    els.countryChips.innerHTML = countryList
-        .slice(0, 24)
-        .map((metric) => {
-            const isActive = state.selectedCountryNormalized
-                && isCountryNameMatchingFeature(metric.name, state.selectedCountryNormalized);
-            return `<button type="button" class="mapping-chip mapping-country-chip${isActive ? ' is-active' : ''}" data-country="${escapeHtml(metric.name)}" aria-pressed="${isActive ? 'true' : 'false'}">${escapeHtml(metric.name)} <span>${metric.count}</span></button>`;
+    els.countryChips.innerHTML = groups
+        .map((group) => {
+            const isActive = state.selectedGroup === group.name;
+            return `<button type="button" class="mapping-chip mapping-country-chip${isActive ? ' is-active' : ''}" data-group="${escapeHtml(group.name)}" aria-pressed="${isActive ? 'true' : 'false'}">${escapeHtml(group.name)} <span>${group.count}</span></button>`;
         })
         .join('');
-
-    if (countryList.length > 24) {
-        els.countryChips.innerHTML += `<span class="mapping-chip mapping-chip-more">+${countryList.length - 24} more</span>`;
-    }
 }
 
 function normalizeName(value) {
@@ -580,7 +600,11 @@ function isCountryNameMatchingFeature(countryName, featureNorm) {
     return false;
 }
 
-function recordMatchesSelectedCountry(record) {
+function recordMatchesSelectedGeography(record) {
+    if (state.selectedGroup) {
+        return record.countries.some((entity) => normalizeName(entity) === normalizeName(state.selectedGroup));
+    }
+
     if (!state.selectedCountryNormalized) {
         return true;
     }
@@ -596,6 +620,11 @@ function recordMatchesSelectedCountry(record) {
 }
 
 function updateSelectedCountryStatus() {
+    if (state.selectedGroup) {
+        const count = state.filtered.length;
+        els.countryFilterStatus.textContent = `Group: ${state.selectedGroup} (${count} publication${count === 1 ? '' : 's'})`;
+        return;
+    }
     if (!state.selectedCountryNormalized) {
         els.countryFilterStatus.textContent = 'No country selected';
         return;
@@ -701,6 +730,8 @@ function handleCountryClick(event, feature) {
     if (!isHighlighted) {
         return;
     }
+
+    state.selectedGroup = null;
 
     if (state.selectedCountryNormalized === featureNorm) {
         state.selectedCountryNormalized = null;
@@ -923,14 +954,12 @@ function bindEvents() {
     els.searchInput.addEventListener('input', () => applyFilters({ resetPage: true }));
 
     els.countryChips.addEventListener('click', (event) => {
-        const chip = event.target.closest('button[data-country]');
+        const chip = event.target.closest('button[data-group]');
         if (!chip) return;
-        const country = chip.dataset.country || '';
-        const normalized = normalizeName(country);
-        const isUnselecting = state.selectedCountryNormalized
-            && isCountryNameMatchingFeature(country, state.selectedCountryNormalized);
-        state.selectedCountryNormalized = isUnselecting ? null : normalized;
-        state.selectedCountryLabel = isUnselecting ? null : country;
+        const group = chip.dataset.group || '';
+        state.selectedGroup = state.selectedGroup === group ? null : group;
+        state.selectedCountryNormalized = null;
+        state.selectedCountryLabel = null;
         applyFilters({ resetPage: true });
     });
 
@@ -956,6 +985,7 @@ function bindEvents() {
             state.selectedCountryNormalized = null;
             state.selectedCountryLabel = null;
         }
+        if (key === 'group') state.selectedGroup = null;
         applyFilters({ resetPage: true });
     });
 
@@ -990,6 +1020,7 @@ function bindEvents() {
         els.searchInput.value = '';
         state.selectedCountryNormalized = null;
         state.selectedCountryLabel = null;
+        state.selectedGroup = null;
         updateFilterOptions();
         applyFilters({ resetPage: true });
     });
@@ -997,6 +1028,7 @@ function bindEvents() {
     els.resetMapButton.addEventListener('click', () => {
         state.selectedCountryNormalized = null;
         state.selectedCountryLabel = null;
+        state.selectedGroup = null;
         resetMapView();
         applyFilters({ resetPage: true });
     });
